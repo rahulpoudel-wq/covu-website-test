@@ -1,0 +1,246 @@
+/* =========================================================
+   COVU Design System — Colors & Type
+   AI-native insurance platform
+   ========================================================= */
+
+/* Fonts loaded via Google Fonts; project hosts no webfont files.
+   If you're running offline, load these locally:
+   @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Nunito:wght@900&family=Merriweather:wght@400;700;900&display=swap');
+*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Nunito:wght@900&family=Merriweather:wght@400;700;900&display=swap');
+
+:root {
+  /* ---------- BRAND CORE ---------- */
+  --covu-navy:         #1C2945;   /* primary — logo on light, headlines, body */
+  --covu-navy-deep:    #141E36;   /* deeper navy for gradients + dark bg base */
+  --covu-ink-navy:     #121A2B;   /* deepest brand navy — brand core */
+  --covu-navy-alt:     #11426B;   /* secondary brand navy (backgrounds, strokes) */
+  --covu-navy-800:     #26344F;
+  --covu-navy-600:     #3B486A;
+  --covu-navy-400:     #6E7892;
+  --covu-navy-200:     #B6BFD5;   /* muted navy — strokes, meta */
+  --covu-navy-100:     #D3DBEE;   /* pale navy — backgrounds */
+
+  --covu-yellow:       #FFB703;   /* PRIMARY — buttons, bars, highlights, main accent */
+  --covu-yellow-soft:  #FFD45A;   /* viz / hover state */
+  --covu-yellow-deep:  #E9AE00;   /* viz / pressed state */
+  --covu-yellow-wash:  #FFF6DA;   /* faint yellow background tint */
+
+  --covu-white:        #FFFFFF;
+  --covu-cream:        #FFFBF0;   /* off-white gradient base on light bgs */
+  --covu-cream-2:      #FFF4DF;   /* stronger cream — inside cards/banners */
+
+  /* ---------- NEUTRAL ---------- */
+  --covu-ink:          #0F172A;   /* near-black for body on light */
+  --covu-text:         #1C2945;   /* body default = navy */
+  --covu-text-muted:   #5B6478;   /* secondary copy */
+  --covu-text-faint:   #8C93A4;   /* timestamps, captions */
+  --covu-line:         #E4E7EE;   /* hairline borders */
+  --covu-line-strong:  #CFD4E0;
+  --covu-surface:      #FFFFFF;
+  --covu-surface-2:    #F7F8FB;   /* section background on light */
+  --covu-surface-3:    #F1F3F9;   /* alt section / card bg */
+
+  /* ---------- SEMANTIC ---------- */
+  --covu-success:      #1FAE6A;
+  --covu-success-bg:   #E4F7EE;
+  --covu-danger:       #E5484D;
+  --covu-danger-bg:    #FDECED;
+  --covu-warning:      #F59E0B;
+  --covu-warning-bg:   #FFF3D6;
+  --covu-info:         #2E6BE6;
+  --covu-info-bg:      #E6EEFB;
+
+  /* ---------- GRADIENTS (never solid flat bgs) ---------- */
+  --covu-gradient-light:
+    radial-gradient(120% 100% at 100% 0%, #FFF4DF 0%, #FFFFFF 55%);
+  --covu-gradient-light-soft:
+    linear-gradient(180deg, #FFFFFF 0%, #FFFBF0 100%);
+  --covu-gradient-dark:
+    linear-gradient(135deg, #1C2945 0%, #141E36 100%);
+  --covu-gradient-dark-rich:
+    radial-gradient(120% 100% at 0% 0%, #26344F 0%, #141E36 60%, #0B1225 100%);
+  --covu-gradient-yellow:
+    linear-gradient(180deg, #FFD45A 0%, #FFC425 100%);
+  --covu-gradient-accent-wedge:
+    linear-gradient(135deg, transparent 60%, #FFC425 60%); /* diagonal wedge */
+
+  /* ---------- TYPOGRAPHY: FAMILIES ---------- */
+  --font-display: 'Nunito Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-body:    'Nunito Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-serif:   'Merriweather', Georgia, 'Times New Roman', serif;
+  --font-logo:    'Nunito', 'Nunito Sans', system-ui, sans-serif; /* ONLY for the word "COVU" */
+
+  /* ---------- TYPE SCALE ---------- */
+  --fs-display:  64px;  --lh-display:  1.05;  --ls-display: -0.02em;
+  --fs-h1:       44px;  --lh-h1:       1.1;   --ls-h1:      -0.015em;
+  --fs-h2:       32px;  --lh-h2:       1.15;  --ls-h2:      -0.01em;
+  --fs-h3:       24px;  --lh-h3:       1.2;
+  --fs-h4:       20px;  --lh-h4:       1.3;
+  --fs-lead:     18px;  --lh-lead:     1.5;
+  --fs-body:     16px;  --lh-body:     1.55;
+  --fs-small:    14px;  --lh-small:    1.5;
+  --fs-caption:  12px;  --lh-caption:  1.4;
+  --fs-eyebrow:  12px;  --lh-eyebrow:  1.2;    /* uppercase yellow labels */
+
+  /* ---------- WEIGHTS ---------- */
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  /* ---------- RADII ---------- */
+  --radius-xs:  4px;
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-pill: 999px;
+
+  /* ---------- SHADOWS ---------- */
+  --shadow-1: 0 1px 2px rgba(28, 41, 69, 0.06), 0 1px 3px rgba(28, 41, 69, 0.05);
+  --shadow-2: 0 4px 10px rgba(28, 41, 69, 0.08), 0 2px 4px rgba(28, 41, 69, 0.05);
+  --shadow-3: 0 10px 28px rgba(28, 41, 69, 0.12), 0 4px 8px rgba(28, 41, 69, 0.06);
+  --shadow-4: 0 24px 60px rgba(28, 41, 69, 0.18), 0 6px 14px rgba(28, 41, 69, 0.08);
+  --shadow-yellow: 0 8px 20px rgba(255, 196, 37, 0.35);
+  --shadow-inset-line: inset 0 0 0 1px rgba(28, 41, 69, 0.08);
+
+  /* ---------- SPACING (4px base) ---------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+
+  /* ---------- MOTION ---------- */
+  --ease-standard: cubic-bezier(.2, .7, .2, 1);
+  --ease-emphasized: cubic-bezier(.2, .9, .15, 1.02);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+
+  /* ---------- BRAND ACCENT BARS ---------- */
+  --accent-bar-h: 4px;            /* the yellow bar under eyebrows */
+  --accent-wedge-angle: 12deg;    /* yellow diagonal wedge element */
+}
+
+/* =========================================================
+   SEMANTIC TYPE CLASSES
+   ========================================================= */
+
+.covu-logo {
+  font-family: var(--font-logo);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--covu-navy); /* NEVER yellow */
+}
+.covu-logo--onDark { color: var(--covu-white); }
+
+.h-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-extrabold);
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  color: var(--covu-navy);
+}
+.h1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-extrabold);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--ls-h1);
+  color: var(--covu-navy);
+}
+.h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2);
+  color: var(--covu-navy);
+}
+.h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  color: var(--covu-navy);
+}
+.h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-h4);
+  color: var(--covu-navy);
+}
+.h-serif {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--covu-navy);
+}
+
+.lead {
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+  color: var(--covu-text);
+}
+.p, p {
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--covu-text);
+}
+.small {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--covu-text-muted);
+}
+.caption {
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+  color: var(--covu-text-faint);
+}
+
+/* The signature yellow uppercase eyebrow (“SPECIAL ANNOUNCEMENT”, “NEW BLOG”) */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: var(--fw-extrabold);
+  font-size: var(--fs-eyebrow);
+  line-height: var(--lh-eyebrow);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--covu-yellow-deep);
+}
+.eyebrow--bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow--bar::before {
+  content: "";
+  width: 28px;
+  height: var(--accent-bar-h);
+  background: var(--covu-yellow);
+  border-radius: var(--radius-pill);
+}
+
+/* Inline highlight: "Grow Yours" where "Yours" is yellow */
+.hl-yellow { color: var(--covu-yellow-deep); }
+
+/* ==== Dark-mode helpers: body MUST become light navy->white, NEVER plain white body on light ==== */
+.onDark { color: var(--covu-white); }
+.onDark .h1, .onDark .h2, .onDark .h3, .onDark .h4, .onDark .h-display { color: var(--covu-white); }
+.onDark .p, .onDark p, .onDark .lead { color: rgba(255,255,255,0.85); }
+.onDark .small, .onDark .caption { color: rgba(255,255,255,0.7); }
