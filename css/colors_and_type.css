@@ -309,3 +309,16 @@ html, body { overflow-x: hidden; }
   background: var(--covu-yellow, #FFB703); color: var(--covu-navy, #1C2945);
   font-weight: 800; border-radius: 30px; padding: 15px; text-decoration: none;
 }
+
+/* =========================================================
+   DESKTOP DROPDOWN PANEL SURFACE (for pages using the shared stylesheet)
+   About/Team define the dropdown's position + open animation but omit the
+   panel's solid background, so the mega-menu rendered see-through. Restore it.
+   ========================================================= */
+.dropdown {
+  background: var(--covu-white, #ffffff) !important;
+  border: 1px solid var(--covu-line, #E4E7EE);
+  border-radius: 22px;
+  box-shadow: 0 24px 60px rgba(28,41,69,.18), 0 6px 14px rgba(28,41,69,.08);
+  overflow: hidden;
+}
