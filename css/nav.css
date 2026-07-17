@@ -209,3 +209,8 @@
 @media(max-width:560px){.nav{height:64px;padding:0 10px 0 18px}.nav-cta{padding:12px 16px;font-size:14px}}
 @media(max-width:900px){#sec-features .nav{align-self:flex-end}}
 @media(max-width:900px){#sec-ctafoot .brandcol{grid-column:1 / -1}}
+
+/* --- global-nav consistency overrides (match homepage exactly) --- */
+.nav a, .dropdown a, .mega2 a, .mega2-feat a, .mobilemenu a, .dditem, .dditem .t, .dditem .d { text-decoration: none; color: inherit; }
+.nav-cta { margin-left: 0 !important; }              /* desktop: let space-between center the links */
+@media (max-width: 960px){ .nav-cta { margin-left: auto !important; } }  /* mobile: push CTA right of burger */
