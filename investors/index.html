@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investors | COVU</title>
+<meta name="description" content="COVU is the operating stack for the fragmented, underserved independent P&C market, built by operators who ran 50+ agencies. Operating proof, not promises.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Nunito:wght@900&family=Merriweather:wght@400;700;900&display=swap');
+
+:root{
+  --covu-navy:#1C2945; --covu-navy-deep:#141E36; --covu-ink-navy:#121A2B;
+  --covu-navy-800:#26344F; --covu-navy-600:#3B486A; --covu-navy-400:#6E7892;
+  --covu-navy-200:#B6BFD5; --covu-navy-100:#D3DBEE;
+  --covu-yellow:#FFB703; --covu-yellow-soft:#FFD45A; --covu-yellow-deep:#E0A100; --covu-yellow-wash:#FFF6DA;
+  --covu-white:#FFFFFF; --covu-cream:#FFFBF0; --covu-cream-2:#FFF4DF;
+  --covu-text:#1C2945; --covu-text-muted:#5B6478; --covu-text-faint:#8C93A4;
+  --covu-line:#E4E7EE; --covu-line-strong:#CFD4E0;
+  --covu-surface:#FFFFFF; --covu-surface-2:#F7F8FB; --covu-surface-3:#F1F3F9;
+  --font-display:'Nunito Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --font-body:'Nunito Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --font-serif:'Merriweather',Georgia,'Times New Roman',serif;
+  --font-logo:'Nunito','Nunito Sans',system-ui,sans-serif;
+  --radius-sm:8px; --radius-md:12px; --radius-lg:16px; --radius-xl:24px; --radius-pill:999px;
+  --shadow-2:0 4px 10px rgba(28,41,69,.08),0 2px 4px rgba(28,41,69,.05);
+  --shadow-3:0 10px 28px rgba(28,41,69,.12),0 4px 8px rgba(28,41,69,.06);
+  --shadow-4:0 24px 60px rgba(28,41,69,.18),0 6px 14px rgba(28,41,69,.08);
+  --shadow-yellow:0 8px 20px rgba(255,183,3,.35);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --gradient-dark:radial-gradient(120% 100% at 0% 0%,#26344F 0%,#141E36 60%,#0B1225 100%);
+  --gradient-light:radial-gradient(120% 100% at 100% 0%,#FFF4DF 0%,#FFFFFF 55%);
+  --maxw:1120px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--covu-text);background:var(--covu-white);-webkit-font-smoothing:antialiased;line-height:1.55;}
+a{text-decoration:none;color:inherit;}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+/* ---------- NAV ---------- */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--covu-line);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;}
+.covu-logo{font-family:var(--font-logo);font-weight:900;text-transform:uppercase;letter-spacing:2px;color:var(--covu-navy);font-size:22px;}
+.covu-logo--onDark{color:var(--covu-white);}
+.nav-links{display:flex;gap:30px;align-items:center;}
+.nav-links a{font-size:15px;font-weight:600;color:var(--covu-navy);opacity:.85;transition:opacity var(--ease) .2s;}
+.nav-links a:hover{opacity:1;}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:15px;padding:12px 22px;border-radius:var(--radius-pill);border:none;cursor:pointer;transition:all .2s var(--ease);white-space:nowrap;}
+.btn--yellow{background:var(--covu-yellow);color:var(--covu-navy);}
+.btn--yellow:hover{background:var(--covu-yellow-soft);box-shadow:var(--shadow-yellow);}
+.btn--yellow:active{background:var(--covu-yellow-deep);transform:translateY(2px);}
+.btn--white{background:var(--covu-white);color:var(--covu-navy);}
+.btn--white:hover{background:var(--covu-cream-2);}
+.btn--ghost{background:transparent;color:var(--covu-white);border:1px solid rgba(255,255,255,.35);}
+.btn--ghost:hover{border-color:var(--covu-white);}
+.btn--lg{padding:15px 30px;font-size:16px;}
+
+/* ---------- SECTION SHELL ---------- */
+section{padding:96px 0;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--covu-yellow-deep);margin-bottom:22px;}
+.eyebrow::before{content:"";width:28px;height:4px;background:var(--covu-yellow);border-radius:var(--radius-pill);}
+.eyebrow--onDark{color:var(--covu-yellow);}
+.h-display{font-family:var(--font-display);font-weight:800;font-size:clamp(38px,5.6vw,62px);line-height:1.04;letter-spacing:-.02em;color:var(--covu-navy);}
+.h2{font-family:var(--font-display);font-weight:800;font-size:clamp(28px,3.6vw,40px);line-height:1.12;letter-spacing:-.015em;color:var(--covu-navy);}
+.lead{font-size:19px;line-height:1.55;color:var(--covu-text-muted);}
+.hl{color:var(--covu-yellow-deep);}
+.onDark .h-display,.onDark .h2{color:var(--covu-white);}
+.onDark .lead{color:rgba(255,255,255,.82);}
+.dark{background:var(--gradient-dark);color:var(--covu-white);}
+.note{font-size:13px;color:var(--covu-text-faint);margin-top:26px;font-style:italic;}
+.onDark .note{color:rgba(255,255,255,.55);}
+
+/* ---------- HERO ---------- */
+.hero{padding:120px 0 128px;position:relative;overflow-x:clip;overflow-y:visible;}
+.hero::after{content:"";position:absolute;top:0;right:-120px;width:420px;height:100%;background:linear-gradient(135deg,transparent 55%,rgba(255,183,3,.10) 55%);pointer-events:none;}
+.hero .wrap{position:relative;z-index:2;max-width:var(--maxw);}
+.hero .h-display{max-width:22ch;}
+.hero .lead{max-width:56ch;margin:26px 0 38px;font-size:20px;color:rgba(255,255,255,.85);}
+
+/* ---------- PROBLEM ---------- */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:start;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:22px;}
+.plist li{position:relative;padding-left:28px;font-size:18px;line-height:1.5;color:var(--covu-text);}
+.plist li::before{content:"";position:absolute;left:0;top:11px;width:12px;height:12px;border-radius:50%;background:var(--covu-yellow);}
+
+/* ---------- SOLUTION ---------- */
+.sol-lead{margin-top:22px;max-width:62ch;font-size:19px;line-height:1.55;color:var(--covu-text-muted);}
+.layer-group-label{margin:48px 0 18px;font-family:var(--font-display);font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--covu-navy-400);}
+.layers{display:flex;flex-direction:column;gap:16px;}
+.layer{display:flex;gap:22px;align-items:flex-start;background:var(--covu-white);border:1px solid var(--covu-line);border-radius:var(--radius-lg);padding:26px 30px;box-shadow:var(--shadow-2);transition:box-shadow .2s var(--ease),transform .2s var(--ease);}
+.layer:hover{box-shadow:var(--shadow-3);transform:translateY(-2px);}
+.layer-badge{flex:none;width:46px;height:46px;border-radius:12px;background:var(--covu-navy);color:var(--covu-yellow);font-family:var(--font-display);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;letter-spacing:.02em;}
+.layer-badge--txt{font-size:13px;letter-spacing:.04em;}
+.layer-body{flex:1;min-width:0;}
+.layer-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:9px;}
+.layer h3{font-family:var(--font-display);font-weight:800;font-size:21px;color:var(--covu-navy);}
+.role-tag{font-family:var(--font-display);font-weight:700;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--covu-navy-600);background:var(--covu-navy-100);padding:4px 11px;border-radius:var(--radius-pill);}
+.role-tag--soon{color:var(--covu-yellow-deep);background:var(--covu-yellow-wash);}
+.layer .what{font-size:16px;color:var(--covu-text);font-weight:600;margin-bottom:8px;}
+.layer .frame{font-size:15px;color:var(--covu-text-muted);line-height:1.6;max-width:76ch;}
+.layer-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--covu-yellow-deep);}
+.layer-link:hover{color:var(--covu-navy);}
+.solution-foot{margin-top:38px;font-size:17px;font-weight:700;color:var(--covu-navy);}
+.stack-cta{margin-top:22px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;background:var(--gradient-dark);border-radius:var(--radius-lg);padding:32px 36px;box-shadow:var(--shadow-3);}
+.stack-cta h3{font-family:var(--font-display);font-weight:800;font-size:23px;color:var(--covu-white);margin-bottom:6px;}
+.stack-cta p{font-size:15px;color:rgba(255,255,255,.8);max-width:52ch;}
+.stack-cta .btn{flex:none;}
+
+/* ---------- PROOF ---------- */
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;}
+.stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);padding:34px 30px;}
+.stat .num{font-family:var(--font-display);font-weight:900;font-size:clamp(44px,5vw,58px);line-height:1;color:var(--covu-yellow);letter-spacing:-.02em;}
+.stat .label{font-family:var(--font-display);font-weight:800;font-size:18px;color:var(--covu-white);margin:16px 0 8px;}
+.stat .sub{font-size:15px;color:rgba(255,255,255,.7);line-height:1.5;}
+
+/* ---------- DEFENSIBILITY ---------- */
+.def-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;}
+.def{background:var(--covu-surface);border:1px solid var(--covu-line);border-radius:var(--radius-lg);padding:30px;box-shadow:var(--shadow-2);}
+.def .bar{width:34px;height:4px;background:var(--covu-yellow);border-radius:var(--radius-pill);margin-bottom:20px;}
+.def h3{font-family:var(--font-display);font-weight:800;font-size:20px;color:var(--covu-navy);margin-bottom:10px;}
+.def p{font-size:16px;color:var(--covu-text-muted);line-height:1.55;}
+
+/* ---------- TRACTION ---------- */
+.traction{background:var(--covu-surface-2);}
+.chips{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px;}
+.chip{display:inline-flex;align-items:center;gap:10px;background:var(--covu-white);border:1px solid var(--covu-line-strong);border-radius:var(--radius-pill);padding:14px 24px;font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--covu-navy);box-shadow:var(--shadow-2);}
+.chip::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--covu-yellow);}
+
+/* ---------- BACKERS ---------- */
+.backers{background:var(--gradient-light);}
+.logo-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px;margin-top:52px;}
+.logo-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;text-align:center;min-height:128px;padding:24px 18px;background:var(--covu-white);border:1px solid var(--covu-line);border-radius:var(--radius-lg);box-shadow:var(--shadow-2);transition:box-shadow .2s var(--ease),transform .2s var(--ease);cursor:pointer;}
+.logo-tile:hover{box-shadow:var(--shadow-3);transform:translateY(-2px);}
+.logo-tile img{max-width:86%;max-height:52px;width:auto;height:auto;object-fit:contain;}
+.logo-tile--invert img{filter:brightness(0) saturate(100%);max-height:42px;}
+.logo-tile span{font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--covu-navy);line-height:1.25;}
+
+/* ---------- CTA ---------- */
+.cta{padding:104px 0;}
+.cta .actions{display:flex;align-items:center;gap:28px;margin-top:34px;flex-wrap:wrap;}
+.cta .textlink{font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--covu-white);border-bottom:2px solid var(--covu-yellow);padding-bottom:3px;}
+.cta .textlink:hover{color:var(--covu-yellow);}
+
+/* ---------- FOOTER ---------- */
+.footer{background:var(--covu-navy-deep);color:rgba(255,255,255,.72);padding:70px 0 44px;}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12);}
+.footer .covu-logo{font-size:24px;margin-bottom:16px;display:inline-block;}
+.footer .tag{font-size:15px;color:rgba(255,255,255,.7);max-width:34ch;}
+.footer .tag a{color:var(--covu-yellow-soft);}
+.footer h4{font-family:var(--font-display);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--covu-white);margin-bottom:18px;}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.footer ul a{font-size:15px;color:rgba(255,255,255,.72);}
+.footer ul a:hover{color:var(--covu-white);}
+.footer-bottom{padding-top:26px;font-size:13px;color:rgba(255,255,255,.5);}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:860px){
+  .nav-links{display:none;}
+  section{padding:72px 0;}
+  .split{grid-template-columns:1fr;gap:32px;}
+  .proof-grid,.def-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;gap:32px;}
+  .hero{padding:88px 0 92px;}
+}
+</style>
+<link rel="stylesheet" href="/css/nav.css">
+<link rel="canonical" href="https://www.covu.com/investors/">
+<style id="nav-place">.hero .navbar{position:sticky;top:18px;z-index:60;padding:0 24px;margin-top:0;margin-bottom:26px}</style>
+</head>
+<body>
+<!-- NAV -->
+<!-- S1 — HERO -->
+<section class="hero dark onDark">
+  <div class="navbar"><div data-include="/partials/nav.html"></div></div>
+  <div class="wrap">
+    <span class="eyebrow eyebrow--onDark">Investors</span>
+    <h1 class="h-display">The operating stack for a fragmented, underserved market.</h1>
+    <p class="lead">Independent P&amp;C insurance runs on legacy systems and manual service work. COVU is the operating layer that finally runs it, built by operators, proven on the agencies we ran ourselves.</p>
+    <a href="#consult" class="btn btn--yellow btn--lg">Request a conversation</a>
+  </div>
+</section>
+
+<!-- S2 — THE PROBLEM -->
+<section id="solutions">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">The problem</span>
+      <h2 class="h2">Independent P&amp;C is large, fragmented, and <span class="hl">stuck</span>.</h2>
+    </div>
+    <div>
+      <ul class="plist">
+        <li>Thousands of independent agencies running service on legacy AMSs and tribal knowledge.</li>
+        <li>Service is the largest cost line and the least measured.</li>
+        <li>Every operator is under pressure to use AI, with no foundation to run it on.</li>
+      </ul>
+      <p class="note">Market-size and fragmentation figures to be sourced from a citable industry report before external use.</p>
+    </div>
+  </div>
+</section>
+
+<!-- S3 — THE SOLUTION -->
+<section id="product" style="background:var(--gradient-light);">
+  <div class="wrap">
+    <span class="eyebrow">The solution</span>
+    <h2 class="h2">The operating stack, on top of what agencies already run.</h2>
+    <p class="sol-lead">Three layers, plus the AI and tooling that run across them. Each is a wedge into a fragmented market, and a source of advantage that compounds as it scales.</p>
+
+    <div class="layer-group-label">The three layers</div>
+    <div class="layers">
+      <div class="layer">
+        <div class="layer-badge">01</div>
+        <div class="layer-body">
+          <div class="layer-head"><h3>Connect</h3><span class="role-tag">Data plane</span></div>
+          <p class="what">Makes the book usable across every AMS: consolidates records, resolves duplicate accounts, and feeds everything from one trusted source.</p>
+          <p class="frame">The wedge into a fragmented market. Once COVU is the connective layer across systems that were never built to talk to each other, it becomes the trusted source of record for service, earned without lock-in and harder to displace as more books and carriers connect.</p>
+          <a class="layer-link" href="https://covu-website-test.vercel.app/connect">Explore Connect &rarr;</a>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-badge">02</div>
+        <div class="layer-body">
+          <div class="layer-head"><h3>OS</h3><span class="role-tag">Control plane</span></div>
+          <p class="what">Decomposes service into tasks, routes them by license and skill, and measures what each one costs.</p>
+          <p class="frame">Turns invisible, tribal-knowledge work into structured, measurable data. That foundation is what everything else compounds on: pricing, automation, and margin all improve as the task base grows. It is the layer that makes the operation legible enough to run like a business.</p>
+          <a class="layer-link" href="/os">Explore OS &rarr;</a>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-badge">03</div>
+        <div class="layer-body">
+          <div class="layer-head"><h3>Service Network</h3><span class="role-tag">Supply layer</span></div>
+          <p class="what">On-demand capacity to do the work: U.S. licensed agents, vetted capacity, and VERO AI, all routed and governed through OS.</p>
+          <p class="frame">Capacity that scales without agencies hiring. As AI absorbs more routine work, human effort moves to higher-value tasks and the economics improve with volume, turning service from a fixed headcount cost into flexible, revenue-aligned supply.</p>
+          <a class="layer-link" href="https://covu-website-test.vercel.app/service-network">Explore the Service Network &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="layer-group-label">Across the stack</div>
+    <div class="layers">
+      <div class="layer">
+        <div class="layer-badge layer-badge--txt">AI</div>
+        <div class="layer-body">
+          <div class="layer-head"><h3>VERO</h3><span class="role-tag">AI across the stack</span></div>
+          <p class="what">COVU's AI, working inside Connect, OS, and the Service Network. It triages, drafts, and executes service work on a standardized foundation.</p>
+          <p class="frame">The compounding advantage. Because the work is structured first, AI compounds here instead of plateauing the way bolted-on pilots do. Every task the stack runs makes it better, on top of operating data that is not available to anyone building from the outside. This is where the long-term margin story lives.</p>
+          <a class="layer-link" href="https://covu-website-test.vercel.app/ai">Explore VERO &rarr;</a>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-badge layer-badge--txt">EXT</div>
+        <div class="layer-body">
+          <div class="layer-head"><h3>BEX</h3><span class="role-tag">Browser extension</span></div>
+          <p class="what">Captures task-efficiency data as agents work in the browser, and lets them send work to COVU from inside the AMS or email.</p>
+          <p class="frame">Extends the operating data COVU can see and act on into the tools agencies already live in. It lowers the friction of adoption and widens the data advantage with every action it observes, reaching agencies long before they migrate anything.</p>
+          <a class="layer-link" href="https://covu-website-test.vercel.app/product">See the stack &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="solution-foot">COVU does not replace the AMS. It runs the operating model on top of it.</p>
+    <div class="stack-cta">
+      <div>
+        <h3>See how the whole stack fits together.</h3>
+        <p>Connect, OS, the Service Network, and VERO, in one operating picture.</p>
+      </div>
+      <a href="https://covu-website-test.vercel.app/product" class="btn btn--yellow btn--lg">Explore the full stack &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- S4 — OPERATING PROOF -->
+<section id="proof" class="dark onDark">
+  <div class="wrap">
+    <span class="eyebrow eyebrow--onDark">Operating proof</span>
+    <h2 class="h2">We didn't build this from the outside.</h2>
+    <div class="proof-grid">
+      <div class="stat">
+        <div class="num">50+</div>
+        <div class="label">Agencies operated</div>
+        <div class="sub">$200M+ premium managed.</div>
+      </div>
+      <div class="stat">
+        <div class="num">60%+</div>
+        <div class="label">S&amp;G Mitchell EBITDA</div>
+        <div class="sub">From 17.9%, same book, 12 months.</div>
+      </div>
+      <div class="stat">
+        <div class="num">~40k</div>
+        <div class="label">Tasks / week, live</div>
+        <div class="sub">Cost per task down ~20%, 98% triage success.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S5 — DEFENSIBILITY -->
+<section id="company">
+  <div class="wrap">
+    <span class="eyebrow">Defensibility</span>
+    <h2 class="h2">Why this compounds.</h2>
+    <div class="def-grid">
+      <div class="def">
+        <div class="bar"></div>
+        <h3>The connective layer</h3>
+        <p>Two-way AMS integration and a read-only buyer API. No lock-in.</p>
+      </div>
+      <div class="def">
+        <div class="bar"></div>
+        <h3>Built for regulated work</h3>
+        <p>An audit trail on every action.</p>
+      </div>
+      <div class="def">
+        <div class="bar"></div>
+        <h3>Improves with scale</h3>
+        <p>A deep base of operating data and a task-based, AI-native architecture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S6 — TRACTION -->
+<section class="traction">
+  <div class="wrap">
+    <span class="eyebrow">Traction</span>
+    <h2 class="h2">Verified milestones.</h2>
+    <div class="chips">
+      <span class="chip">50+ agencies operated</span>
+      <span class="chip">$200M+ premium managed</span>
+      <span class="chip">8 live integrations</span>
+      <span class="chip">Platform live since 2026</span>
+    </div>
+    <p class="note">Funding and round details added once they are in the Proof Tracker.</p>
+  </div>
+</section>
+
+<!-- S6b — BACKED BY -->
+<section class="backers">
+  <div class="wrap">
+    <span class="eyebrow">Backed by</span>
+    <h2 class="h2">The investors behind COVU.</h2>
+    <div class="logo-wall">
+      <a class="logo-tile" href="https://benhamouglobalventures.com/" target="_blank" rel="noopener noreferrer" aria-label="Benhamou Global Ventures">
+        <img src="/images/benhamou-global-ventures.svg" alt="Benhamou Global Ventures logo">
+      </a>
+      <a class="logo-tile" href="https://trueglobalventures.com/" target="_blank" rel="noopener noreferrer" aria-label="True Global Ventures">
+        <img src="/images/true-global-ventures.png" alt="True Global Ventures logo">
+      </a>
+      <a class="logo-tile" href="https://manchesterstory.com/" target="_blank" rel="noopener noreferrer" aria-label="Manchester Story">
+        <img src="/images/manchester-story.webp" alt="Manchester Story logo">
+      </a>
+      <a class="logo-tile" href="https://www.plugandplaytechcenter.com/" target="_blank" rel="noopener noreferrer" aria-label="Plug and Play">
+        <img src="/images/plug-and-play.svg" alt="Plug and Play logo">
+      </a>
+      <a class="logo-tile" href="https://markd.vc/" target="_blank" rel="noopener noreferrer" aria-label="MarkD">
+        <img src="/images/markd.svg" alt="MarkD logo">
+      </a>
+      <a class="logo-tile" href="https://www.uphonestcapital.com/" target="_blank" rel="noopener noreferrer" aria-label="UpHonest Capital">
+        <img src="/images/uphonest.svg" alt="UpHonest Capital logo">
+      </a>
+      <a class="logo-tile" href="https://www.recursiveventures.com/" target="_blank" rel="noopener noreferrer" aria-label="Recursive Ventures">
+        <img src="/images/recursive-ventures.png" alt="Recursive Ventures logo">
+      </a>
+      <a class="logo-tile" href="https://www.manaventures.vc/" target="_blank" rel="noopener noreferrer" aria-label="Mana Ventures">
+        <img src="/images/mana-ventures.svg" alt="Mana Ventures logo">
+      </a>
+      <a class="logo-tile" href="https://www.inp-capital.com/" target="_blank" rel="noopener noreferrer" aria-label="INP Capital">
+        <img src="/images/inp-capital.avif" alt="INP Capital logo">
+      </a>
+      <a class="logo-tile" href="https://www.cadroncapital.com/" target="_blank" rel="noopener noreferrer" aria-label="Cadron Capital Partners">
+        <img src="/images/cadron-capital.webp" alt="Cadron Capital Partners logo">
+      </a>
+      <a class="logo-tile logo-tile--invert" href="https://dellininvestments.com/" target="_blank" rel="noopener noreferrer" aria-label="Dellin Investments">
+        <img src="/images/dellin-investments.webp" alt="Dellin Investments logo">
+      </a>
+      <a class="logo-tile" href="https://amidigroup.com/" target="_blank" rel="noopener noreferrer" aria-label="Amidi Group">
+        <img src="/images/amidi-group.svg" alt="Amidi Group logo">
+      </a>
+      <a class="logo-tile" href="https://thinkplus.vc/" target="_blank" rel="noopener noreferrer" aria-label="Think + Ventures">
+        <img src="/images/think-ventures.svg" alt="Think + Ventures logo">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- S7 — CTA -->
+<section id="consult" class="cta">
+  <div class="wrap">
+    <span class="eyebrow">Let's talk</span>
+    <h2 class="h2">Build the operating stack for P&amp;C with us.</h2>
+    <div class="actions">
+      <a href="#consult" class="btn btn--yellow btn--lg">Request a conversation</a>
+      <a href="#deck" class="textlink" style="color:var(--covu-navy)">Request the deck &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft-footer">
+  <div class="ft-top">
+
+    <div class="ft-brand">
+      <div class="ft-logo">COVU</div>
+      <p class="ft-tag">The operating stack for P&amp;C insurance service operations.</p>
+      <a class="ft-cta" href="https://covu-website-test.vercel.app/book-a-consultation-with-covu">Book a demo</a>
+    </div>
+
+    <div class="ft-col">
+      <div class="ft-h4">Product</div>
+      <ul>
+        <li><a href="#sec-stack">The Stack</a></li>
+        <li><a href="#sec-stack">Connect</a></li>
+        <li><a href="https://go.covu.com/os">OS</a></li>
+        <li><a href="#sec-stack">Service Network</a></li>
+        <li><a href="#sec-features">VERO / AI</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <div class="ft-h4">Solutions</div>
+      <div class="ft-sub">By need</div>
+      <ul>
+        <li><a href="#sec-service">Extra Servicing Capacity</a></li>
+        <li><a href="#sec-service">Operational Visibility &amp; Control</a></li>
+        <li><a href="#sec-service">Free Up Your Best People</a></li>
+        <li><a href="#sec-service">AI Enablement</a></li>
+      </ul>
+      <div class="ft-sub">Services &amp; tech</div>
+      <ul>
+        <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Service Types</a></li>
+        <li><a href="#sec-features">Tech &amp; AI</a></li>
+      </ul>
+      <div class="ft-sub">By focus</div>
+      <ul>
+        <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Servicing</a></li>
+        <li><a href="https://covu-website-test.vercel.app/grow-your-agency">Growth</a></li>
+        <li><a href="https://covu-website-test.vercel.app/acquisition">Acquisition</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <div class="ft-h4">By agency size</div>
+      <ul>
+        <li><a href="#sec-service">Owner-led</a></li>
+        <li><a href="https://covu-website-test.vercel.app/grow-your-agency">Scaling</a></li>
+        <li><a href="#sec-service">Regional &amp; multi-office</a></li>
+        <li><a href="https://covu-website-test.vercel.app/acquisition">Enterprise &amp; acquisitive</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <div class="ft-h4">Resources</div>
+      <ul>
+        <li><a href="https://blog.covu.com">Case Studies</a></li>
+        <li><a href="https://blog.covu.com">Blog</a></li>
+        <li><a href="https://covu-website-test.vercel.app/agency-resources">Guides</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <div class="ft-h4">Company</div>
+      <ul>
+        <li><a href="https://covu-website-test.vercel.app/about-us">About</a></li>
+        <li><a href="https://covu-website-test.vercel.app/about-us">Team</a></li>
+        <li><a href="https://covu.bamboohr.com/careers">Careers</a></li>
+        <li><a href="https://covu-website-test.vercel.app/">Investors</a></li>
+        <li><a href="https://covu-website-test.vercel.app/press">Press / Media</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="ft-bottom">
+    <div class="ft-left">
+      <span class="ft-copy">&copy; 2026 COVU, Inc.</span>
+      <div class="ft-legal">
+        <a href="https://covu-website-test.vercel.app/privacy-policy">Privacy Policy</a>
+        <a href="https://covu-website-test.vercel.app/terms-of-use">Terms of Use</a>
+        <a href="https://covu-website-test.vercel.app/privacy-policy">Cookie Preferences</a>
+      </div>
+    </div>
+    <div class="ft-social">
+      <a href="https://www.linkedin.com/company/covuinc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+      <a href="https://twitter.com/covu_inc" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26L22.5 21.75h-6.66l-5.22-6.82-5.97 6.82H1.34l7.73-8.84L1.5 2.25h6.83l4.72 6.23 5.19-6.23zm-1.16 17.52h1.83L7.01 4.13H5.04L17.08 19.77z"/></svg></a>
+      <a href="https://www.instagram.com/covu_inc/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.35 2.67.94 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.12.66.66 1.33 1.08 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.7 5.7 0 0 0 2.12-1.38 5.7 5.7 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.7 5.7 0 0 0-1.38-2.12A5.7 5.7 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.41a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
+      <a href="https://www.facebook.com/covuinc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
+      <a href="https://www.youtube.com/channel/UCVrR7a3ipRCKQF0JThFTVXw/featured" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
+    </div>
+  </div>
+
+  <div class="ft-disc">COVU Insurance Solutions LLC is a licensed insurance agency &middot; NPN 19476180 &middot; 370 Convention Way, Redwood City, CA 94063</div>
+</footer>
+
+<!-- Site-wide halftone background (auto-injected per section; matches solution pages) -->
+<style>section>canvas.shalf{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}</style>
+<script>
+(function(){
+  function lum(c){var m=(c||'').match(/\d+/g);if(!m)return 128;return m[0]*0.299+m[1]*0.587+m[2]*0.114;}
+  var GAP=12,maxR=GAP*0.105,cvs=[];
+  function draw(cv){var p=cv.parentElement;if(!p)return;var W=p.clientWidth,H=p.clientHeight;if(!W||!H)return;var ctx=cv.getContext('2d');var dpr=Math.min(window.devicePixelRatio||1,2);cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);cv.style.width=W+'px';cv.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);var D=cv.getAttribute('data-dot'),am=parseFloat(cv.getAttribute('data-am'));for(var y=GAP*0.5;y<H;y+=GAP){for(var x=GAP*0.5;x<W;x+=GAP){var wa=Math.sin(x*0.016+y*0.02),n=wa*0.5+0.5;var a=(0.30+0.27*n)*am,r=maxR*(0.45+0.55*n);ctx.beginPath();ctx.arc(x,y,r,0,6.2832);ctx.fillStyle='rgba('+D+','+a.toFixed(3)+')';ctx.fill();}}}
+  function all(){cvs.forEach(draw);}
+  function init(){
+    [].slice.call(document.querySelectorAll('section')).forEach(function(s){
+      if(s.clientHeight<150)return;
+      if(s.parentElement&&s.parentElement.closest('section'))return;
+      if(s.querySelector(':scope>canvas.shalf'))return;
+      if(getComputedStyle(s).position==='static')s.style.position='relative';
+      var h=s.querySelector('h1,h2,h3,p,li');
+      var dark=lum(getComputedStyle(h||s).color)>150;
+      [].slice.call(s.children).forEach(function(ch){var c2=getComputedStyle(ch);if(c2.position==='static')ch.style.position='relative';if(c2.zIndex==='auto')ch.style.zIndex='1';});
+      var cv=document.createElement('canvas');cv.className='shalf';cv.setAttribute('aria-hidden','true');
+      cv.setAttribute('data-dot',dark?'120,148,196':'203,210,226');cv.setAttribute('data-am',dark?'0.18':'0.8');
+      s.insertBefore(cv,s.firstChild);cvs.push(cv);
+    });
+    all();
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+  window.addEventListener('resize',all);
+  if('ResizeObserver' in window){var ro=new ResizeObserver(all);setTimeout(function(){cvs.forEach(function(cv){if(cv.parentElement)ro.observe(cv.parentElement);});},120);}
+  setTimeout(all,400);setTimeout(all,1400);
+})();
+</script>
+
+<style>
+/* ---------- Standardized site footer (matches homepage) ---------- */
+.ft-footer{background:linear-gradient(135deg,#1C2945 0%,#141E36 100%);color:rgba(255,255,255,.72);border-radius:20px;padding:48px 44px 0;overflow:hidden;margin:0 40px 40px}
+.ft-top{display:grid;grid-template-columns:1.5fr repeat(5,1fr);gap:32px;padding-bottom:38px}
+.ft-brand .ft-logo{font-family:"Nunito","Nunito Sans",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0;color:#fff;font-size:28px}
+.ft-brand .ft-tag{font-size:14px;line-height:1.55;color:rgba(255,255,255,.72);margin:14px 0 20px;max-width:240px}
+.ft-cta{display:inline-block;background:#FFB703;color:#1C2945;font-weight:800;font-size:14px;padding:11px 20px;border-radius:999px;text-decoration:none;transition:background .18s}
+.ft-cta:hover{background:#FFD45A}
+.ft-h4{font-size:12px;font-weight:800;text-transform:uppercase;color:#FFD45A;margin-bottom:14px}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin:0;padding:0}
+.ft-col a{color:rgba(255,255,255,.72);text-decoration:none;font-size:14px;font-weight:600;line-height:1.3;transition:color .15s}
+.ft-col a:hover{color:#fff}
+.ft-sub{font-size:10px;font-weight:800;text-transform:uppercase;color:rgba(255,255,255,.38);margin:16px 0 8px}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.12);padding:20px 0 16px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.ft-left{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.ft-copy{font-size:13px;color:rgba(255,255,255,.5);font-weight:600}
+.ft-legal{display:flex;gap:18px;flex-wrap:wrap}
+.ft-legal a{font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;font-weight:600}
+.ft-legal a:hover{color:#fff}
+.ft-social{display:flex;gap:10px}
+.ft-social a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);text-decoration:none;transition:border-color .18s,color .18s}
+.ft-social a:hover{border-color:#FFD45A;color:#fff}
+.ft-social svg{width:16px;height:16px;fill:currentColor}
+.ft-disc{font-size:11px;color:rgba(255,255,255,.34);font-weight:600;padding:0 0 26px}
+@media(max-width:960px){.ft-top{grid-template-columns:1fr 1fr 1fr}.ft-brand{grid-column:1/-1}}
+@media(max-width:640px){.ft-footer{margin:0 16px 20px;padding:36px 24px 0}.ft-top{grid-template-columns:1fr 1fr}.ft-bottom{flex-direction:column;align-items:flex-start}}
+</style>
+
+<style>
+/* Warm+cool hero glow on dark hero (matches homepage hero theme) */
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(560px 560px at 96% -10%, rgba(255,183,3,.16), rgba(255,183,3,0) 58%),
+    radial-gradient(620px 620px at -10% 44%, rgba(63,123,255,.20), rgba(63,123,255,0) 62%);}
+</style>
+
+<!-- Dim halftone in detail-heavy sections (large image/video present) -->
+<script>
+(function(){
+  var SEL='canvas.shalf,canvas.halftone,canvas#halftone,canvas.hbg,canvas.shg';
+  function busy(sec){var m=sec.querySelectorAll('img,video,picture');for(var i=0;i<m.length;i++){var el=m[i];if(el.clientWidth>=220&&el.clientHeight>=140)return true;}return false;}
+  function apply(){var list=document.querySelectorAll(SEL);for(var i=0;i<list.length;i++){var cv=list[i];var sec=cv.closest&&cv.closest('section');if(!sec)continue;cv.style.opacity=busy(sec)?'0.4':'';}}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);else apply();
+  window.addEventListener('load',apply);window.addEventListener('resize',apply);
+  setTimeout(apply,600);setTimeout(apply,1600);
+})();
+</script>
+
+<style id="covu-nav-fix3">
+.covu-nav .navitem>button{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;font-family:"Nunito Sans",system-ui,sans-serif;font-size:17px;font-weight:600;color:#1C2945;padding:12px 18px;border-radius:12px;cursor:pointer;line-height:1}
+.covu-nav .navitem>button:hover,.covu-nav .navitem.open>button{background:#F1F3F9}
+.covu-nav .navitem>button .chev{width:13px;height:13px;stroke:#1C2945;fill:none;transition:transform .2s ease}
+.covu-nav .navitem.open>button .chev{transform:rotate(180deg)}
+.covu-nav .navlinks{display:flex;align-items:center;gap:6px}
+.covu-nav .brand{font-family:"Nunito","Nunito Sans",sans-serif;font-weight:800;font-size:27px;letter-spacing:2px;color:#1C2945;text-decoration:none}
+.covu-nav .nav-cta{background:#FFB703;color:#1C2945;font-weight:800;font-size:15px;padding:12px 22px;border-radius:9999px;text-decoration:none;display:inline-flex;align-items:center;white-space:nowrap}
+.covu-nav .nav-cta:hover{background:#FFD45A}
+</style>
+<style id="nav-pad-fix">.hero{padding-top:18px !important}</style>
+<script src="/js/include.js"></script>
+<script src="/js/nav.js"></script>
+</body>
+</html>
