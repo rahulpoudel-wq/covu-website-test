@@ -81,7 +81,7 @@ section{position:relative;}
 .nav-toggle span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;}
 
 /* ===== HERO ===== */
-#hero{padding:172px 0 96px;position:relative;overflow:hidden;
+#hero{padding:52px 0 96px;position:relative;overflow:hidden;
   background:
     radial-gradient(900px 520px at 84% 2%,rgba(255,183,3,.18),transparent 58%),
     radial-gradient(1000px 640px at 92% 6%,rgba(255,209,92,.16),transparent 55%),
@@ -290,6 +290,7 @@ section{position:relative;}
   #ftr .ft-top{grid-template-columns:1fr 1fr;}
   #ftr .ft-bottom{flex-direction:column;align-items:flex-start;}
 }
+#hero .navbar{margin-bottom:48px}
 </style>
 <style id="ftr-global">
 /* ===== Footer (rebuilt from mockup, namespaced ft-) ===== */
@@ -333,11 +334,9 @@ section{position:relative;}
 <link rel="stylesheet" href="/css/nav.css">
 </head>
 <body>
-<div class="navbar" data-include="/partials/nav.html"></div>
-
-
 <!-- HERO -->
 <section id="hero">
+  <div class="navbar" data-include="/partials/nav.html"></div>
   <div class="halftone"></div>
   <div class="wrap grid">
     <div class="reveal in">
