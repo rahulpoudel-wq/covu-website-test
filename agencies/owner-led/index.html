@@ -81,7 +81,7 @@ section{position:relative;}
 .nav-toggle span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;}
 
 /* ===== HERO ===== */
-#hero{padding:52px 0 96px;position:relative;overflow:hidden;
+#hero{padding:18px 0 96px;position:relative;overflow-x:clip;overflow-y:visible;
   background:
     radial-gradient(900px 520px at 84% 2%,rgba(255,183,3,.18),transparent 58%),
     radial-gradient(1000px 640px at 92% 6%,rgba(255,209,92,.16),transparent 55%),
@@ -268,7 +268,7 @@ section{position:relative;}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:960px){
-  #hero{padding:40px 0 70px;}
+  #hero{padding:18px 0 70px;}
   #hero .grid{grid-template-columns:1fr;gap:40px;}
   #problem .pgrid,#fits .fgrid,.statwrap,#model .model-grid{grid-template-columns:1fr;}
   #help .cards{grid-template-columns:repeat(2,minmax(0,1fr));}
@@ -290,7 +290,7 @@ section{position:relative;}
   #ftr .ft-top{grid-template-columns:1fr 1fr;}
   #ftr .ft-bottom{flex-direction:column;align-items:flex-start;}
 }
-#hero .navbar{margin-bottom:48px}
+#hero .navbar{position:sticky;top:18px;z-index:60;padding:0 24px;margin-top:0;margin-bottom:26px}
 </style>
 <style id="ftr-global">
 /* ===== Footer (rebuilt from mockup, namespaced ft-) ===== */
