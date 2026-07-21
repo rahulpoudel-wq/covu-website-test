@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COVU — Privacy Policy</title>
+<meta name="description" content="COVU Privacy Policy — data protection, cookies, and your rights under the California Consumer Privacy Act (CCPA).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Nunito:wght@800;900&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/nav.css">
+<link rel="canonical" href="https://www.covu.com/privacy-policy/">
+<style>
+:root{
+  --navy:#1C2945; --navy-deep:#11426B; --ink:#121A2B;
+  --yellow:#FFB703; --yellow-dark:#E0A100; --yellow-soft:#FFF7E6; --yellow-learn:#FFD774;
+  --teal:#219EBC; --blue-light:#B2CEDF;
+  --white:#FFFFFF; --surface:#FAFBFD; --surface-2:#F1F3F9;
+  --muted:#667085; --muted-2:#5d6886; --body:#4C5876; --micro:#98A2B3;
+  --line:#E7EBF5; --line-2:#D3DBEE;
+  --shadow-soft:0 4px 14px rgba(18,26,43,.06);
+  --shadow-lift:0 24px 60px -28px rgba(18,26,43,.24);
+  --shadow-nav:0 12px 34px -18px rgba(18,26,43,.22);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;padding:0;font-family:"Nunito Sans",system-ui,-apple-system,sans-serif;color:var(--navy);
+  background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4,h5,h6{font-family:"Merriweather",Georgia,serif;margin:0;letter-spacing:0}
+p{margin:0}
+
+/* ============ page shell + soft top gradient ============ */
+#pp-page{position:relative;z-index:0;
+  background:
+    radial-gradient(1400px 620px at 50% 0, rgba(255,183,3,.16), rgba(255,183,3,0) 60%),
+    radial-gradient(1000px 520px at 92% 0, rgba(255,209,92,.18), rgba(255,209,92,0) 58%),
+    radial-gradient(900px 560px at 6% 0, rgba(63,123,255,.07), rgba(63,123,255,0) 60%),
+    linear-gradient(180deg,#FFF6E4 0%, #FFFDF7 300px, var(--surface) 640px);
+  background-repeat:no-repeat;}
+
+/* ================= NAVBAR (pill nav, ported from site) ================= */
+#pp-nav{position:relative;z-index:130;padding-top:18px;
+  --border:#E7EBF5;--surface:#F4F6FA;--white:#FFFFFF;--navy:#1C2945;
+  --yellow:#FFB703;--yellow-dark:#E0A100;--muted:#667085;}
+#pp-nav .navbar{position:sticky;top:18px;z-index:60;padding:0 24px}
+#pp-nav .nav{max-width:1380px;margin:0 auto;background:var(--white);border:1px solid var(--border);
+  border-radius:44px;box-shadow:var(--shadow-nav);height:74px;padding:0 14px 0 30px;
+  display:flex;align-items:center;justify-content:space-between;position:relative}
+#pp-nav .brand{font-family:"Nunito";font-weight:800;font-size:27px;letter-spacing:2px;color:var(--navy)}
+#pp-nav .navlinks{display:flex;align-items:center;gap:6px}
+#pp-nav .navlinks>a{display:inline-flex;align-items:center;gap:8px;
+  font-family:"Nunito Sans";font-size:17px;font-weight:600;color:var(--navy);padding:12px 18px;border-radius:12px;
+  transition:background .15s ease}
+#pp-nav .navlinks>a:hover{background:var(--surface)}
+#pp-nav .navlinks>a .chev{width:13px;height:13px;stroke:var(--navy);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+#pp-nav .nav-cta{display:inline-flex;align-items:center;background:var(--yellow);color:var(--navy);font-weight:800;
+  font-size:16px;letter-spacing:.3px;border-radius:34px;padding:16px 26px;transition:background .18s ease}
+#pp-nav .nav-cta:hover{background:var(--yellow-dark)}
+#pp-nav .navburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:46px;height:46px;padding:0;border:1px solid var(--border);background:var(--white);border-radius:12px;cursor:pointer;flex:0 0 auto}
+#pp-nav .navburger span{display:block;width:20px;height:2px;background:var(--navy);border-radius:2px;transition:transform .25s ease,opacity .2s ease}
+#pp-nav .navburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#pp-nav .navburger.open span:nth-child(2){opacity:0}
+#pp-nav .navburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#pp-nav .mobilemenu{display:none;position:fixed;top:90px;left:16px;right:16px;background:var(--white);border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow-lift);padding:10px;z-index:70}
+#pp-nav .mobilemenu a{display:block;padding:13px 16px;font-family:"Nunito Sans";font-size:15px;font-weight:700;color:var(--navy);border-radius:10px}
+#pp-nav .mobilemenu a:hover{background:var(--surface)}
+#pp-nav .mobilemenu .mm-cta{text-align:center;margin:10px 6px 6px;background:var(--yellow);border-radius:30px}
+@media(max-width:960px){#pp-nav .navlinks{display:none}#pp-nav .navburger{display:inline-flex;margin-left:auto}#pp-nav .nav-cta{display:none}#pp-nav .mobilemenu.open{display:block}}
+@media(max-width:560px){#pp-nav .nav{height:64px;padding:0 12px 0 18px}}
+
+/* ================= LEGAL HERO ================= */
+.pp-hero{max-width:900px;margin:0 auto;padding:64px 24px 30px;text-align:center}
+.pp-eyebrow{font-family:"Nunito Sans",sans-serif;font-size:14px;font-weight:800;letter-spacing:3px;
+  text-transform:uppercase;color:var(--yellow-dark);display:inline-flex;align-items:center;gap:9px;margin:0 0 18px}
+.pp-eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--yellow);display:inline-block}
+.pp-hero h1{font-family:"Merriweather",serif;font-size:52px;font-weight:900;line-height:1.12;
+  letter-spacing:.5px;color:var(--navy)}
+.pp-hero .updated{font-family:"Nunito Sans";font-size:15px;font-weight:700;color:var(--muted);margin-top:20px}
+
+/* ================= LEGAL BODY ================= */
+.pp-body{max-width:820px;margin:0 auto;padding:26px 24px 96px;position:relative;z-index:1}
+.pp-card{background:var(--white);border:1px solid var(--line);border-radius:24px;
+  box-shadow:0 30px 70px -46px rgba(18,26,43,.32);padding:56px 60px 60px}
+.pp-body p{font-size:17px;line-height:1.72;color:var(--body);margin:0 0 18px}
+.pp-body p:last-child{margin-bottom:0}
+.pp-body h2{font-family:"Merriweather",serif;font-size:26px;font-weight:900;line-height:1.28;
+  color:var(--navy);margin:44px 0 16px;letter-spacing:.2px}
+.pp-body h2:first-child{margin-top:0}
+.pp-body h3{font-family:"Nunito Sans",sans-serif;font-size:18px;font-weight:800;color:var(--navy);
+  margin:26px 0 10px;letter-spacing:.2px}
+.pp-body h2::after{content:"";display:block;width:46px;height:3px;border-radius:3px;background:var(--yellow);margin-top:14px}
+.pp-body ul{margin:0 0 20px;padding:0;list-style:none}
+.pp-body li{position:relative;font-size:17px;line-height:1.62;color:var(--body);padding:0 0 0 26px;margin:0 0 10px}
+.pp-body li::before{content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--yellow)}
+.pp-body a{color:var(--navy-deep);font-weight:700;text-decoration:underline;text-decoration-color:rgba(17,66,107,.28);
+  text-underline-offset:2px;word-break:break-word;transition:text-decoration-color .15s ease}
+.pp-body a:hover{text-decoration-color:var(--navy-deep)}
+.pp-body strong{color:var(--navy);font-weight:800}
+.pp-contact{background:var(--surface-2);border:1px solid var(--line);border-left:4px solid var(--yellow);
+  border-radius:14px;padding:22px 26px;margin:6px 0 24px}
+.pp-contact p{margin:0;font-size:16.5px;line-height:1.7;color:var(--navy);font-weight:600}
+.pp-contact a{font-weight:800}
+.pp-divider{border:0;border-top:1px solid var(--line);margin:44px 0}
+@media(max-width:640px){
+  .pp-hero{padding:44px 18px 20px}
+  .pp-hero h1{font-size:36px}
+  .pp-body{padding:18px 16px 72px}
+  .pp-card{padding:34px 24px 40px;border-radius:20px}
+  .pp-body h2{font-size:22px}
+  .pp-contact{padding:18px 20px}
+}
+
+/* ================= CTA + FOOTER (ported from site footer section) ================= */
+@keyframes shero_hlsheen{0%,100%{background-position:0 0}50%{background-position:130% 0}}
+#sec-ctafoot{
+  --navy:#1C2945; --navy-deep:#11426B; --yellow:#FFB703; --yellow-dark:#E0A100;
+  --surface:#F1F3F9; --border:#E4E8F1; --muted:#667085; --body:#5d6886; --white:#FFFFFF;
+}
+#sec-ctafoot, #sec-ctafoot *{box-sizing:border-box;margin:0;padding:0}
+#sec-ctafoot{position:relative;font-family:"Nunito Sans",sans-serif;color:var(--navy);-webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(900px 520px at 50% -6%, rgba(255,183,3,.16), rgba(255,183,3,0) 58%),
+    radial-gradient(1000px 640px at 88% 4%, rgba(255,209,92,.18), rgba(255,209,92,0) 55%),
+    radial-gradient(900px 620px at 6% 30%, rgba(63,123,255,.10), rgba(63,123,255,0) 55%),
+    linear-gradient(180deg,#FFFDF7 0%, #FAFBFD 60%)}
+#sec-ctafoot h1, #sec-ctafoot h2{font-family:"Merriweather",Georgia,serif;letter-spacing:1px;line-height:1.3}
+#sec-ctafoot a{text-decoration:none}
+#sec-ctafoot .ctawrap{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:40px 30px 24px}
+#sec-ctafoot .cta{position:relative;z-index:1;padding:70px 40px 64px;background:transparent}
+#sec-ctafoot .cta-inner{position:relative;z-index:1;text-align:center}
+#sec-ctafoot .cta-eyebrow{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow-dark);margin-bottom:20px}
+#sec-ctafoot .cta h2{font-size:62px;font-weight:900;color:var(--navy);line-height:1.08;letter-spacing:.3px;margin-bottom:24px}
+#sec-ctafoot .cta h2 .hl{background:linear-gradient(100deg,#E0A100 0%,#FFB703 22%,#FFF1BE 40%,#FFD15C 50%,#FFB703 66%,#E0A100 100%);
+  background-size:240% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  color:var(--yellow);animation:shero_hlsheen 6.5s ease-in-out infinite}
+#sec-ctafoot .formcard{background:var(--white);border-radius:20px;max-width:430px;margin:0 auto;padding:28px 28px 30px;
+    box-shadow:0 24px 60px rgba(0,0,0,.28);text-align:left}
+#sec-ctafoot .formcard label{display:block;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:14px}
+#sec-ctafoot .inrow{display:flex;align-items:center;gap:10px;border-bottom:1.5px solid var(--border);padding-bottom:10px;margin-bottom:24px}
+#sec-ctafoot .inrow input{flex:1;border:none;outline:none;font-family:"Nunito Sans";font-size:16px;color:var(--navy);background:transparent}
+#sec-ctafoot .inrow input::placeholder{color:#B6BFD5}
+#sec-ctafoot .dots{width:34px;height:30px;border-radius:7px;background:var(--navy);display:flex;align-items:center;justify-content:center;gap:3px;flex:0 0 auto;cursor:pointer}
+#sec-ctafoot .dots span{width:4px;height:4px;border-radius:50%;background:#fff}
+#sec-ctafoot .submit{display:block;width:100%;text-align:center;background:var(--yellow);color:var(--navy);
+    font-family:"Nunito Sans";font-weight:700;letter-spacing:1px;font-size:16px;border:none;border-radius:10px;padding:16px;cursor:pointer;transition:background .18s ease}
+#sec-ctafoot .submit:hover{background:var(--yellow-dark)}
+#sec-ctafoot .ft-wrap{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:8px 30px 48px}
+#sec-ctafoot .ft-footer{background:linear-gradient(135deg,#1C2945 0%,#141E36 100%);color:rgba(255,255,255,.72);border-radius:20px;padding:48px 44px 0;overflow:hidden}
+#sec-ctafoot .ft-top{display:grid;grid-template-columns:1.5fr repeat(5,1fr);gap:32px;padding-bottom:38px}
+#sec-ctafoot .ft-brand .ft-logo{font-family:"Nunito",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0;color:#fff;font-size:28px}
+#sec-ctafoot .ft-brand .ft-tag{font-family:"Nunito Sans",sans-serif;font-size:14px;line-height:1.55;color:rgba(255,255,255,.72);margin:14px 0 20px;max-width:240px;letter-spacing:0}
+#sec-ctafoot .ft-cta{display:inline-block;background:#FFB703;color:#1C2945;font-family:"Nunito Sans",sans-serif;font-weight:800;font-size:14px;padding:11px 20px;border-radius:999px;text-decoration:none;letter-spacing:0;transition:background .18s ease}
+#sec-ctafoot .ft-cta:hover{background:#FFD45A}
+#sec-ctafoot .ft-h4{font-family:"Nunito Sans",sans-serif;font-size:12px;font-weight:800;letter-spacing:0;text-transform:uppercase;color:#FFD45A;margin-bottom:14px}
+#sec-ctafoot .ft-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin:0;padding:0}
+#sec-ctafoot .ft-col a{font-family:"Nunito Sans",sans-serif;color:rgba(255,255,255,.72);text-decoration:none;font-size:14px;font-weight:600;line-height:1.3;letter-spacing:0;transition:color .15s ease}
+#sec-ctafoot .ft-col a:hover{color:#fff}
+#sec-ctafoot .ft-sub{font-family:"Nunito Sans",sans-serif;font-size:10px;font-weight:800;letter-spacing:0;text-transform:uppercase;color:rgba(255,255,255,.38);margin:16px 0 8px}
+#sec-ctafoot .ft-bottom{border-top:1px solid rgba(255,255,255,.12);padding:20px 0 16px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+#sec-ctafoot .ft-left{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+#sec-ctafoot .ft-copy{font-family:"Nunito Sans",sans-serif;font-size:13px;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:0}
+#sec-ctafoot .ft-legal{display:flex;gap:18px;flex-wrap:wrap}
+#sec-ctafoot .ft-legal a{font-family:"Nunito Sans",sans-serif;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;font-weight:600;letter-spacing:0}
+#sec-ctafoot .ft-legal a:hover{color:#fff}
+#sec-ctafoot .ft-social{display:flex;gap:10px}
+#sec-ctafoot .ft-social a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);text-decoration:none;transition:border-color .18s ease,color .18s ease}
+#sec-ctafoot .ft-social a:hover{border-color:#FFD45A;color:#fff}
+#sec-ctafoot .ft-social svg{width:16px;height:16px;fill:currentColor}
+#sec-ctafoot .ft-disc{font-family:"Nunito Sans",sans-serif;font-size:11px;color:rgba(255,255,255,.34);font-weight:600;letter-spacing:0;padding:0 0 26px}
+@media(max-width:1000px){#sec-ctafoot .ft-top{grid-template-columns:1fr 1fr 1fr}#sec-ctafoot .ft-brand{grid-column:1/-1}}
+@media(max-width:900px){#sec-ctafoot .cta{padding:52px 24px 60px}#sec-ctafoot .cta h2{font-size:40px}}
+@media(max-width:620px){#sec-ctafoot .ft-wrap{padding:8px 16px 36px}#sec-ctafoot .ft-top{grid-template-columns:1fr 1fr}#sec-ctafoot .ft-footer{padding:36px 24px 0}#sec-ctafoot .ft-bottom{flex-direction:column;align-items:flex-start}}
+</style>
+<style id="nav-place">#pp-page{padding-top:18px}#pp-page .navbar{position:sticky;top:18px;z-index:60;padding:0 24px;margin-top:0;margin-bottom:26px}</style>
+</head>
+<body>
+
+<div id="pp-page">
+  <div class="navbar"><div data-include="/partials/nav.html"></div></div>
+
+  <!-- ============ HERO ============ -->
+  <header class="pp-hero">
+    <p class="pp-eyebrow"><i></i>Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">COVU Privacy Policy — Data Protection &amp; User Rights</p>
+  </header>
+
+  <!-- ============ BODY ============ -->
+  <main class="pp-body">
+    <article class="pp-card">
+
+      <p>This Privacy Statement provides information about the processing of your personal data (hereinafter also referred to as &ldquo;data&rdquo;) by the insurance broker, COVU Insurance Solutions LLC., (hereinafter also referred to as &ldquo;controller&rdquo; or &ldquo;we&rdquo;) in the use of their website, their contact form, their newsletter and in the determination and assignment of a broker/consultant suitable for you and your insurance product wishes.</p>
+
+      <p>&ldquo;Personal information&rdquo; means any information or opinion, whether true or not, and whether recorded in a material form or not, about an identified individual or an individual who is reasonably identifiable. In general terms, this includes information or an opinion that personally identifies you either directly (e.g. your name) or indirectly.</p>
+
+      <h2>Who is the controller under California Consumer Privacy Act (&ldquo;CCPA&rdquo;) and whom can you contact?</h2>
+      <p>The controller is:</p>
+      <div class="pp-contact">
+        <p>COVU Insurance Solution LLC.<br>
+        560 Hillside road<br>
+        Redwood City, CA, 94062c<br>
+        608.692.1475<br>
+        Email: <a href="mailto:dataprotection@covu.com">dataprotection@covu.com</a></p>
+      </div>
+
+      <h2>What are the purposes for which we process your data?</h2>
+      <p>When you visit our website, your browser transmits certain data to our web server to provide you with the information you have accessed. In order to enable you to visit the website, the following data are collected, stored and used for a short time:</p>
+      <ul>
+        <li>IP address</li>
+        <li>Date and time of the request</li>
+        <li>Time zone difference to Greenwich Mean Time (GMT)</li>
+        <li>Content of the request (specific page)</li>
+        <li>Access status/http status code</li>
+        <li>Each transmitted data volume</li>
+        <li>Website from which the request comes</li>
+        <li>Browser</li>
+        <li>Operating system and its interface</li>
+        <li>Language and version of the browser software</li>
+      </ul>
+      <p>In addition, to protect our legitimate interests, we store this data for a limited period of time based on appropriate retention periods in order to be able to initiate a derivation of personal data in the event of unauthorized access or access attempts to our servers.</p>
+
+      <h2>When filling in Online forms</h2>
+      <p>You have the opportunity to use our services as an insurance intermediary by registering on our website. The following data are collected (please note this list is not exhaustive, as we may add more products/services at a later time and may require additional information):</p>
+      <ul>
+        <li>Name</li>
+        <li>Address</li>
+        <li>Email address</li>
+        <li>Mobile phone number</li>
+        <li>Birth date</li>
+        <li>Contract data</li>
+      </ul>
+
+      <h2>Use within the scope of the broker contract</h2>
+      <p>As part of your broker contract or broker subcontract, we negotiate insurance contracts (hereinafter referred to as &ldquo;negotiation&rdquo;) and/or the support and management of already existing contractual relationships. For this purpose, data that you provide as part of the data acquisition, implementation of pre-contractual measures, consulting documentation, contract application or conclusion, communication with the product providers and contract support, is required. Your data is collected, processed and used by the broker as part of your brokerage order for contract-related advice and processing and transmitted, for this purpose, by the broker to the providers requested by it (such as insurance companies, comparison platforms) stored and used by them for application review. The associated collection and use of your data are necessary to fulfill the contract with you.</p>
+
+      <h2>Use when processing notification of claims</h2>
+      <p>We receive third-party data from the customer that we store and forward, as necessary to process notifications of claims from customers. In principle, we ask that we only be informed of data that is necessary or legally required for the respective purpose (e.g. performance or claims processing). The collection, storage and transfer therefore takes place for the purpose of fulfilling the contract and for the purpose of fulfilling a legal obligation of the Controller. Failure to provide this data may result in the insurer not being able to process the notification of a claim or provide a suitable service experience.</p>
+
+      <h2>Email inquiries</h2>
+      <p>For inquiries, you can contact us via the email addresses provided on our website. If you send us an email, we collect, store and use your:</p>
+      <ul>
+        <li>Name</li>
+        <li>Email address</li>
+        <li>Content of your message</li>
+      </ul>
+      <p>Processing takes place only to the extent necessary for the processing of your inquiry and for correspondence with you. The data collected are for the sole purpose of being able to process your request. The data collected during the transmission process are necessary to prevent misuse of the function and to ensure the security of our systems.</p>
+
+      <h2>Information emails and newsletters</h2>
+      <p>We use your contact information for direct marketing purposes. Your email address may be used for advertising purposes if you have either given consent through a corresponding declaration or via the website in order to keep you informed of comparable insurance products and our associated services. You can withdraw your consent by clicking on the link provided in each information email and in each newsletter. You can also Opt-Out by email. You can submit your objection to advertising in relation to information emails that we send you to <a href="mailto:dataprotection@covu.com">dataprotection@covu.com</a>.</p>
+      <p>To register for our newsletter, we use the double opt-in procedure. This means that after you have registered, you will receive an email to the email address you provide to confirm your decision to receive the newsletter. If you do not confirm your registration within 24 hours, your information is blocked and automatically deleted after six months. We also store your IP address and the time of registration and confirmation. The purpose of this process is to verify your registration and, if necessary, resolve any possible misuse of your data.</p>
+      <p>The only information we require to send the newsletter is your email address. The provision of further, separately marked data is voluntary and is used to address you personally. After confirmation, your email address is saved for the purpose of sending you the newsletter.</p>
+
+      <h2>Cookies</h2>
+      <p>Cookies are small text files that are stored in the memory of your device via your browser and through which certain information flows to us. Cookies cannot run programs or transfer viruses to your computer. The COVU website uses cookies to make the website more user-friendly and effective overall.</p>
+
+      <h2>Cookies we use</h2>
+      <p>This website uses cookies, which are described below, to improve user experience:</p>
+      <h3>How a website works</h3>
+      <p>Cookies that are technically necessary for the function of our website or offer a service or option requested by you, e.g. a cookie that &ldquo;remembers&rdquo; your personal settings, such as selected language or similar matters.</p>
+      <h3>Performance analysis of the website</h3>
+      <p>We make every effort to constantly improve our website. For this purpose, cookies are used that provide us with overall statistics about the number of visitors, which areas of a page are viewed most, information about the city or location of the users, as well as the length of the stay, etc.</p>
+      <h3>Social Media Cookies</h3>
+      <p>A cookie must be installed on your device in order for you to share content from our website via social media channels such as Facebook or Twitter. For more information, refer to the policies of the relevant company.</p>
+      <h3>Targeting and Tracking Cookies</h3>
+      <p>On certain pages of our website, we use cookies to better understand your interests when using the internet. We do this so we will be able to offer a service tailored to your needs in the future. These cookies collect information about the starting point of your visit, whether you have been shown COVU content, what specific advertising material you have viewed, whether you have accessed our website directly or indirectly, from which device you have visited our website and what you have downloaded.</p>
+
+      <h2>Your Options</h2>
+      <p>You can also view our website without the use of cookies. You are welcome to use the settings in our cookie banner to decide which categories of cookies you want to accept. To prevent the use of cookies by your internet browser completely, you can deactivate the use of cookies using the settings of your internet browser. In addition, cookies that have already been placed can be deleted at any time via an internet browser or another software program. This is possible in all standard internet browsers. You can find out how to disable and/or delete cookies via the help functions of your internet browser. Please note that deactivating/deleting cookies may result in the website not functioning as expected. Cookies that may be required for certain features of our website are shown below. Furthermore, the deactivation/deletion of cookies only affects the internet browser used in this case. If you use other internet browsers, the deactivation/deletion of cookies must be repeated accordingly. We store these data until the end of the term of a particular cookie or until you delete the cookies. Further processing of personal data by means of cookies can be found below:</p>
+
+      <h2>Cookies for web analysis</h2>
+      <p>We use your information as part of website analyses to make it more user-friendly and conduct market research using web analytics tools. These tools use your IP addresses either in truncated form or not at all. As the operator of this website, we have a legitimate interest in analyzing user behavior to optimize our website.</p>
+
+      <h2>Google Analytics &amp; Google Tag Manager</h2>
+      <p>Our website uses Google Analytics and Google Tag Manager, web analytics services of Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA (hereinafter referred to as &ldquo;Google&rdquo;). The information generated by the cookies in Google Analytics and Google Tag Manager about your use of our website is transmitted to a Google server in the USA and stored there. For the order of the operator of this website, Google uses this information to evaluate your use of this website, create reports about the website activities and provide other services connected with use of the website and Internet for the website operator. The IP address transmitted from your browser within the context of Google Analytics and Google Tag Manager is not associated with other data from Google. You can find additional information about this at: <a href="https://policies.google.com/privacy?hl=en">policies.google.com/privacy?hl=en</a></p>
+      <p><a href="https://legal.hubspot.com/privacy-policy">HubSpot Privacy Policy</a><br>
+      <a href="https://legal.hubspot.com/privacy-policy">https://legal.hubspot.com/privacy-policy</a></p>
+      <h3>ZoomInfo</h3>
+      <p><a href="https://www.zoominfo.com/about-zoominfo/privacy-policy">https://www.zoominfo.com/about-zoominfo/privacy-policy</a></p>
+
+      <h2>Cookies for advertising purposes on our website</h2>
+      <p>We use your information to display advertisements tailored to you and your interests. We use the below tools, which use your IP address (in abbreviated or unabbreviated form) for these purposes.</p>
+
+      <h2>Facebook Pixel/Custom Audiences</h2>
+      <p>We use the &ldquo;Facebook Custom Audiences&rdquo; feature operated by Facebook Ireland Limited, Hanover Reach, 5-7 Hanover Quay, Dublin 2, Ireland (&ldquo;Facebook&rdquo;). Through this technology, users who have already visited our website and are interested in the offer are again approached via ad inserts with targeted advertising on Facebook. Advertising is displayed through the use of cookies, with the help of which user behavior can be analyzed when visiting the website and then used for targeted product recommendations and interest-based advertising.</p>
+      <p>Information about the user&rsquo;s activities on the website, such as surfing behavior, visited subpages of the website, etc., are collected.</p>
+      <p>You can find more information at <a href="https://www.facebook.com/about/privacy/">https://www.facebook.com/about/privacy/</a>.<br>
+      You can disable the Custom Audiences feature at <a href="https://www.facebook.com/settings?tabR=ads">https://www.facebook.com/settings?tabR=ads</a>. To do this, you first need to log in.</p>
+
+      <h2>Google AdWords Conversion Tracking</h2>
+      <p>COVU uses the online advertising offer of Google &ldquo;Google AdWords&rdquo; and, in the context of Google AdWords, Conversion-Tracking. Google Conversion Tracking is an analysis service provided by Google Inc. (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA; &ldquo;Google&rdquo;). When you click on an ad placed by Google, a cookie for Conversion-Tracking is stored on your computer. These cookies expire after 90 days and do not contain any personal data. If you visit certain websites on our website and the cookie has not yet expired, Google and we can recognise that you have clicked on the advertisement and have been redirected to this page. Each Google AdWords customer receives a different cookie. The information collected using the conversion cookie is used to generate conversion statistics for us. We will find out the total number of users who have clicked on the ad and have been redirected to a page marked with a Conversion-Tracking-Tag. However, they will not receive any information with which users can be personally identified.</p>
+      <p>You can opt out of personalized advertising at <a href="http://www.google.com/settings/ads">http://www.google.com/settings/ads</a> in Google&rsquo;s Advertising Settings.</p>
+      <p>Additional information on how your data are handled is available at <a href="https://policies.google.com/privacy?hl=en&gl=en">https://policies.google.com/privacy?hl=en&amp;gl=en</a></p>
+
+      <h2>Google DoubleClick</h2>
+      <p>Google&rsquo;s retargeting uses double-click cookies. This enables ads to be presented, optimized and evaluated for you on the basis of your previous visits to this website by collecting and storing information about your browsing behavior for marketing purposes on a pseudonymous basis. Based on this, targeted product recommendations can then be displayed as advertising banners on other websites. Under no circumstances do we associate this information with data from your customer relationship or use the data to personally identify you as a visitor to this website.</p>
+      <p>You can prevent Google/DoubleClick from collecting usage data by following the instructions at the following link: <a href="http://www.google.com/settings/ads">http://www.google.com/settings/ads</a>.</p>
+
+      <h2>Microsoft Bing Ads</h2>
+      <p>This website uses Bing Ads Universal Event Tracking, a conversion tracking service provided by Microsoft (Microsoft Corporation, One Microsoft Way, Redmond, WA 98052-6399, USA).</p>
+      <p>This service enables us to track activities on our site if you come to our website via a Bing ad.</p>
+      <p>This is done by placing a cookie (small text file) on your device when you click a Microsoft Bing Ads display. In particular, Microsoft and we learn the total number of users who have clicked on an ad and have reached a previously defined target page. These data are stored by Microsoft for 180 days. No personal information about the identity of the user is provided. If you do not wish to participate in the Universal Event Tracking procedure, you can prevent the collection and processing of the data generated by the cookie relating to your use of the website by, for example, deactivating the setting of cookies in your browser settings. In addition, it is possible to disable the receipt of advertising based on your user behavior by Microsoft at the following link:</p>
+      <p><a href="https://go.microsoft.com/fwlink/?LinkID=286759">https://go.microsoft.com/fwlink/?LinkID=286759</a></p>
+      <p>You can find additional information on data usage in Microsoft&rsquo;s Data Privacy Policy at:<br>
+      <a href="https://privacy.microsoft.com/de-DE/privacystatement/">https://privacy.microsoft.com/de-DE/privacystatement/</a></p>
+
+      <h2>LinkedIn</h2>
+      <p>Our website uses the &ldquo;LinkedIn Insight Tag&rdquo; of the LinkedIn network. The provider is LinkedIn Corporation, 2029 Stierlin Court, Mountain View, CA 94043, USA. We use the LinkedIn Insight Tag to track the success of our ads (called &ldquo;conversion&rdquo;), to address visitors to our website again and to gain additional insights into the interaction of LinkedIn members with our LinkedIn ads. The LinkedIn Insight tag enables the collection of metadata such as IP address information, time stamps and events (e.g. page views). All data is encrypted. The LinkedIn browser cookies stored in the browser of a website visitor until he/she deletes the cookie or the cookie expires. Based on the interaction of users with our website, we can use the LinkedIn Insight tag to analyze the success of our campaigns within the LinkedIn platform or to identify target groups for the campaigns. If you are registered with LinkedIn, LinkedIn can link your interaction with our online services to your account. You can unsubscribe permanently via this link: <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out/">https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out/</a>. You can find additional information about the LinkedIn privacy policy at: <a href="https://www.linkedin.com/legal/privacypolicy/">https://www.linkedin.com/legal/privacypolicy/</a> .</p>
+
+      <h2>FinanceAds</h2>
+      <p>We use the affiliate program of finance Ads International GmbH (Hardenbergstr. 32, 10623 Berlin), The script enables us to pay a so-called lead or sales commission to the partners of the advertising network in the event of successful registration.The script will only run for users who have accessed our websites through an affiliate partner in the FinanceAds network if the user accesses the pages relevant to the commission. For this purpose, FinanceAds parameters are stored locally in a cookie in the user&rsquo;s browser and read on a script-based basis when calling up our website for billing purposes. The evaluation is carried out on the basis of pseudonymised data records and only for the above-mentioned purposes. Further information on privacy and data use by FinanceAds can be found in the privacy policy of FinanceAds. The cookie stored in your browser in the event of your consent is completely deleted after 90 days at the latest.</p>
+
+      <h2>Facebook</h2>
+      <p>Meta Headquarters 1 Hacker Way, Menlo Park, CA 94025, USA (&ldquo;Facebook&rdquo;).<br>
+      Information on privacy at Facebook can be found here: <a href="http://www.facebook.com/policy.php">http://www.facebook.com/policy.php</a>.</p>
+
+      <h2>Twitter</h2>
+      <p>Twitter, Inc., 1355 Market St, Suite 900, San Francisco, California 94103, USA; For more information and customisation, please visit: <a href="https://twitter.com/privacy">https://twitter.com/privacy</a>.</p>
+
+      <h2>Links to Social Media Networks</h2>
+      <p>You will also find links to social media networks on our website. These are not social plugins provided by the social media provider, which already transmit data to the provider when the page is loaded, without the users being able to influence this. There is only a link to the social media network behind the buttons to the social media networks, including the transfer of the website to be shared. No user data are transmitted from the website to the social media network. If you are already logged in to the corresponding social media service at the time of clicking the button, the release dialogue recognises this so that you can release the contents directly. If this is not the case, you are asked to log into the social media network. From this point on, you are on the website of the respective social media network. You can find information below on the data processing of the respective providers.</p>
+      <h3>Facebook</h3>
+      <p>Meta Headquarters 1 Hacker Way, Menlo Park, CA 94025, USA (&ldquo;Facebook&rdquo;).<br>
+      Information on privacy at Facebook can be found here: <a href="http://www.facebook.com/policy.php">http://www.facebook.com/policy.php</a>.</p>
+      <h3>Twitter</h3>
+      <p>Twitter, Inc., 1355 Market St, Suite 900, San Francisco, California 94103, USA; For more information and customisation, please visit: <a href="https://twitter.com/privacy">https://twitter.com/privacy</a>.</p>
+      <h3>Instagram</h3>
+      <p>Instagram is a product provided by Facebook Meta Headquarters 1 Hacker Way, Menlo Park, CA 94025, USA (&ldquo;Facebook&rdquo;), <a href="https://help.instagram.com/519522125107875">https://help.instagram.com/519522125107875</a>.</p>
+      <h3>LinkedIn</h3>
+      <p>LinkedIn Ireland Unlimited Company, Wilton Place, Dublin 2, Ireland;<br>
+      <a href="https://www.linkedin.com/legal/privacy-policy">https://www.linkedin.com/legal/privacy-policy</a>.</p>
+
+      <h2>Performance Tools</h2>
+      <h3>Salesforce CMS System</h3>
+      <p>We use the customer management system from the provider Salesforce to process user requests faster and more efficiently. You can obtain information on privacy from Salesforce, Salesforce Tower, 415 Mission Street, 3rd Floor, San Francisco, CA 94105:<br>
+      <a href="https://www.salesforce.com/">https://www.salesforce.com/</a>.</p>
+
+      <h2>With whom and how we share your information</h2>
+      <h3>Data processing within the corporate group</h3>
+      <p>Your data is shared with affiliated companies of COVU Group to perform central data processing tasks. Your data can be processed centrally for the central administration of address data, for telephone customer service, for service processing or for joint mail processing. These companies include in particular:</p>
+      <p>COVU Inc., 560 Hillside Road Redwood City, CA, 94062</p>
+      <h3>External service providers</h3>
+      <p>COVU outsources certain processes and tasks to service providers in order to ensure the handling of complex matters that require special knowledge or cannot be assumed internally or in order to be able to fulfill the contract with you, such as hosting our website, analyses of user behavior on our websites, etc. We therefore forward your data to the following categories of recipients:</p>
+      <ul>
+        <li>Insurers, insurance intermediaries, consultants, broker pools</li>
+        <li>Technical service providers</li>
+        <li>Web analytics and marketing tool</li>
+      </ul>
+      <h3>External service providers established in a third country (outside the US):</h3>
+      <p>Some of our service providers, including some of the aforementioned cookie providers, tools, services and web services, are fully or partially located in so-called third countries, i.e. outside the US. The transfer of your data to these service providers is carried out on a permitted legal basis.</p>
+      <h3>Disclosure due to legal obligation</h3>
+      <p>In addition, we only transmit your personal data and insofar as there is a legal obligation on our part to disclose it (e.g. to law enforcement authorities).</p>
+
+      <h2>When will your information be deleted?</h2>
+      <p>We store your data for as long as this is necessary for the above-mentioned purposes or until you have withdrawn your consent. We delete the data per data retention policies unless we determine any other legal grounds for further storage. If the data are not deleted because it is required for other and legally permissible purposes, its processing is limited. Information collected in connection with tax, commercial and (other) legal obligations is sometimes stored for a correspondingly longer period. The storage periods under these amount to up to ten years. However, it may also be the case that personal data is stored for the period during which claims may be made against COVU Insurance Solutions LLC. (statutory limitation period of three or up to thirty years).</p>
+
+      <h2>What are your rights?</h2>
+      <p>To show you all possibilities in the context of the collection and use of your information/personal data, we would like to draw your attention to the rights that you have in this context. To exercise any of the rights below, please fill out this form <a href="https://docs.google.com/forms/d/1Xelv2XcfPzpMzvMBiN2iHWcsACiVf1ymdD-fZ5f0bxw/edit">COVU Data Subject Request Form - Google Forms</a> and for further questions please email <a href="mailto:dataprotection@covu.com">dataprotection@covu.com</a>.</p>
+      <h3>Right to be informed</h3>
+      <p>You can request information about how, by whom, for what purposes, and under what conditions your data are collected and used.</p>
+      <h3>Right of rectification</h3>
+      <p>Of course, we do not want to pass on false or outdated information when using your personal information, for example to prevent misunderstandings or possible damage. Therefore, you have the option to update or correct the information we have collected about you at any time.</p>
+      <h3>Right to limitation of processing</h3>
+      <p>You can also require us to use your data only to a limited extent. This means that although your data is still stored, it may only be used under limited conditions (e.g. to assert legal claims).</p>
+      <h3>Right to object</h3>
+      <p>If we collect and use your information based on legitimate interests, you of course have the right to object to the use of your information.</p>
+      <h3>Right to file a legal complaint with a supervisory authority</h3>
+      <p>We are committed to complying with all laws relating to your data. However, if you believe that the use of the data concerning you violates the data privacy regulation, you have the right to lodge a complaint with a supervisory authority but we encourage you to contact us first to rectify any concerns.</p>
+      <h3>Right to delete</h3>
+      <p>Your data is deleted when it is no longer necessary for the purposes mentioned here and insofar as there are no retention obligations for us. However, if you believe that there is no legal basis for further storage, you can assert your right to erasure of the data.</p>
+      <h3>Right to data portability</h3>
+      <p>You have the right to data portability with respect to all data that you have provided to us. This means that we are required to provide you with this data in a structured, common, and machine-readable format.</p>
+
+      <h2>Consent and withdrawal of consent</h2>
+      <p>If you have consented to the processing of your personal data, you can revoke it at any time. Withdrawal of consent is effective for the future. The lawfulness of the processing of your data up to the time of revocation remains unaffected.</p>
+
+      <h2>Children&rsquo;s Privacy</h2>
+      <p>Our services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13 unless it is with parental consent. If you are a parent or guardian and you are aware that your child has provided us with any personal information/data, please contact us via email at <a href="mailto:dataprotection@covu.com">dataprotection@covu.com</a>. If we become aware that we have collected personal data from anyone under the age of 13 without verification of parental consent, we will take necessary steps to remove that information from our servers.</p>
+
+      <h2>Changes to this privacy policy</h2>
+      <p>We retain the right to update these privacy policies from time to time. Updates to this Privacy Statement will be published on our website. Changes are valid as of the date that they are published on our website. We therefore recommend that you visit this page regularly to find out about any updates that may have been made</p>
+
+      <h2>Mobile Privacy</h2>
+      <p>No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
+
+    </article>
+  </main>
+
+  <!-- ============ CTA + FOOTER ============ -->
+  <div id="sec-ctafoot">
+    <div class="ctawrap">
+      <section class="cta">
+        <div class="cta-inner">
+          <div class="cta-eyebrow">Book a Call</div>
+          <h2>Experience the Future of<br><span class="hl">P&amp;C Operations</span></h2>
+          <div class="formcard">
+            <label for="email">Work Email*</label>
+            <div class="inrow">
+              <input id="email" name="email" type="email" placeholder="you@youragency.com">
+              <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            </div>
+            <a class="submit" href="https://covu-website-test.vercel.app/book-a-consultation-with-covu">Book a Consultation</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="ft-wrap">
+    <footer class="ft-footer">
+      <div class="ft-top">
+        <div class="ft-brand">
+          <div class="ft-logo">COVU</div>
+          <p class="ft-tag">The operating stack for P&amp;C insurance service operations.</p>
+          <a class="ft-cta" href="https://covu-website-test.vercel.app/book-a-consultation-with-covu">Book a demo</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-h4">Product</div>
+          <ul>
+            <li><a href="https://covu-website-test.vercel.app/">The Stack</a></li>
+            <li><a href="https://covu-website-test.vercel.app/">Connect</a></li>
+            <li><a href="https://go.covu.com/os">OS</a></li>
+            <li><a href="https://covu-website-test.vercel.app/">Service Network</a></li>
+            <li><a href="https://covu-website-test.vercel.app/">Vero / AI</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <div class="ft-h4">Solutions</div>
+          <div class="ft-sub">By need</div>
+          <ul>
+            <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Extra Servicing Capacity</a></li>
+            <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Operational Visibility &amp; Control</a></li>
+            <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Free Up Your Best People</a></li>
+            <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">AI Enablement</a></li>
+          </ul>
+          <div class="ft-sub">Services &amp; tech</div>
+          <ul>
+            <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Service Types</a></li>
+            <li><a href="https://covu-website-test.vercel.app/">Tech &amp; AI</a></li>
+          </ul>
+          <div class="ft-sub">By focus</div>
+          <ul>
+            <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Servicing</a></li>
+            <li><a href="https://covu-website-test.vercel.app/grow-your-agency">Growth</a></li>
+            <li><a href="https://covu-website-test.vercel.app/acquisition">Acquisition</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <div class="ft-h4">By agency size</div>
+          <ul>
+            <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Owner-led</a></li>
+            <li><a href="https://covu-website-test.vercel.app/grow-your-agency">Scaling</a></li>
+            <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Regional &amp; multi-office</a></li>
+            <li><a href="https://covu-website-test.vercel.app/acquisition">Enterprise &amp; acquisitive</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <div class="ft-h4">Resources</div>
+          <ul>
+            <li><a href="https://blog.covu.com">Case Studies</a></li>
+            <li><a href="https://blog.covu.com">Blog</a></li>
+            <li><a href="https://covu-website-test.vercel.app/agency-resources">Guides</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <div class="ft-h4">Company</div>
+          <ul>
+            <li><a href="https://covu-website-test.vercel.app/about-us">About</a></li>
+            <li><a href="https://covu-website-test.vercel.app/about-us">Team</a></li>
+            <li><a href="https://covu.bamboohr.com/careers">Careers</a></li>
+            <li><a href="https://covu-website-test.vercel.app/">Investors</a></li>
+            <li><a href="https://covu-website-test.vercel.app/press">Press / Media</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ft-bottom">
+        <div class="ft-left">
+          <span class="ft-copy">&copy; 2026 COVU, Inc.</span>
+          <div class="ft-legal">
+            <a href="https://covu-website-test.vercel.app/privacy-policy">Privacy Policy</a>
+            <a href="https://covu-website-test.vercel.app/terms-of-use">Terms of Use</a>
+            <a href="https://covu-website-test.vercel.app/privacy-policy">Cookie Preferences</a>
+          </div>
+        </div>
+        <div class="ft-social">
+          <a href="https://www.linkedin.com/company/covuinc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="https://twitter.com/covu_inc" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26L22.5 21.75h-6.66l-5.22-6.82-5.97 6.82H1.34l7.73-8.84L1.5 2.25h6.83l4.72 6.23 5.19-6.23zm-1.16 17.52h1.83L7.01 4.13H5.04L17.08 19.77z"/></svg></a>
+          <a href="https://www.instagram.com/covu_inc/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.35 2.67.94 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.12.66.66 1.33 1.08 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.7 5.7 0 0 0 2.12-1.38 5.7 5.7 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.7 5.7 0 0 0-1.38-2.12A5.7 5.7 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.41a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
+          <a href="https://www.facebook.com/covuinc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCVrR7a3ipRCKQF0JThFTVXw/featured" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="ft-disc">COVU Insurance Solutions LLC is a licensed insurance agency &middot; NPN 19476180 &middot; 370 Convention Way, Redwood City, CA 94063</div>
+    </footer>
+    </div>
+  </div>
+
+</div>
+
+<style>/* nav-pad-fix: clear global sticky covu-nav overlay */
+.pp-hero{padding-top:20px !important}</style>
+<script src="/js/include.js"></script>
+<script src="/js/nav.js"></script>
+</body>
+</html>

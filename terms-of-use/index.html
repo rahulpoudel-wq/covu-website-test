@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COVU — Terms of Use</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Nunito:wght@800;900&family=Merriweather:wght@700;900&display=swap');
+
+:root{
+  --navy:#1C2945; --navy-deep:#11426B; --yellow:#FFB703; --yellow-dark:#E0A100;
+  --surface:#F1F3F9; --border:#E4E8F1; --muted:#667085; --body:#5d6886; --white:#FFFFFF;
+  --shadow-nav:0 10px 34px rgba(18,26,43,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#FAFBFD}
+body{font-family:"Nunito Sans",system-ui,-apple-system,sans-serif;color:var(--navy);-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+h1,h2,h3,h4{font-family:"Merriweather",Georgia,serif;line-height:1.3}
+
+/* ===== Announcement bar ===== */
+.announce{background:var(--navy);color:#fff;text-align:center;font-size:13.5px;font-weight:600;letter-spacing:.2px;padding:10px 20px}
+.announce a{color:var(--yellow);font-weight:800;margin-left:6px}
+.announce a:hover{text-decoration:underline}
+
+/* ===== Nav ===== */
+.nav-shell{position:sticky;top:14px;z-index:120;padding:14px 24px 0}
+.nav{max-width:1380px;margin:0 auto;background:var(--white);border:1px solid var(--border);
+  border-radius:44px;box-shadow:var(--shadow-nav);height:74px;padding:0 14px 0 30px;
+  display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"Nunito";font-weight:800;font-size:27px;letter-spacing:2px;color:var(--navy)}
+.navlinks{display:flex;align-items:center;gap:4px}
+.navlinks a{font-family:"Nunito Sans";font-size:17px;font-weight:600;color:var(--navy);padding:12px 18px;border-radius:12px;transition:background .15s ease}
+.navlinks a:hover{background:var(--surface)}
+.nav-cta{display:inline-flex;align-items:center;background:var(--yellow);color:var(--navy)!important;font-weight:800;
+  font-size:16px;letter-spacing:.3px;border-radius:34px;padding:15px 26px;transition:background .18s ease}
+.nav-cta:hover{background:var(--yellow-dark)}
+.navburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:10px}
+.navburger span{width:24px;height:2px;background:var(--navy);border-radius:2px}
+@media(max-width:960px){
+  .navlinks{display:none}
+  .navburger{display:flex}
+}
+
+/* ===== Terms hero + body ===== */
+.terms-wrap{max-width:880px;margin:0 auto;padding:64px 30px 40px}
+.terms-hero h1{font-size:48px;font-weight:900;color:var(--navy);letter-spacing:.3px}
+.terms-hero .rule{width:96px;height:5px;background:var(--yellow);border-radius:3px;margin:22px 0 10px}
+.terms-hero .eff{font-size:14px;color:var(--muted);font-weight:700;letter-spacing:.3px}
+
+.terms-body{max-width:880px;margin:0 auto;padding:8px 30px 80px}
+.terms-body p{font-size:16px;line-height:1.8;color:var(--body);margin:0 0 20px}
+.terms-body .lead{font-size:15px;line-height:1.85;color:#4a5573;margin:0 0 18px}
+.terms-body h2{font-size:22px;font-weight:900;color:var(--navy);margin:44px 0 6px;letter-spacing:.2px;display:flex;gap:12px;align-items:baseline}
+.terms-body h2 .num{color:var(--yellow-dark);font-family:"Nunito Sans";font-weight:900;font-size:18px}
+.terms-body h2 + .divider{height:2px;background:var(--border);border-radius:2px;margin:12px 0 22px}
+.terms-body h3{font-size:17px;font-weight:800;font-family:"Nunito Sans";color:var(--navy);margin:26px 0 8px}
+.terms-body a.inline{color:var(--navy-deep);font-weight:700;text-decoration:underline;text-decoration-color:rgba(17,66,107,.35)}
+.terms-body a.inline:hover{text-decoration-color:var(--navy-deep)}
+.terms-body .callout{background:#FFFBEF;border:1px solid #F5E4B5;border-left:4px solid var(--yellow);border-radius:12px;padding:20px 24px;margin:0 0 22px}
+.terms-body .callout p{font-size:14px;line-height:1.8;color:#5a4e2d;margin:0 0 12px;font-weight:600}
+.terms-body .callout p:last-child{margin:0}
+@media(max-width:620px){
+  .terms-hero h1{font-size:36px}
+  .terms-body h2{font-size:19px}
+}
+
+/* ===== CTA + FOOTER (from COVU footer section) ===== */
+@keyframes shero_hlsheen{0%,100%{background-position:0 0}50%{background-position:130% 0}}
+#sec-ctafoot{--blue-light:#B2CEDF;position:relative;font-family:"Nunito Sans",sans-serif;color:var(--navy);
+  background:
+    radial-gradient(900px 520px at 50% -6%, rgba(255,183,3,.16), rgba(255,183,3,0) 58%),
+    radial-gradient(1000px 640px at 88% 4%, rgba(255,209,92,.18), rgba(255,209,92,0) 55%),
+    radial-gradient(900px 620px at 6% 30%, rgba(63,123,255,.10), rgba(63,123,255,0) 55%),
+    linear-gradient(180deg,#FFFDF7 0%, #FAFBFD 60%)}
+#sec-ctafoot h1,#sec-ctafoot h2{font-family:"Merriweather",Georgia,serif;letter-spacing:1px;line-height:1.3}
+#sec-ctafoot .ctawrap{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:40px 30px 24px}
+#sec-ctafoot .cta{position:relative;z-index:1;padding:70px 40px 64px}
+#sec-ctafoot .cta-inner{position:relative;z-index:1;text-align:center}
+#sec-ctafoot .cta-eyebrow{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow-dark);margin-bottom:20px}
+#sec-ctafoot .cta h2{font-size:62px;font-weight:900;color:var(--navy);line-height:1.08;letter-spacing:.3px;margin-bottom:24px}
+#sec-ctafoot .cta h2 .hl{background:linear-gradient(100deg,#E0A100 0%,#FFB703 22%,#FFF1BE 40%,#FFD15C 50%,#FFB703 66%,#E0A100 100%);
+  background-size:240% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  color:var(--yellow);animation:shero_hlsheen 6.5s ease-in-out infinite}
+#sec-ctafoot .formcard{background:var(--white);border-radius:20px;max-width:430px;margin:0 auto;padding:28px 28px 30px;
+  box-shadow:0 24px 60px rgba(0,0,0,.28);text-align:left}
+#sec-ctafoot .formcard label{display:block;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:14px}
+#sec-ctafoot .inrow{display:flex;align-items:center;gap:10px;border-bottom:1.5px solid var(--border);padding-bottom:10px;margin-bottom:24px}
+#sec-ctafoot .inrow input{flex:1;border:none;outline:none;font-family:"Nunito Sans";font-size:16px;color:var(--navy);background:transparent}
+#sec-ctafoot .inrow input::placeholder{color:#B6BFD5}
+#sec-ctafoot .dots{width:34px;height:30px;border-radius:7px;background:var(--navy);display:flex;align-items:center;justify-content:center;gap:3px;flex:0 0 auto}
+#sec-ctafoot .dots span{width:4px;height:4px;border-radius:50%;background:#fff}
+#sec-ctafoot .submit{display:block;width:100%;text-align:center;background:var(--yellow);color:var(--navy);
+  font-family:"Nunito Sans";font-weight:700;letter-spacing:1px;font-size:16px;border:none;border-radius:10px;padding:16px;cursor:pointer;transition:background .18s ease}
+#sec-ctafoot .submit:hover{background:var(--yellow-dark)}
+#sec-ctafoot .ft-wrap{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:8px 30px 48px}
+#sec-ctafoot .ft-footer{background:linear-gradient(135deg,#1C2945 0%,#141E36 100%);color:rgba(255,255,255,.72);border-radius:20px;padding:48px 44px 0;overflow:hidden}
+#sec-ctafoot .ft-top{display:grid;grid-template-columns:1.5fr repeat(5,1fr);gap:32px;padding-bottom:38px}
+#sec-ctafoot .ft-brand .ft-logo{font-family:"Nunito",sans-serif;font-weight:800;text-transform:uppercase;color:#fff;font-size:28px}
+#sec-ctafoot .ft-brand .ft-tag{font-size:14px;line-height:1.55;color:rgba(255,255,255,.72);margin:14px 0 20px;max-width:240px}
+#sec-ctafoot .ft-cta{display:inline-block;background:#FFB703;color:#1C2945;font-weight:800;font-size:14px;padding:11px 20px;border-radius:999px;transition:background .18s ease}
+#sec-ctafoot .ft-cta:hover{background:#FFD45A}
+#sec-ctafoot .ft-h4{font-size:12px;font-weight:800;text-transform:uppercase;color:#FFD45A;margin-bottom:14px}
+#sec-ctafoot .ft-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+#sec-ctafoot .ft-col a{color:rgba(255,255,255,.72);font-size:14px;font-weight:600;line-height:1.3;transition:color .15s ease}
+#sec-ctafoot .ft-col a:hover{color:#fff}
+#sec-ctafoot .ft-sub{font-size:10px;font-weight:800;text-transform:uppercase;color:rgba(255,255,255,.38);margin:16px 0 8px}
+#sec-ctafoot .ft-bottom{border-top:1px solid rgba(255,255,255,.12);padding:20px 0 16px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+#sec-ctafoot .ft-left{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+#sec-ctafoot .ft-copy{font-size:13px;color:rgba(255,255,255,.5);font-weight:600}
+#sec-ctafoot .ft-legal{display:flex;gap:18px;flex-wrap:wrap}
+#sec-ctafoot .ft-legal a{font-size:13px;color:rgba(255,255,255,.6);font-weight:600}
+#sec-ctafoot .ft-legal a:hover{color:#fff}
+#sec-ctafoot .ft-social{display:flex;gap:10px}
+#sec-ctafoot .ft-social a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);transition:border-color .18s ease,color .18s ease}
+#sec-ctafoot .ft-social a:hover{border-color:#FFD45A;color:#fff}
+#sec-ctafoot .ft-social svg{width:16px;height:16px;fill:currentColor}
+#sec-ctafoot .ft-disc{font-size:11px;color:rgba(255,255,255,.34);font-weight:600;padding:0 0 26px}
+@media(max-width:1000px){#sec-ctafoot .ft-top{grid-template-columns:1fr 1fr 1fr}#sec-ctafoot .ft-brand{grid-column:1/-1}}
+@media(max-width:900px){#sec-ctafoot .cta{padding:52px 24px 60px}#sec-ctafoot .cta h2{font-size:40px}}
+@media(max-width:620px){#sec-ctafoot .ft-wrap{padding:8px 16px 36px}#sec-ctafoot .ft-top{grid-template-columns:1fr 1fr}#sec-ctafoot .ft-footer{padding:36px 24px 0}#sec-ctafoot .ft-bottom{flex-direction:column;align-items:flex-start}}
+</style>
+<link rel="stylesheet" href="/css/nav.css">
+<link rel="canonical" href="https://www.covu.com/terms-of-use/">
+<style id="nav-place">body{max-width:none !important;padding:18px 0 0 !important;margin:0 !important}body>.navbar{position:sticky;top:18px;z-index:60;padding:0 24px;margin-top:0;margin-bottom:26px}</style>
+</head>
+<body>
+<div class="navbar"><div data-include="/partials/nav.html"></div></div>
+
+<!-- ===== Terms hero ===== -->
+<header class="terms-wrap terms-hero">
+  <h1>Terms of Use</h1>
+  <div class="rule"></div>
+</header>
+
+<!-- ===== Terms body ===== -->
+<main class="terms-body">
+
+  <p class="lead">PLEASE READ THIS TERMS OF USE AGREEMENT (THESE &ldquo;TERMS OF USE&rdquo;) CAREFULLY. THESE TERMS OF USE GOVERN YOUR ACCESS TO AND USE OF THIS WEBSITE AND ANY OTHER WEBSITES OF COVU, INC. (&ldquo;COMPANY&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;), ITS AFFILIATES OR AGENTS (COLLECTIVELY, THE &ldquo;WEBSITE&rdquo;), OUR MOBILE APPLICATIONS, IF ANY (EACH AN &ldquo;APPLICATION&rdquo;) AND ANY SERVICES PROVIDED BY COMPANY, ITS AFFILIATES OR AGENTS THROUGH THE WEBSITE OR APPS OR ON WHICH A LINK TO THIS TERMS OF USE IS DISPLAYED (COLLECTIVELY WITH THE WEBSITE AND ANY APPLICATIONS, THE &ldquo;SERVICES&rdquo;). BY CLICKING ON THE &ldquo;I ACCEPT&rdquo; BUTTON, COMPLETING THE REGISTRATION PROCESS, AND/OR ACCESSING OR USING THE SERVICES, YOU REPRESENT AND WARRANT THAT YOU HAVE THE RIGHT, AUTHORITY, AND CAPACITY TO ENTER INTO THESE TERMS OF USE. IF YOU DO NOT AGREE TO BE BOUND BY THE TERMS OF USE, IF YOU ARE AN INDIVIDUAL UNDER THE AGE OF 13, HAVE PREVIOUSLY BEEN REMOVED OR BANNED FROM THE SERVICES BY COMPANY, OR ARE NOT OF LEGAL AGE TO FORM A BINDING CONTRACT OR IF YOUR ACCESS TO OR USE OF THE SERVICES IS ILLEGAL OR PROHIBITED UNDER APPLICABLE LAW, YOU MAY NOT ACCESS OR USE THE SERVICES.</p>
+
+  <div class="callout">
+    <p>PLEASE BE AWARE THAT SECTION 11 (DISPUTE RESOLUTION) OF THIS AGREEMENT, BELOW, CONTAINS PROVISIONS GOVERNING HOW DISPUTES THAT YOU AND WE HAVE AGAINST EACH OTHER ARE RESOLVED, INCLUDING, WITHOUT LIMITATION, ANY DISPUTES THAT AROSE OR WERE ASSERTED PRIOR TO THE EFFECTIVE DATE OF THIS AGREEMENT. IN PARTICULAR, IT CONTAINS AN ARBITRATION AGREEMENT WHICH WILL, WITH LIMITED EXCEPTIONS, REQUIRE DISPUTES BETWEEN US TO BE SUBMITTED TO BINDING AND FINAL ARBITRATION. UNLESS YOU OPT OUT OF THE ARBITRATION AGREEMENT: (1) YOU WILL ONLY BE PERMITTED TO PURSUE DISPUTES OR CLAIMS AND SEEK RELIEF AGAINST US ON AN INDIVIDUAL BASIS, NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY CLASS OR REPRESENTATIVE ACTION OR PROCEEDING; AND (2) YOU ARE WAIVING YOUR RIGHT TO PURSUE DISPUTES OR CLAIMS AND SEEK RELIEF IN A COURT OF LAW AND TO HAVE A JURY TRIAL.</p>
+  </div>
+
+  <p class="lead">ANY DISPUTE, CLAIM, OR REQUEST FOR RELIEF RELATING IN ANY WAY TO YOUR USE OF THE SITE WILL BE GOVERNED AND INTERPRETED BY AND UNDER THE LAWS OF THE STATE OF CALIFORNIA, CONSISTENT WITH THE FEDERAL ARBITRATION ACT, WITHOUT GIVING EFFECT TO ANY PRINCIPLES THAT PROVIDE FOR THE APPLICATION OF THE LAW OF ANY OTHER JURISDICTION. THE UNITED NATIONS CONVENTION ON CONTRACTS FOR THE INTERNATIONAL SALE OF GOODS IS EXPRESSLY EXCLUDED FROM THIS AGREEMENT.</p>
+
+  <p class="lead">THE INFORMATION AND SUGGESTIONS, INCLUDING ANY PROTECTION SCORE (AS DEFINED IN 1.1) OR INFORMATION PERTAINING TO ANY THIRD PARTY PROVIDER (AS DEFINED IN SECTION 1.1), PROVIDED THROUGH THE SERVICES ARE PROVIDED FOR INFORMATIONAL PURPOSES ONLY AND PROTECTION SCORES ARE ONLY ONE OF MANY FACTORS THAT YOU SHOULD CONSIDER WHEN MAKING FINANCIAL DECISIONS. BECAUSE SUCH INFORMATION AND SUGGESTIONS ARE AUTOMATICALLY GENERATED BASED ON THE INFORMATION YOU SUPPLY TO THE SERVICE, THEY MAY BE INACCURATE, INCOMPLETE, OR NOT APPROPRIATE FOR YOUR INDIVIDUAL CIRCUMSTANCES. PLEASE CONSULT A TRUSTED FINANCIAL ADVISOR, INSURANCE AGENT, BROKER, OR OTHER QUALIFIED PROFESSIONAL WHO IS FULLY AWARE OF YOUR INDIVIDUAL CIRCUMSTANCES BEFORE YOU MAKE ANY FINANCIAL DECISIONS.</p>
+
+  <p>Your use of, and participation in, certain Services may be subject to additional terms (&ldquo;Supplemental Terms&rdquo;) and such Supplemental Terms will either be listed in the Terms of Use or will be presented to you in connection with you use of the applicable Service. If the Terms of Use are inconsistent with the Supplemental Terms, the Supplemental Terms shall control with respect to such Service. The Terms of Use and any applicable Supplemental Terms are referred to herein as the &ldquo;Agreement.&rdquo;</p>
+
+  <p>PLEASE NOTE THAT THE AGREEMENT IS SUBJECT TO CHANGE BY COMPANY ON A GOING-FORWARD BASIS IN ITS SOLE DISCRETION AT ANY TIME. When changes are made, we will make a new copy of the modified Terms of Use and any modified Supplemental Terms available on the Services. Any changes to the Agreement will be effective immediately for new users of the Services and will be effective for continuing users upon the earlier of: (i) thirty (30) days after posting notice of such changes on the Services for existing users; (ii) thirty (30) days after dispatch of an e-mail notice of such changes to you; or (iii) you to providing consent to the updated Agreement in a specified manner, as applicable. Unless otherwise stated, your continued use of the Services constitutes your acceptance of such change(s). If you do not agree to any change(s) after receiving a notice of such change(s), you may not be permitted to continue using the Services. PLEASE REGULARLY CHECK THE SERVICES TO VIEW THE THEN-CURRENT TERMS.</p>
+
+  <h2><span class="num">1.</span> THE SERVICES</h2>
+  <div class="divider"></div>
+
+  <h3>1.1 Overview</h3>
+  <p>Company provides a mission driven personal risk management platform that provides suggestions to help users make smarter risk decisions. As part of the Services, we may provide you with automated risk management analysis and suggestions based on Your Information (as defined in Section 3.2) (a &ldquo;Protection Score&rdquo;) and make recommendations about or allow you to obtain information about third-party risk management service providers, such as insurance brokers and insurance agents (&ldquo;Third Party Providers&rdquo;) solely for your informational and entertainment purposes.</p>
+
+  <h3>1.2 Access and Use</h3>
+  <p>Subject to your compliance with the Agreement, Company grants you a limited, non-exclusive, non-transferable, non-sublicensable, revocable, right to access and use the Services for your persona purposes.</p>
+
+  <h3>1.3 Application License</h3>
+  <p>Subject to your compliance with the Agreement, Company grants you a limited non-exclusive, non-transferable, non-sublicensable, revocable license to download, install and use a copy of the Applications on mobile devices that you own or control and to run such copy of the Application solely for your own personal or internal business purposes. Furthermore, with respect to any Application accessed through or downloaded from the Apple App Store (an &ldquo;App Store Sourced Application&rdquo;), you will only use the App Store Sourced Application (a) on an Apple-branded product that runs the iOS (Apple&rsquo;s proprietary operating system) and (b) as permitted by the &ldquo;Usage Rules&rdquo; set forth in the Apple App Store Terms of Service. Notwithstanding the first sentence in this section, with respect to any Application accessed through or downloaded from the Google Play store (a &ldquo;Google Play Sourced Application&rdquo;), you may have additional license rights with respect to use of the Application on a shared basis within your designated family group.</p>
+
+  <h3>1.4 Updates</h3>
+  <p>You acknowledge that the Services are evolving. You acknowledge and agree that Company may update Services with or without notifying you, and you may need to update third-party software from time to time in order to use Services.</p>
+
+  <h3>1.5 Certain Restrictions</h3>
+  <p>You shall not, and shall not permit any third party to: (a) license, sell, rent, lease, transfer, assign, reproduce, distribute, host or otherwise commercially exploit Services or any portion of Services; (b) frame or utilize framing techniques to enclose any trademark, logo, or other Services (including images, text, page layout or form); (c) use any metatags or other &ldquo;hidden text&rdquo; using Company&rsquo;s name or trademarks; (d) modify, translate, adapt, merge, make derivative works of, disassemble, decompile, reverse compile or reverse engineer any part of Services except to the extent the foregoing restrictions are expressly prohibited by applicable law; (e) attempt to engage in or engage in, any potentially harmful acts that are directed against Company or the Services, including but not limited to violating or attempting to violate any security features of Services, using manual or automated software or other means to access, &ldquo;scrape,&rdquo; &ldquo;crawl&rdquo; or &ldquo;spider&rdquo; any pages contained in the Services (except that we grant the operators of public search engines revocable permission to use spiders to copy materials from the Website for the sole purpose of and solely to the extent necessary for creating publicly available searchable indices of the materials, but not caches or archives of such materials), introducing viruses, worms, or similar harmful code into the Services, or interfering or attempting to interfere with use of the Services by any other user, host or network, including by means of overloading, &ldquo;flooding,&rdquo; &ldquo;spamming,&rdquo; &ldquo;mail bombing,&rdquo; or &ldquo;crashing&rdquo; the ; (f) access Services in order to build a similar or competitive website, application, or services; (g) except as expressly stated herein, copy, reproduce, distribute, republish, download, display, post or transmit in any form or by any means any portion of the Services; (h) remove or destroy any copyright notices or other proprietary markings contained on or in the Services; or (i) take any action that is unlawful, threatening, abusive, harassing, defamatory, libelous, deceptive, fraudulent, invasive of another&rsquo;s privacy, tortious, obscene, offensive, or profane. Any future release, update or other addition to the Services shall be subject to the Agreement. Any unauthorized use of any Services terminates the licenses granted by Company pursuant to the Agreement.</p>
+
+  <h3>1.6 Third-Party Websites, Applications and Ads</h3>
+  <p>The Services may contain links to or information about Third Party Providers or other third-party websites, applications, or services (&ldquo;Third-Party Services&rdquo;) and may contain advertisements for third parties (&ldquo;Third-Party Ads&rdquo;). When you click on a link to a Third-Party Service Third-Party Ad, we will not warn you that you have left the Services and are subject to the terms and conditions (including privacy policies) of another website or destination. Such Third Party Providers, Third-Party Services, and Third-Party Ads are not under the control of Company. Company is not responsible for any Third Party Providers, Third-Party Services, or Third-Party Ads. Company provides information about Services Providers, Third-Party Services, and Third Party Ads only as a convenience and does not review, approve, monitor, endorse, warrant, or make any representations with respect to, and is not an agent of any Third Party Providers, Third-Party Services, or Third-Party Ads, or any product or service provided in connection therewith. Your use of Third Party Providers, Third-Party Services, and Third-Party Ads is entirely at your own risk. When you leave the Services, this Agreement and our policies no longer govern. You should review applicable terms and policies, including privacy and data gathering practices, of any Third Party Providers, Third-Party Services, or providers of Third-Party Ads, and make whatever investigation you feel necessary or appropriate before proceeding with any transaction with any third party.</p>
+
+  <h3>1.7 You Are Responsible for Choosing to Engage a Third Party Provider and Making Other Financial Decisions</h3>
+  <p>Our Services provide a venue where you may be provided information about certain Third Party Providers and financial and risk management products. However, such information is provided for informational purposes only, and we urge you to obtain the advice of financial advisors, insurance agents, brokers or other qualified professionals who are fully aware of your individual circumstances before you make any financial decisions. We do not validate or investigate the licensing, certification or other requirements and qualifications of Third Party Providers. It is your responsibility to investigate Third Party Providers. You acknowledge and agree that Third Party Providers are solely responsible for any services that they may provide to you and that we are not liable for any losses, costs, damages or claims in connection with, arising from, or related to, your use of a Third Party Provider&rsquo;s products or services. You acknowledge and agree that you rely on your own judgment and that of such advisors in selecting any products or services offered by Third Party Providers.</p>
+
+  <h3>1.8 We are Not an Insurance Provider</h3>
+  <p>We are not an insurance provider or insurance agent and do not issue any insurance policies or coverage. While we may help to connect you with Third Party Providers that sell insurance products based on information provided by you, we do not make any coverage decision with or on behalf of any Third Party Provider with whom you are connected through the Services.</p>
+
+  <h3>1.9 We Make No Guarantees Regarding Any Protection Scores or Third Party Coverage</h3>
+  <p>Protection Scores include automated analysis and suggestions based on Your Information, and are provided for informational purposes only. We cannot and do not make any promises or guarantees that any Protection Score is accurate, sufficient, or appropriate for your particular circumstances or that your use of a Protection Score will obtain any results. Because such Protection Scores are automatically generated, they may not fully take into account all information that is relevant to your personal situation, and may therefore be inaccurate or incomplete. Additionally, we cannot and do not make any promises or guarantees, whether concerning accuracy, appropriateness, sufficiency, or otherwise, regarding the quotes, fees, terms, rates, coverage or services offered or made available by Third Party Providers, included in a Protection Score, or otherwise displayed on the Services. We do not guarantee that quotes, fees, terms, rates, coverage or services offered by Third Party Providers are the best available.</p>
+
+  <h3>1.10 Company Communications</h3>
+  <p>By entering into this Agreement or using the Services, you agree to receive communications from us, including via e-mail, text message, calls, and push notifications. You agree that texts, calls or prerecorded messages may be generated by automatic telephone dialing systems. Communications from us and our affiliated companies may include but are not limited to: operational communications concerning your Account or the use of the Services, updates concerning new and existing features on the Services, communications concerning promotions run by us or our third-party partners, and news concerning the Company and industry developments. Standard text messaging charges applied by your cell phone carrier will apply to text messages that we send. IF YOU WISH TO OPT OUT OF PROMOTIONAL EMAILS, YOU CAN UNSUBSCRIBE FROM OUR PROMOTIONAL EMAIL LIST BY FOLLOWING THE UNSUBSCRIBE OPTIONS IN THE PROMOTIONAL EMAIL ITSELF. IF YOU WISH TO OPT OUT OF PROMOTIONAL CALLS OR TEXTS, YOU MAY TEXT &ldquo;END&rdquo; TO +1 314-455-6751 FROM THE MOBILE DEVICE RECEIVING THE MESSAGES. YOU ACKNOWLEDGE THAT YOU ARE NOT REQUIRED TO CONSENT TO RECEIVE PROMOTIONAL TEXTS OR CALLS AS A CONDITION OF USING THE SERVICES OR RELATED SERVICES. IF YOU WISH TO OPT OUT OF ALL TEXTS OR CALLS FROM US (INCLUDING OPERATIONAL OR TRANSACTIONAL TEXTS OR CALLS), YOU CAN TEXT THE WORD &ldquo;STOPALL&rdquo; TO +1 314-455-6751 FROM THE MOBILE DEVICE RECEIVING THE MESSAGES. HOWEVER, YOU ACKNOWLEDGE THAT OPTING OUT OF RECEIVING ALL TEXTS MAY IMPACT YOUR USE OF THE SERVICES OR RELATED SERVICES.</p>
+
+  <h2><span class="num">2.</span> REGISTRATION</h2>
+  <div class="divider"></div>
+
+  <h3>2.1 Registering Your Account</h3>
+  <p>In order to access certain features of the Services you may be required to become a Registered User. For purposes of the Agreement, a &ldquo;Registered User&rdquo; is a user who has registered an account on the Services (&ldquo;Account&rdquo;). You are responsible for all activities that occur under your Account. You agree that you will accept full responsibility for any use of the Services from your Account.</p>
+
+  <h3>2.2 Registration Data</h3>
+  <p>In registering an Account, you agree to (a) provide true, accurate, current and complete information about yourself as prompted by the registration form (the &ldquo;Registration Data&rdquo;); and (b) maintain and promptly update the Registration Data to keep it true, accurate, current and complete. You may not share your Account or password with anyone, and you agree to (y) notify Company immediately of any unauthorized use of your password or any other breach of security; and (z) exit from your Account at the end of each session. If you provide any information that is untrue, inaccurate, not current or incomplete, or Company has reasonable grounds to suspect that any information you provide is untrue, inaccurate, not current or incomplete, Company has the right to suspend or terminate your Account and refuse any and all current or future use of the Services (or any portion thereof). You agree not to create an Account using a false identity or information, or on behalf of someone other than yourself.</p>
+
+  <h2><span class="num">3.</span> IP RIGHTS</h2>
+  <div class="divider"></div>
+
+  <h3>3.1 Ownership</h3>
+  <p>Except with respect to Your Information, you agree that Company or its licensors own all rights, title, and interest in and to the Services and all portions thereof Company&rsquo;s name and all related graphics, logos, service marks and trade names used on or in connection with the Services are the trademarks of Company and may not be used without permission in connection with your, or any third-party, products or services. Any other trademarks, service marks and trade names that may appear on or in the Services are the property of their respective owners.</p>
+
+  <h3>3.2 Your Information</h3>
+  <p>You grant Company a fully paid, royalty-free, perpetual, irrevocable, worldwide, royalty-free, non-exclusive and license to use, modify, distribute, and reproduce the content and information that you provide, upload, or submit to the Service (&ldquo;Your Information&rdquo;) as necessary for the purposes of providing and improving the Services or as otherwise permitted by the terms of our Privacy Policy. You represent that you have all necessary right, title, interest, consent and authorization to provide, upload, or submit Your Information and to permit Company to use such information as contemplated by this Agreement and the function of the Services.</p>
+
+  <h3>3.3 Feedback</h3>
+  <p>You agree that submission of any ideas, suggestions, documents, and/or proposals to Company pertaining to the Services or Company&rsquo;s business or other products or services (&ldquo;Feedback&rdquo;) is at your own risk and that Company has no obligations (including without limitation obligations of confidentiality) with respect to such Feedback. You represent and warrant that you have all rights necessary to provide the Feedback. You hereby grant to Company a fully paid, royalty-free, perpetual, irrevocable, worldwide, non-exclusive, and fully sublicensable right and license to use, reproduce, perform, display, distribute, adapt, modify, re-format, create derivative works of, and otherwise commercially or non-commercially exploit in any manner, any and all Feedback, and to sublicense the foregoing rights, in connection with the operation and maintenance of the Services and/or Company&rsquo;s business.</p>
+
+  <h2><span class="num">4.</span> INDEMNIFICATION</h2>
+  <div class="divider"></div>
+  <p>You agree to indemnify and hold Company, its parents, subsidiaries, affiliates, officers, employees, agents, partners, suppliers, and licensors (each, a &ldquo;Company Party&rdquo; and collectively, the &ldquo;Company Parties&rdquo;) harmless from any losses, costs, liabilities and expenses (including reasonable attorneys&rsquo; fees) relating to or arising out of your: (a) use of, or inability to use, the Services; (b) violation of the Agreement; (c) violation of any rights of another party; or (d) violation of any applicable laws, rules or regulations. Company reserves the right, at its own cost, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you, in which event you will fully cooperate with Company in asserting any available defenses. This provision does not require you to indemnify any of the Company Parties for any unconscionable commercial practice by such party or for such party&rsquo;s fraud, deception, false promise, misrepresentation or concealment, or suppression or omission of any material fact in connection with the Services. You agree that the provisions in this section will survive any termination of your Account, the Agreement and/or your access to the Services.</p>
+
+  <h2><span class="num">5.</span> DISCLAIMER OF WARRANTIES AND CONDITIONS</h2>
+  <div class="divider"></div>
+
+  <h3>5.1 As Is</h3>
+  <p>YOU EXPRESSLY UNDERSTAND AND AGREE THAT TO THE EXTENT PERMITTED BY APPLICABLE LAW, YOUR USE OF THE SERVICES IS AT YOUR SOLE RISK, AND THE SERVICES ARE PROVIDED ON AN &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo; BASIS, WITH ALL FAULTS. COMPANY PARTIES EXPRESSLY DISCLAIM ALL WARRANTIES, REPRESENTATIONS, AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARISING FROM USE OF THE SERVICES.</p>
+
+  <h3>5.2 No Liability for Your Decisions</h3>
+  <p>THE INFORMATION AND SUGGESTIONS, INCLUDING ANY PROTECTION SCORE OR INFORMATION PERTAINING TO ANY THIRD PARTY PROVIDER, PROVIDED THROUGH THE SERVICES IS PROVIDED SOLELY FOR INFORMATIONAL PURPOSES. YOU ACKNOWLEDGE AND AGREE THAT THE INFORMATION AND SUGGESTIONS, INCLUDING ANY PROTECTION SCORE OR INFORMATION OR RECOMMENDATIONS PERTAINING TO SERVICES PROVIDERS, PROVIDED THROUGH THE SERVICES MAY NOT BE APPROPRIATE FOR YOU OR YOUR FINANCIAL SITUATION. YOU ARE SOLELY RESPONSIBLE FOR YOUR DECISIONS BASED ON INFORMATION OBTAINED THROUGH THE SERVICES AND FOR VERIFYING AND OBTAINING ALL INFORMATION NECESSARY FOR MAKING SUCH DECISIONS. AS SUCH, NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED FROM COMPANY OR THROUGH THE SERVICES WILL CREATE ANY WARRANTY NOT EXPRESSLY MADE HEREIN.</p>
+
+  <h3>5.3 No Liability for Errors and Results</h3>
+  <p>COMPANY PARTIES MAKE NO WARRANTY, REPRESENTATION OR CONDITION THAT: (1) THE SERVICES WILL MEET YOUR REQUIREMENTS; (2) YOUR USE OF SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE OR ERROR-FREE; OR (3) THE RESULTS THAT MAY BE OBTAINED FROM USE OF SERVICES WILL BE ACCURATE OR RELIABLE.</p>
+
+  <h3>5.4 No Liability for Content and Property Damage</h3>
+  <p>YOU ACKNOWLEDGE AND AGREE THAT ANY CONTENT DOWNLOADED FROM OR OTHERWISE ACCESSED THROUGH SERVICES IS ACCESSED AT YOUR OWN RISK, AND YOU SHALL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR PROPERTY, INCLUDING, BUT NOT LIMITED TO, YOUR COMPUTER SYSTEM AND ANY DEVICE YOU USE TO ACCESS THE SERVICES, OR ANY OTHER LOSS THAT RESULTS FROM ACCESSING SUCH CONTENT.</p>
+
+  <h3>5.5 No Liability for Conduct of Third Parties</h3>
+  <p>YOU ACKNOWLEDGE AND AGREE THAT WE ARE NOT A FINANCIAL INSTITUTION, INSURANCE AGENT, BROKER, OR PROVIDER AND THAT WE EXPRESSLY DISCLAIM ANY AND ALL LIABILITY FOR ANY CONTENT, PRODUCTS OR SERVICES PROVIDED BY THIRD PARTY PROVIDERS. YOU ACKNOWLEDGE AND AGREE THAT COMPANY PARTIES ARE NOT LIABLE, AND YOU AGREE NOT TO SEEK TO HOLD COMPANY PARTIES LIABLE, FOR THE CONDUCT OF THIRD PARTIES, INCLUDING OPERATORS OF EXTERNAL SITES, AND THAT THE RISK OF INJURY FROM SUCH THIRD PARTIES RESTS ENTIRELY WITH YOU.</p>
+
+  <h2><span class="num">6.</span> LIMITATION OF LIABILITY</h2>
+  <div class="divider"></div>
+
+  <h3>6.1 Disclaimer of Certain Damages</h3>
+  <p>YOU UNDERSTAND AND AGREE THAT, TO THE FULLEST EXTENT PROVIDED BY LAW, IN NO EVENT SHALL COMPANY PARTIES BE LIABLE FOR ANY LOSS OF PROFITS, REVENUE OR DATA, INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES, OR DAMAGES OR COSTS DUE TO LOSS OF PRODUCTION OR USE, BUSINESS INTERRUPTION, OR PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, IN EACH CASE WHETHER OR NOT COMPANY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, ARISING OUT OF OR IN CONNECTION WITH THE AGREEMENT OR ANY COMMUNICATIONS, INTERACTIONS WITH THE SERVICES OR THIRD PARTY PROVIDERS, ON ANY THEORY OF LIABILITY, RESULTING FROM: (a) THE USE OR INABILITY TO USE THE SERVICES; (b) THE COST OF PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES RESULTING FROM ANY GOODS, DATA, INFORMATION OR SERVICES PURCHASED OR OBTAINED; OR MESSAGES RECEIVED FOR TRANSACTIONS ENTERED INTO THROUGH THE SERVICES; (c) UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR INFORMATION OR DATA; (d) STATEMENTS OR CONDUCT OF ANY THIRD PARTY ON THE SERVICES; OR (e) ANY OTHER MATTER RELATED TO THE SERVICES, WHETHER BASED ON WARRANTY, COPYRIGHT, CONTRACT, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR ANY OTHER LEGAL THEORY. THE FOREGOING LIMITATION OF LIABILITY SHALL NOT APPLY TO LIABILITY OF A COMPANY PARTY FOR (i) DEATH OR PERSONAL INJURY CAUSED BY A COMPANY PARTY&rsquo;S NEGLIGENCE; OR FOR (ii) ANY INJURY CAUSED BY A COMPANY PARTY&rsquo;S FRAUD OR FRAUDULENT MISREPRESENTATION.</p>
+
+  <h3>6.2 Cap on Liability</h3>
+  <p>TO THE FULLEST EXTENT PROVIDED BY LAW, COMPANY PARTIES WILL NOT BE LIABLE TO YOU FOR MORE THAN THE GREATER OF: $1000 OR THE REMEDY OR PENALTY IMPOSED BY THE STATUTE UNDER WHICH SUCH CLAIM ARISES. THE FOREGOING CAP ON LIABILITY SHALL NOT APPLY TO LIABILITY OF A COMPANY PARTY FOR (a) DEATH OR PERSONAL INJURY CAUSED BY A COMPANY PARTY&rsquo;S NEGLIGENCE; OR FOR (b) ANY INJURY CAUSED BY A COMPANY PARTY&rsquo;S FRAUD OR FRAUDULENT MISREPRESENTATION.</p>
+
+  <h3>6.3 Exclusion of Damages</h3>
+  <p>CERTAIN JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. IF THESE LAWS APPLY TO YOU, SOME OR ALL OF THE ABOVE EXCLUSIONS OR LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MIGHT HAVE ADDITIONAL RIGHTS.</p>
+
+  <h3>6.4 Basis of the Bargain</h3>
+  <p>THE LIMITATIONS OF DAMAGES SET FORTH ABOVE ARE FUNDAMENTAL ELEMENTS OF THE BASIS OF THE BARGAIN BETWEEN COMPANY AND YOU.</p>
+
+  <h2><span class="num">7.</span> MONITORING AND ENFORCEMENT</h2>
+  <div class="divider"></div>
+  <p>Company may, but is not obligated to, monitor or review the Services at any time. Without limiting the foregoing, Company shall have the right, in its sole discretion, to remove any of Your Information for any reason (or no reason). Although Company does not generally monitor user activity occurring in connection with the Services, Company reserves the right to: (a) investigate violations of this Agreement or applicable law; (b) take appropriate legal action, including without limitation, referral to law enforcement, for any illegal or unauthorized use of the Services; and/or (c) terminate or suspend your access to all or part of the Services or remove or alter Your Information for any or no reason, including without limitation, any violation of this Agreement. Additionally, if Company believes that criminal activity has occurred, Company reserves the right to refer the matter to, and to cooperate with, any and all applicable legal authorities. Company is entitled to disclose any information or materials on or in the Services, including Your Information, in Company&rsquo;s possession in connection with your use of the Services, to (i) comply with applicable laws, legal process or governmental request; (ii) enforce the Agreement, (iii) respond to any claims that Your Information violates the rights of third parties, (iv) respond to your requests for customer service, or (v) protect the rights, property or personal safety of Company, its Registered Users or the public, and all enforcement or other government officials, as Company in its sole discretion believes to be necessary or appropriate.</p>
+
+  <h2><span class="num">8.</span> TERM AND TERMINATION</h2>
+  <div class="divider"></div>
+
+  <h3>8.1 Term</h3>
+  <p>The Agreement commences on the date when you accept these Terms of Use (as described in the preamble above) and will remain in full force and effect while you use the Services, unless terminated earlier in accordance with the Agreement.</p>
+
+  <h3>8.2 Termination of Services by Company</h3>
+  <p>Company has the right to, immediately and without notice, suspend or terminate this Agreement and/or any Services provided to you for any reason, including your violation of this Agreement, or no reason. You agree that all such terminations shall be made in Company&rsquo;s sole discretion and that Company shall not be liable to you or any third party for any termination of your Account.</p>
+
+  <h3>8.3 Termination of Services by You</h3>
+  <p>If you want to terminate this Agreement and/or your right to access and use the Services, you may do so by (a) notifying Company at any time and (b) closing your Account for all of the Services that you use. Your notice should be sent, in writing, to Company&rsquo;s address set forth below.</p>
+
+  <h3>8.4 Effect of Termination</h3>
+  <p>Termination of this Agreement includes removal of access to the Services and barring of further use of the Services, deletion of your password and all information and content associated with or inside your Account (or any part thereof), including Your Information. Company will not have any liability whatsoever to you for any suspension or termination, including for deletion of Your Information. All provisions of the Agreement which by their nature should survive, shall survive termination of Services, including without limitation, ownership provisions, warranty disclaimers, and limitation of liability.</p>
+
+  <h2><span class="num">9.</span> BETA SERVICES</h2>
+  <div class="divider"></div>
+  <p>We may make available certain Services that are identified as being in beta and allow you to access and use certain features, technologies, and/or services that are not yet generally commercially released (collectively referred to as &ldquo;Beta Services&rdquo;). In addition to the other provisions in this Agreement, the following additional provisions in this subsection apply to the Beta Services.</p>
+
+  <h3>9.1 Beta Period</h3>
+  <p>The license granted by Company under this Agreement with respect to the Beta Services will automatically terminate upon the release of a generally commercially available version of the applicable Beta Services, as otherwise set forth in this Agreement, or as determined by Company (&ldquo;Beta Period&rdquo;).</p>
+
+  <h3>9.2 As-Is</h3>
+  <p>Company may revoke, modify the permitted use of, or suspend your access to any Beta Services at any time and for any or no reason. NOTWITHSTANDING ANYTHING TO THE CONTRARY HEREIN, YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT ALL BETA SERVICES ARE PROVIDED ON AN &ldquo;AS-IS&rdquo; &ldquo;WHEREAS&rdquo; BASIS WITH ALL FAULTS AND WITHOUT ANY WARRANTIES.</p>
+
+  <h3>9.3 Confidentiality</h3>
+  <p>You acknowledge that all information pertaining to the Beta Services, including information pertaining to the features, functionality, and performance of the Beta Services are the confidential information of Company (&ldquo;Beta Information&rdquo;). By accessing or using the Beta Services, you agree to: (i) keep Beta Information confidential; (ii) not disclose any Beta Confidential Information to or permit any Beta Information to be accessed by any third parties; (iii) not use any Beta Information for any purpose other than using the Beta Services and providing feedback to Company with respect to such Beta Services; and (iv) promptly notify Company of any misuse or misappropriation of Beta Information that may come to your attention; provided that the foregoing (i) &ndash; (iv) does not apply to any information, that becomes generally known or publically available without any fault of your own or any information suggestions or Protection Scores provided through the Beta Services based on Your Information.</p>
+
+  <h2><span class="num">10.</span> INTERNATIONAL USERS</h2>
+  <div class="divider"></div>
+  <p>The Services may be able to be accessed from countries around the world and may contain references to Services and content that are not available in your country. These references do not imply that Company intends to announce such Services or content in your country. The Services are controlled and offered by Company from its facilities in the United States of America. Company makes no representations that the Services are appropriate or available for use in other locations. Those who access or use the Services from other countries do so at their own volition and are responsible for compliance with local law.</p>
+
+  <h2><span class="num">11.</span> DISPUTE RESOLUTION</h2>
+  <div class="divider"></div>
+  <p>Please read the following arbitration agreement in this section (&ldquo;Arbitration Agreement&rdquo;) carefully. It requires [U.S. users] to arbitrate disputes with Company and limits the manner in which you can seek relief from us.</p>
+
+  <h3>11.1 Applicability of Arbitration Agreement</h3>
+  <p>You agree that any dispute, claim, or request for relief relating in any way to your access or use of the Website, to any products sold or distributed through the Website, or to any aspect of your relationship with Company, will be resolved by binding arbitration, rather than in court, except that (a) you may assert claims or seek relief in small claims court if your claims qualify,; and (b) you or Company may seek equitable relief in court for infringement or other misuse of intellectual property rights (such as trademarks, trade dress, domain names, trade secrets, copyrights, and patents). This Arbitration Agreement shall apply, without limitation, to all disputes or claims and requests for relief that arose or were asserted before the effective date of this Agreement or any prior version of this Agreement.</p>
+
+  <h3>11.2 Arbitration Rules and Forum</h3>
+  <p>The Federal Arbitration Act governs the interpretation and enforcement of this Arbitration Agreement. To begin an arbitration proceeding, you must send a letter requesting arbitration and describing your dispute or claim or request for relief to our registered agent [include name and address of registered agent here]. The arbitration will be conducted by JAMS, an established alternative dispute resolution provider. Disputes involving claims, counterclaims, or request for relief under $250,000, not inclusive of attorneys&rsquo; fees and interest, shall be subject to JAMS&rsquo;s most current version of the Streamlined Arbitration Rules and procedures available at <a class="inline" href="http://www.jamsadr.com/rules-streamlined-arbitration/">http://www.jamsadr.com/rules-streamlined-arbitration/</a>; all other disputes shall be subject to JAMS&rsquo;s most current version of the Comprehensive Arbitration Rules and Procedures, available at <a class="inline" href="http://www.jamsadr.com/rules-comprehensive-arbitration/">http://www.jamsadr.com/rules-comprehensive-arbitration/</a>. JAMS&rsquo;s rules are also available at <a class="inline" href="http://www.jamsadr.com">www.jamsadr.com</a> or by calling JAMS at 800-352-5267. If JAMS is not available to arbitrate, the parties will select an alternative arbitral forum. If the arbitrator finds that you cannot afford to pay JAMS&rsquo;s filing, administrative, hearing and/or other fees and cannot obtain a waiver from JAMS, Company will pay them for you. In addition, Company will reimburse all such JAMS&rsquo;s filing, administrative, hearing and/or other fees for disputes, claims, or requests for relief totaling less than $10,000 unless the arbitrator determines the claims are frivolous.</p>
+  <p>You may choose to have the arbitration conducted by telephone, based on written submissions, or in person in the country where you live or at another mutually agreed location. Any judgment on the award rendered by the arbitrator may be entered in any court of competent jurisdiction.</p>
+
+  <h3>11.3 Authority of Arbitrator</h3>
+  <p>The arbitrator shall have exclusive authority to (a) determine the scope and enforceability of this Arbitration Agreement and (b) resolve any dispute related to the interpretation, applicability, enforceability or formation of this Arbitration Agreement including, but not limited to, any assertion that all or any part of this Arbitration Agreement is void or voidable. The arbitration will decide the rights and liabilities, if any, of you and Company. The arbitration proceeding will not be consolidated with any other matters or joined with any other cases or parties. The arbitrator shall have the authority to grant motions dispositive of all or part of any claim. The arbitrator shall have the authority to award monetary damages and to grant any non-monetary remedy or relief available to an individual under applicable law, the arbitral forum&rsquo;s rules, and the Agreement (including the Arbitration Agreement). The arbitrator shall issue a written award and statement of decision describing the essential findings and conclusions on which the award is based, including the calculation of any damages awarded. The arbitrator has the same authority to award relief on an individual basis that a judge in a court of law would have. The award of the arbitrator is final and binding upon you and us.</p>
+
+  <h3>11.4 Waiver of Jury Trial</h3>
+  <p>YOU AND COMPANY HEREBY WAIVE ANY CONSTITUTIONAL AND STATUTORY RIGHTS TO SUE IN COURT AND HAVE A TRIAL IN FRONT OF A JUDGE OR A JURY. You and Company are instead electing that all disputes, claims, or requests for relief shall be resolved by arbitration under this Arbitration Agreement, except as specified in Section 11.1 (Application of Arbitration Agreement) above. An arbitrator can award on an individual basis the same damages and relief as a court and must follow this Agreement as a court would. However, there is no judge or jury in arbitration, and court review of an arbitration award is subject to very limited review.</p>
+
+  <h3>11.5 Waiver of Class or Other Non-Individualized Relief</h3>
+  <p>ALL DISPUTES, CLAIMS, AND REQUESTS FOR RELIEF WITHIN THE SCOPE OF THIS ARBITRATION AGREEMENT MUST BE ARBITRATED ON AN INDIVIDUAL BASIS AND NOT ON A CLASS OR COLLECTIVE BASIS, ONLY INDIVIDUAL RELIEF IS AVAILABLE, AND CLAIMS OF MORE THAN ONE CUSTOMER OR USER CANNOT BE ARBITRATED OR CONSOLIDATED WITH THOSE OF ANY OTHER CUSTOMER OR USER. If a decision is issued stating that applicable law precludes enforcement of any of this section&rsquo;s limitations as to a given dispute, claim, or request for relief, then such aspect must be severed from the arbitration and brought into the State or Federal Courts located in the State of California. All other disputes, claims, or requests for relief shall be arbitrated.</p>
+
+  <h3>11.6 30-Day Right to Opt Out</h3>
+  <p>You have the right to opt out of the provisions of this Arbitration Agreement by sending written notice of your decision to opt out to: [insert email address], within thirty (30) days after first becoming subject to this Arbitration Agreement. Your notice must include your name and address, your Company username (if any), the email address you used to set up your Company account (if you have one), and an unequivocal statement that you want to opt out of this Arbitration Agreement. If you opt out of this Arbitration Agreement, all other parts of this Agreement will continue to apply to you. Opting out of this Arbitration Agreement has no effect on any other arbitration agreements that you may currently have, or may enter in the future, with us.</p>
+
+  <h3>11.7 Severability</h3>
+  <p>Except as provided in Section 11.5 (Waiver of Class or Other Non-Individualized Relief), if any part or parts of this Arbitration Agreement are found under the law to be invalid or unenforceable, then such specific part or parts shall be of no force and effect and shall be severed and the remainder of the Arbitration Agreement shall continue in full force and effect.</p>
+
+  <h3>11.8 Survival of Agreement</h3>
+  <p>This Arbitration Agreement will survive the termination of your relationship with Company.</p>
+
+  <h3>11.9 Modification</h3>
+  <p>Notwithstanding any provision in this Agreement to the contrary, we agree that if Company makes any future material change to this Arbitration Agreement, you may reject that change within thirty (30) days of such change becoming effective by writing Company at the following address: 370 Convention Way, 3rd floor, Redwood City, CA, 94063.</p>
+
+  <h2><span class="num">12.</span> GENERAL PROVISIONS</h2>
+  <div class="divider"></div>
+
+  <h3>Electronic Communications</h3>
+  <p>The communications between you and Company may take place via electronic means, whether you visit the Services or send Company e-mails, or whether Company posts notices on the Services or communicates with you via e-mail. For contractual purposes, you (a) consent to receive communications from Company in an electronic form; and (b) agree that all terms and conditions, agreements, notices, disclosures, and other communications that Company provides to you electronically satisfy any legal requirement that such communications would satisfy if it were to be in writing. The foregoing does not affect your statutory rights, including but not limited to the Electronic Signatures in Global and National Commerce Act at 15 U.S.C. &sect;7001 et seq. (&ldquo;E-Sign&rdquo;).</p>
+
+  <h3>Release</h3>
+  <p>You hereby release Company Parties and their successors from claims, demands, any and all losses, damages, rights, and actions of any kind, including personal injuries, death, and property damage, that is either directly or indirectly related to or arises from your use of the Services, including but not limited to, any interactions with or conduct of other users or third-party websites of any kind arising in connection with or as a result of the Agreement or your use of the Services. If you are a California resident, you hereby waive California Civil Code Section 1542, which states, &ldquo;A general release does not extend to claims that the creditor or releasing party does not know or suspect to exist in his or her favor at the time of executing the release and that, if known by him or her, would have materially affected his or her settlement with the debtor or released party.&rdquo; The foregoing release does not apply to any claims, demands, or any losses, damages, rights and actions of any kind, including personal injuries, death or property damage for any unconscionable commercial practice by a Company Party or for such party&rsquo;s fraud, deception, false, promise, misrepresentation or concealment, suppression or omission of any material fact in connection with the Website [or any Services provided hereunder].</p>
+
+  <h3>Assignment</h3>
+  <p>The Agreement, and your rights and obligations hereunder, may not be assigned, subcontracted, delegated or otherwise transferred by you without Company&rsquo;s prior written consent, and any attempted assignment, subcontract, delegation, or transfer in violation of the foregoing will be null and void.</p>
+
+  <h3>Force Majeure</h3>
+  <p>Company shall not be liable for any delay or failure to perform resulting from causes outside its reasonable control, including, but not limited to, acts of God, war, terrorism, riots, embargos, acts of civil or military authorities, fire, floods, accidents, strikes or shortages of transportation facilities, fuel, energy, labor or materials.</p>
+
+  <h3>Questions, Complaints, Claims</h3>
+  <p>If you have any questions, complaints or claims with respect to the Services, please contact us at <a class="inline" href="mailto:help@covu.com">help@covu.com</a>. We will do our best to address your concerns. If you feel that your concerns have been addressed incompletely, we invite you to let us know for further investigation.</p>
+
+  <h3>Exclusive Venue</h3>
+  <p>To the extent the parties are permitted under this Agreement to initiate litigation in a court, both you and Company agree that all claims and disputes arising out of or relating to the Agreement will be litigated exclusively in the state or federal courts located in Santa Clara County, California.</p>
+
+  <h3>Governing Law</h3>
+  <p>THE TERMS AND ANY ACTION RELATED THERETO WILL BE GOVERNED AND INTERPRETED BY AND UNDER THE LAWS OF THE STATE OF CALIFORNIA, CONSISTENT WITH THE FEDERAL ARBITRATION ACT, WITHOUT GIVING EFFECT TO ANY PRINCIPLES THAT PROVIDE FOR THE APPLICATION OF THE LAW OF ANOTHER JURISDICTION. THE UNITED NATIONS CONVENTION ON CONTRACTS FOR THE INTERNATIONAL SALE OF GOODS DOES NOT APPLY TO THE AGREEMENT.</p>
+
+  <h3>Notice</h3>
+  <p>Where Company requires that you provide an e-mail address, you are responsible for providing Company with your most current e-mail address. In the event that the last e-mail address you provided to Company is not valid, or for any reason is not capable of delivering to you any notices required/ permitted by the Agreement, Company&rsquo;s dispatch of the e-mail containing such notice will nonetheless constitute effective notice. You may give notice to Company at the following address: 370 Convention Way, 3rd floor, Redwood City, CA, 94063. Such notice shall be deemed given when received by Company by letter delivered by nationally recognized overnight delivery service or first class postage prepaid mail at the above address.</p>
+
+  <h3>Waiver</h3>
+  <p>Any waiver or failure to enforce any provision of the Agreement on one occasion will not be deemed a waiver of any other provision or of such provision on any other occasion.</p>
+
+  <h3>Severability</h3>
+  <p>If any portion of this Agreement is held invalid or unenforceable, that portion shall be construed in a manner to reflect, as nearly as possible, the original intention of the parties, and the remaining portions shall remain in full force and effect.</p>
+
+  <h3>Export Control</h3>
+  <p>You may not use, export, import, or transfer the Services except as authorized by U.S. law, the laws of the jurisdiction in which you obtained the Services, and any other applicable laws. In particular, but without limitation, the Services may not be exported or re-exported (a) into any United States embargoed countries, or (b) to anyone on the U.S. Treasury Department&rsquo;s list of Specially Designated Nationals or the U.S. Department of Commerce&rsquo;s Denied Person&rsquo;s List or Entity List. By using the Services, you represent and warrant that (i) you are not located in a country that is subject to a U.S. Government embargo, or that has been designated by the U.S. Government as a &ldquo;terrorist supporting&rdquo; country and (ii) you are not listed on any U.S. Government list of prohibited or restricted parties. You also will not use the Services for any purpose prohibited by U.S. law, including the development, design, manufacture or production of missiles, nuclear, chemical or biological weapons. You acknowledge and agree that products, services or technology provided by Company are subject to the export control laws and regulations of the United States. You shall comply with these laws and regulations and shall not, without prior U.S. government authorization, export, re-export, or transfer the Services, services or technology, either directly or indirectly, to any country in violation of such laws and regulations.</p>
+
+  <h3>Consumer Complaints</h3>
+  <p>In accordance with California Civil Code &sect;1789.3, you may report complaints to the Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs by contacting them in writing at 1625 North Market Blvd., Suite N 112, Sacramento, CA 95834, or by telephone at (800) 952-5210.</p>
+
+  <h3>Entire Agreement</h3>
+  <p>The Agreement is the final, complete and exclusive agreement of the parties with respect to the subject matter hereof and supersedes and merges all prior discussions between the parties with respect to such subject matter.</p>
+
+  <h3>App Stores</h3>
+  <p>You acknowledge and agree that the availability of any Application is dependent on the third party from whom you received the Application license, e.g., the Apple App Store or Google Play (each, an &ldquo;App Store&rdquo;). You acknowledge that the Agreement is between you and Company and not with the App Store. Company, not the App Store, is solely responsible for the Services, including the Application, the content thereof, maintenance, support services, and warranty therefor, and addressing any claims relating thereto (e.g., product liability, legal compliance or intellectual property infringement). In order to use the Application, you must have access to a wireless network, and you agree to pay all fees associated with such access. You also agree to pay all fees (if any) charged by the App Store in connection with the Services, including the Application. You agree to comply with, and your license to use the Application is conditioned upon your compliance with all terms of agreement imposed by the applicable App Store when using the Services, including the Application. You acknowledge that the App Store (and its subsidiaries) are third-party beneficiaries of the Agreement and will have the right to enforce it.</p>
+
+  <h3>Accessing and Downloading the Application from iTunes</h3>
+  <p>The following applies to any App Store Sourced Application accessed through or downloaded from the Apple App Store:</p>
+  <p>You acknowledge and agree that (i) the Agreement is concluded between you and Company only, and not Apple, and (ii) Company, not Apple, is solely responsible for the App Store Sourced Application and content thereof. Your use of the App Store Sourced Application must comply with the App Store Terms of Service.</p>
+  <p>You acknowledge that Apple has no obligation whatsoever to furnish any maintenance and support services with respect to the App Store Sourced Application.</p>
+  <p>In the event of any failure of the App Store Sourced Application to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price for the App Store Sourced Application to you and to the maximum extent permitted by applicable law, Apple will have no other warranty obligation whatsoever with respect to the App Store Sourced Application. As between Company and Apple, any other claims, losses, liabilities, damages, costs or expenses attributable to any failure to conform to any warranty will be the sole responsibility of Company.</p>
+  <p>You and Company acknowledge that, as between Company and Apple, Apple is not responsible for addressing any claims you have or any claims of any third party relating to the App Store Sourced Application or your possession and use of the App Store Sourced Application, including, but not limited to: (i) product liability claims; (ii) any claim that the App Store Sourced Application fails to conform to any applicable legal or regulatory requirement; and (iii) claims arising under consumer protection or similar legislation.</p>
+  <p>You and Company acknowledge that, in the event of any third-party claim that the App Store Sourced Application or your possession and use of that App Store Sourced Application infringes that third party&rsquo;s intellectual property rights, as between Company and Apple, Company, not Apple, will be solely responsible for the investigation, defense, settlement and discharge of any such intellectual property infringement claim to the extent required by the Agreement.</p>
+  <p>You and Company acknowledge and agree that Apple, and Apple&rsquo;s subsidiaries, are third-party beneficiaries of the Agreement as related to your license of the App Store Sourced Application, and that, upon your acceptance of the terms and conditions of the Agreement, Apple will have the right (and will be deemed to have accepted the right) to enforce the Agreement as related to your license of the App Store Sourced Application against you as a third-party beneficiary thereof.</p>
+  <p>Without limiting any other terms of the Agreement, you must comply with all applicable third-party terms of agreement when using the App Store Sourced Application.</p>
+
+  <div class="callout">
+    <p>Message frequency varies, and data rates may apply. For assistance, text HELP; to unsubscribe, text STOP. Note: Carriers are not liable for delayed or undelivered messages.</p>
+  </div>
+
+</main>
+
+<!-- ===== CTA + FOOTER ===== -->
+<div id="sec-ctafoot">
+  <div class="ctawrap">
+    <section class="cta">
+      <div class="cta-inner">
+        <div class="cta-eyebrow">Book a Call</div>
+        <h2>Experience the Future of<br><span class="hl">P&amp;C Operations</span></h2>
+        <div class="formcard">
+          <label for="email">Work Email*</label>
+          <div class="inrow">
+            <input id="email" name="email" type="email" placeholder="you@youragency.com">
+            <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+          </div>
+          <a class="submit" href="https://covu-website-test.vercel.app/book-a-consultation-with-covu">Book a Consultation</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="ft-wrap">
+  <footer class="ft-footer">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="ft-logo">COVU</div>
+        <p class="ft-tag">The operating stack for P&amp;C insurance service operations.</p>
+        <a class="ft-cta" href="https://covu-website-test.vercel.app/book-a-consultation-with-covu">Book a demo</a>
+      </div>
+      <div class="ft-col">
+        <div class="ft-h4">Product</div>
+        <ul>
+          <li><a href="https://covu-website-test.vercel.app/">The Stack</a></li>
+          <li><a href="https://covu-website-test.vercel.app/">Connect</a></li>
+          <li><a href="https://go.covu.com/os">OS</a></li>
+          <li><a href="https://covu-website-test.vercel.app/">Service Network</a></li>
+          <li><a href="https://covu-website-test.vercel.app/">Vero / AI</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-h4">Solutions</div>
+        <div class="ft-sub">By need</div>
+        <ul>
+          <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Extra Servicing Capacity</a></li>
+          <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Operational Visibility &amp; Control</a></li>
+          <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Free Up Your Best People</a></li>
+          <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">AI Enablement</a></li>
+        </ul>
+        <div class="ft-sub">By focus</div>
+        <ul>
+          <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Servicing</a></li>
+          <li><a href="https://covu-website-test.vercel.app/grow-your-agency">Growth</a></li>
+          <li><a href="https://covu-website-test.vercel.app/acquisition">Acquisition</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-h4">By agency size</div>
+        <ul>
+          <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Owner-led</a></li>
+          <li><a href="https://covu-website-test.vercel.app/grow-your-agency">Scaling</a></li>
+          <li><a href="https://covu-website-test.vercel.app/support-on-insurance-operations">Regional &amp; multi-office</a></li>
+          <li><a href="https://covu-website-test.vercel.app/acquisition">Enterprise &amp; acquisitive</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-h4">Resources</div>
+        <ul>
+          <li><a href="https://blog.covu.com">Case Studies</a></li>
+          <li><a href="https://blog.covu.com">Blog</a></li>
+          <li><a href="https://covu-website-test.vercel.app/agency-resources">Guides</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-h4">Company</div>
+        <ul>
+          <li><a href="https://covu-website-test.vercel.app/about-us">About</a></li>
+          <li><a href="https://covu-website-test.vercel.app/about-us">Team</a></li>
+          <li><a href="https://covu.bamboohr.com/careers">Careers</a></li>
+          <li><a href="https://covu-website-test.vercel.app/">Investors</a></li>
+          <li><a href="https://covu-website-test.vercel.app/press">Press / Media</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ft-bottom">
+      <div class="ft-left">
+        <span class="ft-copy">&copy; 2026 COVU, Inc.</span>
+        <div class="ft-legal">
+          <a href="https://covu-website-test.vercel.app/privacy-policy">Privacy Policy</a>
+          <a href="https://covu-website-test.vercel.app/terms-of-use">Terms of Use</a>
+          <a href="https://covu-website-test.vercel.app/privacy-policy">Cookie Preferences</a>
+        </div>
+      </div>
+      <div class="ft-social">
+        <a href="https://www.linkedin.com/company/covuinc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://twitter.com/covu_inc" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26L22.5 21.75h-6.66l-5.22-6.82-5.97 6.82H1.34l7.73-8.84L1.5 2.25h6.83l4.72 6.23 5.19-6.23zm-1.16 17.52h1.83L7.01 4.13H5.04L17.08 19.77z"/></svg></a>
+        <a href="https://www.instagram.com/covu_inc/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.35 2.67.94 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.12.66.66 1.33 1.08 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.7 5.7 0 0 0 2.12-1.38 5.7 5.7 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.7 5.7 0 0 0-1.38-2.12A5.7 5.7 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.41a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
+        <a href="https://www.facebook.com/covuinc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
+        <a href="https://www.youtube.com/channel/UCVrR7a3ipRCKQF0JThFTVXw/featured" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ft-disc">COVU Insurance Solutions LLC is a licensed insurance agency &middot; NPN 19476180 &middot; 370 Convention Way, Redwood City, CA 94063</div>
+  </footer>
+  </div>
+</div>
+
+<style>/* nav-pad-fix: clear global sticky covu-nav overlay */
+.terms-hero{padding-top:20px !important}</style>
+<script src="/js/include.js"></script>
+<script src="/js/nav.js"></script>
+</body>
+</html>
