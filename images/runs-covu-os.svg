@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ro1" class="ill" viewBox="0 0 300 150" role="img" aria-label="COVU OS — work broken into routed tasks">
+          <style>
+            #ro1 .flow{stroke-dasharray:4 8;animation:ro1flow 1.4s linear infinite}
+            @keyframes ro1flow{to{stroke-dashoffset:-24}}
+            #ro1 .chk{transform-box:fill-box;transform-origin:center;animation:ro1chk 2.4s ease-in-out infinite}
+            #ro1 .c2{animation-delay:.35s}#ro1 .c3{animation-delay:.7s}
+            @keyframes ro1chk{0%,70%,100%{opacity:.5;transform:scale(.8)}12%,42%{opacity:1;transform:scale(1)}}
+            #ro1 .work{animation:ro1bob 3s ease-in-out infinite}
+            @keyframes ro1bob{0%,100%{transform:translateX(0)}50%{transform:translateX(3px)}}
+            @media(prefers-reduced-motion:reduce){#ro1 .flow,#ro1 .chk,#ro1 .work{animation:none}#ro1 .chk{opacity:1}}
+          </style>
+          <g class="work"><rect x="14" y="64" width="52" height="22" rx="6" fill="#FFF7E6" stroke="#F4E3B3"/><rect x="22" y="72" width="8" height="6" rx="1.5" fill="#E0A100"/><text x="36" y="79" font-family="Nunito Sans, sans-serif" font-size="10" font-weight="800" fill="#1C2945">Work</text></g>
+          <path d="M66 75 H92" fill="none" stroke="#D3DBEE" stroke-width="2"/>
+          <rect x="92" y="58" width="36" height="36" rx="10" fill="#1C2945"/><path d="M118 68 l-9 7 9 7" fill="none" stroke="#FFB703" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="none" stroke="#D3DBEE" stroke-width="2"><path d="M128 75 C150 75 150 40 172 40"/><path d="M128 75 H172"/><path d="M128 75 C150 75 150 110 172 110"/></g>
+          <g fill="none" stroke="#FFB703" stroke-width="2" stroke-linecap="round"><path class="flow" d="M128 75 C150 75 150 40 172 40"/><path class="flow" style="animation-delay:.3s" d="M128 75 H172"/><path class="flow" style="animation-delay:.6s" d="M128 75 C150 75 150 110 172 110"/></g>
+          <g font-family="Nunito Sans, sans-serif">
+            <rect x="172" y="28" width="110" height="24" rx="7" fill="#fff" stroke="#E7EBF5"/><rect x="182" y="37" width="60" height="6" rx="3" fill="#D3DBEE"/><g class="chk c1"><circle cx="270" cy="40" r="8" fill="#E7F7EE"/><path d="M266 40 l3 3 5-6" fill="none" stroke="#1FA463" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+            <rect x="172" y="63" width="110" height="24" rx="7" fill="#fff" stroke="#E7EBF5"/><rect x="182" y="72" width="72" height="6" rx="3" fill="#FFD774"/><g class="chk c2"><circle cx="270" cy="75" r="8" fill="#E7F7EE"/><path d="M266 75 l3 3 5-6" fill="none" stroke="#1FA463" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+            <rect x="172" y="98" width="110" height="24" rx="7" fill="#fff" stroke="#E7EBF5"/><rect x="182" y="107" width="52" height="6" rx="3" fill="#D3DBEE"/><g class="chk c3"><circle cx="270" cy="110" r="8" fill="#E7F7EE"/><path d="M266 110 l3 3 5-6" fill="none" stroke="#1FA463" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+          </g>
+        </svg>

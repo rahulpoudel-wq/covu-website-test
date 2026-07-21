@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ro4" class="ill" viewBox="0 0 300 150" role="img" aria-label="BEX — turn any email into a structured request">
+          <style>
+            #ro4 .flow{stroke-dasharray:4 8;animation:ro4flow 1.5s linear infinite}
+            @keyframes ro4flow{to{stroke-dashoffset:-24}}
+            #ro4 .node{transform-box:fill-box;transform-origin:center;animation:ro4node 1.9s ease-in-out infinite}
+            @keyframes ro4node{0%,100%{transform:scale(.85)}50%{transform:scale(1.05)}}
+            #ro4 .env{animation:ro4bob 3s ease-in-out infinite}
+            @keyframes ro4bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+            #ro4 .row{transform-box:fill-box;transform-origin:left center;animation:ro4row 2.6s ease-in-out infinite}
+            #ro4 .r2{animation-delay:.5s}#ro4 .r3{animation-delay:.8s}
+            @keyframes ro4row{0%,100%{opacity:.55}45%{opacity:1}}
+            @media(prefers-reduced-motion:reduce){#ro4 .flow,#ro4 .node,#ro4 .env,#ro4 .row{animation:none}#ro4 .row{opacity:1}}
+          </style>
+          <g class="env"><rect x="20" y="52" width="72" height="46" rx="8" fill="#fff" stroke="#E7EBF5"/><path d="M20 60 l36 24 36-24" fill="none" stroke="#B2CEDF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+          <path d="M96 75 H150" fill="none" stroke="#D3DBEE" stroke-width="2"/><path class="flow" d="M96 75 H150" fill="none" stroke="#FFB703" stroke-width="2" stroke-linecap="round"/>
+          <g class="node"><circle cx="123" cy="75" r="7" fill="#FFB703"/><path d="M120 75l2 2 4-4" fill="none" stroke="#1C2945" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+          <path d="M150 75 l-6 -4 v8z" fill="#98A2B3"/>
+          <rect x="164" y="40" width="118" height="70" rx="10" fill="#fff" stroke="#E7EBF5"/>
+          <circle cx="178" cy="54" r="3" fill="#1FA463"/><rect x="188" y="51" width="60" height="6" rx="3" fill="#1C2945"/>
+          <rect class="row r1" x="178" y="66" width="90" height="6" rx="3" fill="#FFD774"/>
+          <rect class="row r2" x="178" y="79" width="70" height="6" rx="3" fill="#D3DBEE"/>
+          <rect class="row r3" x="178" y="92" width="52" height="6" rx="3" fill="#D3DBEE"/>
+        </svg>

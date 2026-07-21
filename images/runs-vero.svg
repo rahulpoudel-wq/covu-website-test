@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ro3" class="ill" viewBox="0 0 300 150" role="img" aria-label="VERO — AI woven through every layer">
+          <style>
+            #ro3 .flow{stroke-dasharray:4 8;animation:ro3flow 1.7s linear infinite}
+            @keyframes ro3flow{to{stroke-dashoffset:-24}}
+            #ro3 .halo{transform-box:fill-box;transform-origin:center;animation:ro3halo 3s ease-in-out infinite}
+            @keyframes ro3halo{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.12);opacity:1}}
+            #ro3 .spark{transform-box:fill-box;transform-origin:center;animation:ro3spin 8s linear infinite}
+            @keyframes ro3spin{to{transform:rotate(360deg)}}
+            #ro3 .lp{transform-box:fill-box;transform-origin:left center;animation:ro3lp 2.7s ease-in-out infinite}
+            #ro3 .lp2{animation-delay:.4s}#ro3 .lp3{animation-delay:.8s}
+            @keyframes ro3lp{0%,100%{opacity:.7}50%{opacity:1}}
+            @media(prefers-reduced-motion:reduce){#ro3 .flow,#ro3 .halo,#ro3 .spark,#ro3 .lp{animation:none}}
+          </style>
+          <g font-family="Nunito Sans, sans-serif" font-size="10" font-weight="800" fill="#1C2945">
+            <g class="lp"><rect x="16" y="34" width="104" height="26" rx="8" fill="#fff" stroke="#E7EBF5"/><circle cx="30" cy="47" r="4" fill="#11426B"/><text x="42" y="51">Connect</text></g>
+            <g class="lp lp2"><rect x="16" y="66" width="104" height="26" rx="8" fill="#fff" stroke="#E7EBF5"/><circle cx="30" cy="79" r="4" fill="#FFB703"/><text x="42" y="83">COVU OS</text></g>
+            <g class="lp lp3"><rect x="16" y="98" width="104" height="26" rx="8" fill="#fff" stroke="#E7EBF5"/><circle cx="30" cy="111" r="4" fill="#219EBC"/><text x="42" y="115">Network</text></g>
+          </g>
+          <g fill="none" stroke="#F4E3B3" stroke-width="2"><path d="M120 47 C160 47 176 79 202 79"/><path d="M120 79 H202"/><path d="M120 111 C160 111 176 79 202 79"/></g>
+          <g fill="none" stroke="#FFB703" stroke-width="2" stroke-linecap="round"><path class="flow" d="M120 47 C160 47 176 79 202 79"/><path class="flow" style="animation-delay:.35s" d="M120 79 H202"/><path class="flow" style="animation-delay:.7s" d="M120 111 C160 111 176 79 202 79"/></g>
+          <circle class="halo" cx="222" cy="79" r="26" fill="#FFF7E6" stroke="#F4E3B3"/><circle cx="222" cy="79" r="17" fill="#FFB703"/>
+          <path class="spark" d="M222 68 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" fill="#1C2945"/>
+        </svg>

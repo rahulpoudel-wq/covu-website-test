@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ro2" class="ill" viewBox="0 0 300 150" role="img" aria-label="Service Capacity — licensed people and AI do the work on demand">
+          <style>
+            #ro2 .flow{stroke-dasharray:4 8;animation:ro2flow 1.5s linear infinite}
+            @keyframes ro2flow{to{stroke-dashoffset:-24}}
+            #ro2 .agent{transform-box:fill-box;transform-origin:center;animation:ro2pulse 2.2s ease-in-out infinite}
+            #ro2 .a2{animation-delay:.35s}#ro2 .a3{animation-delay:.7s}#ro2 .a4{animation-delay:1.05s}
+            @keyframes ro2pulse{0%,100%{transform:scale(.9);opacity:.75}50%{transform:scale(1.06);opacity:1}}
+            #ro2 .hub{transform-box:fill-box;transform-origin:center;animation:ro2hub 1.9s ease-in-out infinite}
+            @keyframes ro2hub{0%,100%{transform:scale(.92)}50%{transform:scale(1.08)}}
+            #ro2 .task{transform-box:fill-box;transform-origin:left center;animation:ro2task 2.6s ease-in-out infinite}
+            #ro2 .t2{animation-delay:.4s}#ro2 .t3{animation-delay:.8s}
+            @keyframes ro2task{0%,100%{opacity:.55}45%{opacity:1}}
+            @media(prefers-reduced-motion:reduce){#ro2 .flow,#ro2 .agent,#ro2 .hub,#ro2 .task{animation:none}#ro2 .agent{opacity:1}}
+          </style>
+          <g>
+            <rect class="task t1" x="14" y="42" width="58" height="12" rx="4" fill="#FFF7E6" stroke="#F4E3B3"/>
+            <rect class="task t2" x="14" y="69" width="58" height="12" rx="4" fill="#fff" stroke="#E7EBF5"/>
+            <rect class="task t3" x="14" y="96" width="58" height="12" rx="4" fill="#fff" stroke="#E7EBF5"/>
+          </g>
+          <path d="M72 75 H104" fill="none" stroke="#D3DBEE" stroke-width="2"/>
+          <path class="flow" d="M72 75 H104" fill="none" stroke="#FFB703" stroke-width="2" stroke-linecap="round"/>
+          <circle class="hub" cx="112" cy="75" r="9" fill="#1C2945"/><circle cx="112" cy="75" r="3.4" fill="#FFB703"/>
+          <g fill="none" stroke="#D3DBEE" stroke-width="2">
+            <path d="M121 75 C150 75 152 40 182 40"/>
+            <path d="M121 75 C150 75 152 62 182 62"/>
+            <path d="M121 75 C150 75 152 90 182 90"/>
+            <path d="M121 75 C150 75 152 112 182 112"/>
+          </g>
+          <g fill="none" stroke="#FFB703" stroke-width="2" stroke-linecap="round">
+            <path class="flow" d="M121 75 C150 75 152 40 182 40"/>
+            <path class="flow" style="animation-delay:.25s" d="M121 75 C150 75 152 62 182 62"/>
+            <path class="flow" style="animation-delay:.5s" d="M121 75 C150 75 152 90 182 90"/>
+            <path class="flow" style="animation-delay:.75s" d="M121 75 C150 75 152 112 182 112"/>
+          </g>
+          <g class="agent a1"><circle cx="196" cy="40" r="13" fill="#fff" stroke="#E7EBF5"/><circle cx="196" cy="36" r="4" fill="#1C2945"/><path d="M188 48c0-4 3.6-6 8-6s8 2 8 6" fill="#1C2945"/></g>
+          <g class="agent a2"><circle cx="196" cy="62" r="13" fill="#FFF7E6" stroke="#F4E3B3"/><path d="M196 54l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#E0A100"/></g>
+          <g class="agent a3"><circle cx="196" cy="90" r="13" fill="#fff" stroke="#E7EBF5"/><circle cx="196" cy="86" r="4" fill="#1C2945"/><path d="M188 98c0-4 3.6-6 8-6s8 2 8 6" fill="#1C2945"/></g>
+          <g class="agent a4"><circle cx="196" cy="112" r="12" fill="none" stroke="#D3DBEE" stroke-width="1.6" stroke-dasharray="3 4"/><path d="M196 106v12M190 112h12" stroke="#98A2B3" stroke-width="2" stroke-linecap="round"/></g>
+          <g font-family="Nunito Sans, sans-serif" font-size="9" font-weight="800" fill="#8A93A6">
+            <text x="218" y="43">Licensed</text>
+            <text x="218" y="65">VERO AI</text>
+            <text x="218" y="93">Licensed</text>
+            <text x="218" y="115">On demand</text>
+          </g>
+        </svg>

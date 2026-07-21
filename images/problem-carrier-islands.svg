@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 210" role="img" aria-label="Diagram: the same facts get re-keyed across separate carrier portals and back into the AMS, with copy-paste between every one.">
+          <defs>
+            <marker id="bexah" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0 0l6 3-6 3z" fill="#8A97B0"/></marker>
+          </defs>
+          <rect x="180" y="14" width="100" height="34" rx="9" fill="rgba(255,183,3,.12)" stroke="rgba(255,183,3,.5)"/>
+          <text x="230" y="35" font-size="11" font-weight="700" fill="#FFB703" text-anchor="middle" font-family="Nunito Sans">Your AMS</text>
+          <g font-family="Nunito Sans" font-size="10" font-weight="700" fill="#c7d0e2">
+            <rect x="20" y="120" width="96" height="70" rx="10" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/>
+            <text x="68" y="150" text-anchor="middle">Carrier A</text>
+            <rect x="182" y="120" width="96" height="70" rx="10" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/>
+            <text x="230" y="150" text-anchor="middle">Carrier B</text>
+            <rect x="344" y="120" width="96" height="70" rx="10" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/>
+            <text x="392" y="150" text-anchor="middle">Carrier C</text>
+            <g font-size="7.5" font-weight="400" fill="#8A97B0">
+              <text x="68" y="166" text-anchor="middle">login + 2FA</text>
+              <text x="230" y="166" text-anchor="middle">login + 2FA</text>
+              <text x="392" y="166" text-anchor="middle">login + 2FA</text>
+            </g>
+          </g>
+          <g stroke="#8A97B0" stroke-width="1.4" fill="none" stroke-dasharray="4 4">
+            <path d="M210 50 C150 70 90 90 68 118" marker-end="url(#bexah)"/>
+            <path d="M230 50 L230 118" marker-end="url(#bexah)"/>
+            <path d="M250 50 C310 70 370 90 392 118" marker-end="url(#bexah)"/>
+          </g>
+          <g font-family="Nunito Sans" font-size="7.5" fill="#FFB703">
+            <text x="120" y="80">copy / paste</text>
+            <text x="238" y="84">re-key</text>
+            <text x="320" y="80">copy / paste</text>
+          </g>
+        </svg>
