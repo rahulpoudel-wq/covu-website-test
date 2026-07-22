@@ -1738,7 +1738,11 @@ document.documentElement.classList.add('js');
     }
   }
   function resize(){ var r=canvas.getBoundingClientRect(); dpr=Math.min(window.devicePixelRatio||1,2); W=Math.max(1,r.width|0); H=Math.max(1,r.height|0); canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); var cw=root.querySelector('.ctawrap'); ctaH=cw?cw.getBoundingClientRect().height:H; var ff=root.querySelector('.ft-footer'); if(ff){ var fr=ff.getBoundingClientRect(); fx0=fr.left-r.left; fx1=fr.right-r.left; fy0=fr.top-r.top; fy1=fr.bottom-r.top; } else { fx1=-1; } buildGrid(); zones[0].appr=-1; zones[1].appr=-1; }
-  window.addEventListener('resize',resize); resize(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(resize);
+  window.addEventListener('resize',resize);
+  root.addEventListener('include:loaded',function(e){
+    if(e.target&&e.target.matches('[data-include="/partials/footer.html"]')) resize();
+  });
+  resize(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(resize);
   var running=false, raf=null, reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   function frame(t){ draw(t); if(running) raf=requestAnimationFrame(frame); else raf=null; }
   function start(){ if(raf) return; if(reduce){ draw(CONV+HOLD*0.4); return; } running=true; raf=requestAnimationFrame(frame); }
