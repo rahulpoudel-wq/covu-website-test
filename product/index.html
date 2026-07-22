@@ -83,7 +83,7 @@ p{margin:0}
 /* ================= HERO (isometric pentagon, reused) ================= */
 #hero-penta{
   --border:#D3DBEE; --muted:#98A2B3; --body:#5B6B87;
-  position:relative; overflow:hidden; padding:164px 48px 76px;
+  position:relative; overflow:hidden; padding:0 48px 76px;
   background:
     radial-gradient(900px 520px at 78% 8%,rgba(255,183,3,.22),transparent 60%),
     radial-gradient(760px 560px at 12% 30%,rgba(178,206,223,.30),transparent 62%),
@@ -200,7 +200,7 @@ p{margin:0}
   #hero-penta .penta{transform:scale(.86); margin:-30px 0;}
 }
 @media (max-width:940px){
-  #hero-penta{padding:18px 24px 56px;}
+  #hero-penta{padding:0 24px 56px;}
   #hero-penta .stage{grid-template-columns:1fr;}
   #hero-penta .penta-wrap{order:2; width:100%; overflow:hidden;}
   #hero-penta h1{max-width:none;}
@@ -215,7 +215,11 @@ p{margin:0}
 /* ================= NAVBAR ================= */
 #w2-page > .nav-shell{position:fixed;top:16px;left:0;right:0;z-index:120;padding:0 24px}
 /* .navbar wrapper styling is handled by shared /css/nav.css (transparent sticky wrapper).
-   The old inline pill rule was removed — it double-wrapped the shared nav pill. */
+   The old inline pill rule was removed — it double-wrapped the shared nav pill.
+   The 18px gap above the nav comes from the shared .navbar sticky top:18px, so the
+   hero must NOT add its own top padding (padding-top:0) or it stacks to 36px. Also
+   zero the shared 18px .navbar margin-top. Matches enterprise/home nav placement. */
+#hero-penta .navbar{margin-top:0 !important}
 .nav-logo{font-family:"Nunito",sans-serif;font-weight:800;font-size:26px;letter-spacing:.5px;color:var(--navy)}
 .nav-links{display:flex;align-items:center;gap:6px}
 .nav-item > a{position:relative;font-weight:700;font-size:15.5px;color:var(--navy);padding:10px 16px;border-radius:9999px;
