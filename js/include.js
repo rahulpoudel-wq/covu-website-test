@@ -52,6 +52,10 @@
     anchors.forEach(function (anchor) {
       var label = anchor.textContent.replace(/\s+/g, " ").trim();
       if (footerLinks[label]) anchor.setAttribute("href", footerLinks[label]);
+      if (label === "Careers") {
+        anchor.setAttribute("target", "_blank");
+        anchor.setAttribute("rel", "noopener noreferrer");
+      }
     });
   }
 
