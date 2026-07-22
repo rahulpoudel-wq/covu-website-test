@@ -214,9 +214,8 @@ p{margin:0}
 
 /* ================= NAVBAR ================= */
 #w2-page > .nav-shell{position:fixed;top:16px;left:0;right:0;z-index:120;padding:0 24px}
-.navbar{max-width:1380px;margin:0 auto;background:var(--white);border:1px solid var(--line);
-  border-radius:9999px;box-shadow:0 12px 34px -18px rgba(18,26,43,.22);
-  display:flex;align-items:center;justify-content:space-between;padding:12px 14px 12px 30px}
+/* .navbar wrapper styling is handled by shared /css/nav.css (transparent sticky wrapper).
+   The old inline pill rule was removed — it double-wrapped the shared nav pill. */
 .nav-logo{font-family:"Nunito",sans-serif;font-weight:800;font-size:26px;letter-spacing:.5px;color:var(--navy)}
 .nav-links{display:flex;align-items:center;gap:6px}
 .nav-item > a{position:relative;font-weight:700;font-size:15.5px;color:var(--navy);padding:10px 16px;border-radius:9999px;
