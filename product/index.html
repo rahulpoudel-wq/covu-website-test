@@ -626,9 +626,10 @@ p{margin:0}
 <link rel="canonical" href="https://www.covu.com/product/">
 <link rel="stylesheet" href="/css/nav.css">
 <style id="nav-place">
-  #w2-page{padding-top:18px;overflow-x:clip;overflow-y:visible}
+  #w2-page{--top-shell:136px;padding-top:18px;overflow-x:clip;overflow-y:visible}
   #w2-page>.navbar{position:sticky;top:18px;z-index:120}
-  #hero-penta{padding-top:44px}
+  #hero-penta{margin-top:calc(-1 * var(--top-shell));padding-top:calc(44px + var(--top-shell))}
+  @media(max-width:560px){#w2-page{--top-shell:126px}}
 </style>
 </head>
 <body>

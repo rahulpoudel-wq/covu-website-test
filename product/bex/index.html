@@ -43,7 +43,7 @@ h1,h2,h3,h4,h5,h6{font-family:"Merriweather",Georgia,serif;margin:0;letter-spaci
 p{margin:0}
 
 /* ---------- page shell + GLOBAL halftone ---------- */
-#svc-page{position:relative;z-index:0;
+#svc-page{--top-shell:118px;position:relative;z-index:0;display:flow-root;
   background:
     radial-gradient(1400px 640px at 50% 0, rgba(255,183,3,.16), rgba(255,183,3,0) 62%),
     radial-gradient(1000px 520px at 92% 0, rgba(255,209,92,.20), rgba(255,209,92,0) 60%),
@@ -136,6 +136,7 @@ p{margin:0}
 @media(max-width:560px){.bexnav .nav-cta{display:none}}
 @media(max-width:1080px){.bexnav .dropdown.mega{width:auto}.bexnav .navlinks{display:none}}
 @media(max-width:560px){.bexnav .nav{height:64px;padding:0 10px 0 18px}.bexnav .nav-cta{padding:12px 16px;font-size:14px}}
+@media(max-width:560px){#svc-page{--top-shell:108px}}
 .bexnav .dropdown.mega{padding:0;width:760px;max-width:calc(100vw - 32px);overflow:hidden}
 .bexnav .mega-col .dditem{align-items:flex-start}
 .bexnav .mega-col .dd-ic{width:44px;height:44px;flex:0 0 44px;border-radius:13px}
@@ -1920,7 +1921,7 @@ document.documentElement.classList.add('js');
   document.addEventListener("visibilitychange",kick); kick();
 })();
 </script>
-<style id="nav-pad-fix">#hero-svc{padding-top:40px !important}</style>
+<style id="nav-pad-fix">#hero-svc{margin-top:calc(-1 * var(--top-shell));padding-top:calc(40px + var(--top-shell)) !important}</style>
 <script src="/js/include.js"></script>
 <script src="/js/nav.js"></script>
 </body>
