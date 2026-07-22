@@ -55,6 +55,125 @@
     });
   }
 
+  var spacingAdjustments = [];
+  var spacingTimer;
+  var settledSpacingTimer;
+
+  function isVisible(element) {
+    var rect = element.getBoundingClientRect();
+    var style = window.getComputedStyle(element);
+    return rect.width > 0 && rect.height > 0 &&
+      style.display !== "none" && style.visibility !== "hidden";
+  }
+
+  function getUntransformedTop(element) {
+    var translateY = 0;
+    var node = element;
+    while (node) {
+      var transform = window.getComputedStyle(node).transform;
+      if (transform && transform !== "none") {
+        var values = transform.match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi) || [];
+        if (transform.indexOf("matrix3d") === 0 && values.length >= 14) {
+          translateY += parseFloat(values[13]) || 0;
+        } else if (transform.indexOf("matrix") === 0 && values.length >= 6) {
+          translateY += parseFloat(values[5]) || 0;
+        }
+      }
+      node = node.parentElement;
+    }
+    return element.getBoundingClientRect().top - translateY;
+  }
+
+  function rememberStyle(element) {
+    var exists = spacingAdjustments.some(function (item) {
+      return item.element === element;
+    });
+    if (!exists) {
+      spacingAdjustments.push({
+        element: element,
+        marginTop: element.style.getPropertyValue("margin-top"),
+        priority: element.style.getPropertyPriority("margin-top")
+      });
+    }
+  }
+
+  function restoreSpacing() {
+    spacingAdjustments.forEach(function (item) {
+      if (item.marginTop) {
+        item.element.style.setProperty("margin-top", item.marginTop, item.priority);
+      } else {
+        item.element.style.removeProperty("margin-top");
+      }
+    });
+    spacingAdjustments = [];
+  }
+
+  function changeTopMargin(element, amount) {
+    if (!element || Math.abs(amount) < 0.5) return;
+    rememberStyle(element);
+    var marginTop = parseFloat(window.getComputedStyle(element).marginTop) || 0;
+    element.style.setProperty("margin-top", (marginTop + amount) + "px", "important");
+  }
+
+  function findHeroRoot(heading, nav) {
+    var node = heading.parentElement;
+    var candidate = node;
+    while (node && node.parentElement && node.parentElement !== document.body) {
+      var parent = node.parentElement;
+      if (parent.contains(nav)) break;
+      candidate = parent;
+      node = parent;
+    }
+    return candidate;
+  }
+
+  function normalizeTopSpacing() {
+    restoreSpacing();
+
+    var navs = Array.prototype.filter.call(document.querySelectorAll("nav"), function (nav) {
+      return isVisible(nav) && nav.getBoundingClientRect().top < 250;
+    });
+    var headings = Array.prototype.filter.call(document.querySelectorAll("h1"), isVisible);
+    if (!navs.length || !headings.length) return;
+
+    navs.sort(function (a, b) {
+      return a.getBoundingClientRect().top - b.getBoundingClientRect().top;
+    });
+    headings.sort(function (a, b) {
+      return a.getBoundingClientRect().top - b.getBoundingClientRect().top;
+    });
+
+    var nav = navs[0];
+    var heading = headings[0];
+    var navHost = nav.closest(".navbar") || nav;
+
+    for (var i = 0; i < 8; i += 1) {
+      var navOffset = 18 - getUntransformedTop(nav);
+      if (Math.abs(navOffset) < 0.5) break;
+      changeTopMargin(navHost, navOffset);
+    }
+
+    var targetGap = window.innerWidth <= 767 ? 85 : 100;
+    if (window.innerWidth <= 767 && window.location.pathname === "/") {
+      targetGap += 0.64;
+    }
+    var heroRoot = findHeroRoot(heading, nav);
+    for (var j = 0; j < 8; j += 1) {
+      var currentGap = getUntransformedTop(heading) -
+        (getUntransformedTop(nav) + nav.getBoundingClientRect().height);
+      var gapOffset = targetGap - currentGap;
+      if (Math.abs(gapOffset) < 0.5) break;
+      changeTopMargin(heroRoot, gapOffset);
+    }
+  }
+
+  function scheduleTopSpacing() {
+    window.clearTimeout(spacingTimer);
+    window.clearTimeout(settledSpacingTimer);
+    spacingTimer = window.setTimeout(normalizeTopSpacing, 0);
+    settledSpacingTimer = window.setTimeout(normalizeTopSpacing, 1100);
+  }
+
   function loadIncludes() {
     normalizeFooterLinks(document);
     var nodes = document.querySelectorAll("[data-include]");
@@ -66,13 +185,20 @@
           el.innerHTML = html;
           normalizeFooterLinks(el);
           el.dispatchEvent(new CustomEvent("include:loaded", { bubbles: true }));
+          scheduleTopSpacing();
         })
         .catch(function (err) { console.error("Include failed:", url, err); });
     });
+    scheduleTopSpacing();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", loadIncludes);
   } else {
     loadIncludes();
+  }
+  window.addEventListener("load", scheduleTopSpacing);
+  window.addEventListener("resize", scheduleTopSpacing);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(scheduleTopSpacing);
   }
 })();
