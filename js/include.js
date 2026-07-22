@@ -29,16 +29,21 @@
     "Scaling": "/agencies/scaling",
     "Regional & multi-office": "/agencies/regional",
     "Enterprise & acquisitive": "/agencies/enterprise",
-    "Guides": "https://blog.covu.com",
+    "Case Studies": "https://blog.covu.com/task-native-insurance-operations/",
+    "Customers": "https://blog.covu.com/task-native-insurance-operations/",
+    "Blog": "https://blog.covu.com/",
+    "Guides": "https://blog.covu.com/",
     "About": "/about-us",
     "Team": "/team",
+    "Careers": "https://covu.bamboohr.com/careers",
     "Investors": "/investors",
     "Press / Media": "/press",
     "Privacy": "/privacy-policy",
     "Privacy Policy": "/privacy-policy",
     "Terms": "/terms-of-use",
     "Terms of Use": "/terms-of-use",
-    "Cookie Preferences": "/privacy-policy"
+    "Cookie Preferences": "/privacy-policy",
+    "Security": "/privacy-policy"
   };
 
   function normalizeFooterLinks(root) {
