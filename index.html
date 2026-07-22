@@ -1136,7 +1136,7 @@ section{position:relative;}
       <!-- Card 1: cost per task -->
       <div class="card stat">
         <div class="num countup" data-target="20" data-prefix-arrow="1">
-          <span class="arrow">&#8595;</span><span class="val">0</span><span class="pct">%</span>
+          <span class="arrow">&#8595;</span><span class="val">20</span><span class="pct">%</span>
         </div>
         <h3>Lower cost per task</h3>
         <p class="desc">About $4.80 per task, down from ~$6.00.</p>
@@ -1149,7 +1149,7 @@ section{position:relative;}
       <!-- Card 2: handle time -->
       <div class="card stat">
         <div class="num countup" data-target="16" data-prefix-arrow="1">
-          <span class="arrow">&#8595;</span><span class="val">0</span><span class="pct">%</span>
+          <span class="arrow">&#8595;</span><span class="val">16</span><span class="pct">%</span>
         </div>
         <h3>Faster handle time</h3>
         <p class="desc">Median 3.8 min per task, down from 4.5.</p>
@@ -1162,7 +1162,7 @@ section{position:relative;}
       <!-- Card 3: noise -->
       <div class="card stat">
         <div class="num countup" data-target="68" data-prefix-tilde="1">
-          <span class="tilde">~</span><span class="val">0</span><span class="pct">%</span>
+          <span class="tilde">~</span><span class="val">68</span><span class="pct">%</span>
         </div>
         <h3>Of inbound filtered as noise</h3>
         <p class="desc">AI clears the noise so staff only see the ~32% that needs a person.</p>
@@ -1175,10 +1175,10 @@ section{position:relative;}
       <div class="band">
       <div class="bl">What we operate</div>
       <div class="ops">
-        <div class="op"><div class="n countup" data-target="50" data-suffix="+"><span class="val">0</span><span class="sfx">+</span></div><div class="l">agencies operated</div></div>
-        <div class="op"><div class="n countup" data-target="200" data-prefix="$" data-suffix="M+"><span class="pfx">$</span><span class="val">0</span><span class="sfx">M+</span></div><div class="l">premium managed</div></div>
-        <div class="op"><div class="n countup" data-target="500000" data-suffix="+" data-sep="1"><span class="val">0</span><span class="sfx">+</span></div><div class="l">customer transactions</div></div>
-        <div class="op"><div class="n countup" data-target="8"><span class="val">0</span></div><div class="l">AMS integrations live</div></div>
+        <div class="op"><div class="n countup" data-target="50" data-suffix="+"><span class="val">50</span><span class="sfx">+</span></div><div class="l">agencies operated</div></div>
+        <div class="op"><div class="n countup" data-target="200" data-prefix="$" data-suffix="M+"><span class="pfx">$</span><span class="val">200</span><span class="sfx">M+</span></div><div class="l">premium managed</div></div>
+        <div class="op"><div class="n countup" data-target="500000" data-suffix="+" data-sep="1"><span class="val">500,000</span><span class="sfx">+</span></div><div class="l">customer transactions</div></div>
+        <div class="op"><div class="n countup" data-target="8"><span class="val">8</span></div><div class="l">AMS integrations live</div></div>
       </div>
       </div>
       </div><!-- /col-left -->
@@ -1192,7 +1192,7 @@ section{position:relative;}
           </span>
         </a>
         <div class="csat">
-          <div class="rate countup" data-target="4.8" data-decimals="1" data-suffix="/5"><span class="val">0</span><span class="sfx">/5</span></div>
+          <div class="rate countup" data-target="4.8" data-decimals="1" data-suffix="/5"><span class="val">4.8</span><span class="sfx">/5</span></div>
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <h4>CSAT Across All Customers Served</h4>
           <p>Delivering high-quality service with consistently exceptional satisfaction scores.</p>
@@ -3026,17 +3026,7 @@ window.addEventListener('load',function(){position(false);});
     var sep = el.getAttribute('data-sep')==='1';
     var valEl = el.querySelector('.val');
     if(!valEl) return;
-    if(reduce){ valEl.textContent = fmt(target, decimals, sep); return; }
-    var dur = 1100, start = null;
-    function step(ts){
-      if(start===null) start = ts;
-      var p = Math.min((ts-start)/dur, 1);
-      var eased = 1 - Math.pow(1-p, 3);
-      valEl.textContent = fmt(target*eased, decimals, sep);
-      if(p<1){ requestAnimationFrame(step); }
-      else { valEl.textContent = fmt(target, decimals, sep); }
-    }
-    requestAnimationFrame(step);
+    valEl.textContent = fmt(target, decimals, sep); // static: no count-up animation
   }
 
   var counts = Array.prototype.slice.call(sec.querySelectorAll('.countup'));
