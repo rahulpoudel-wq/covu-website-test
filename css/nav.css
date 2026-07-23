@@ -84,9 +84,9 @@
 .mega2-feat .fimg.vid .fplay svg{width:22px;height:22px;margin-left:2px;fill:currentColor}
 .mega2-feat .fcard:hover .fimg.vid .fplay{transform:translate(-50%,-50%) scale(1.08);background:var(--yellow)}
 .mega2-feat .fimg.bex{background:radial-gradient(120% 120% at 75% 15%, rgba(255,183,3,.24), transparent 55%),linear-gradient(135deg,#20304F,#11426B)}
-.mega2-feat .fimg.vidposter{background-image:url("/images/see-the-stack-in-action.jpg");background-size:cover;background-position:center}
-.mega2-feat .fimg.report{background-image:url("/images/covu-os-report.png");background-size:cover;background-position:left center;background-color:#FBFCFE}
-.mega2-feat .fimg.team{background-image:url("/images/covu-team.jpg");background-size:cover;background-position:center;background-color:#EDF1F8}
+.mega2-feat .fimg.vidposter{background-image:url("/images/see-the-stack-in-action.jpg")!important;background-size:cover!important;background-position:center!important}
+.mega2-feat .fimg.report{background-image:url("/images/covu-os-report.png")!important;background-size:cover!important;background-position:left center!important;background-color:#FBFCFE!important}
+.mega2-feat .fimg.team{background-image:url("/images/covu-team.jpg")!important;background-size:cover!important;background-position:center!important;background-color:#EDF1F8!important}
 
 /* solutions slider */
 .mega2-feat.slider .fviewport{overflow:hidden;border-radius:16px}
@@ -104,7 +104,7 @@
   background-image:url("/images/covu-stack-diagram.png");
   background-size:cover;background-position:center;background-color:#EEF2F8}
 .fcard:hover .fimg.stackdiagram{transform:scale(1.03)}
-.mega2-feat .fimg.osfeat{background-image:url("/images/covu-os-report.png");background-size:cover;background-position:center;background-color:#FBFCFE}
+.mega2-feat .fimg.osfeat{background-image:url("/images/covu-os-report.png")!important;background-size:cover!important;background-position:center!important;background-color:#FBFCFE!important}
 
 /* Compact blue "Explore the COVU Stack" card — sits in the stack grid under VERO */
 .stack-card{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:16px;
