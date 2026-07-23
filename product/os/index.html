@@ -608,6 +608,7 @@ p{margin:0}
   #topnav .navbar{position:sticky;top:18px;z-index:120}
 </style>
 <link rel="stylesheet" href="/css/nav.css">
+<style id="os-ops-css">#sec-cta .opswrap{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:hidden}#sec-cta .opsfield{position:absolute;inset:0;width:100%;height:100%;display:block}#sec-cta .gcap{position:absolute;width:260px;margin-left:-130px;text-align:center;font-family:"Nunito Sans",sans-serif;font-size:13.5px;font-weight:700;letter-spacing:.2px;color:#5d6886;line-height:1.35;opacity:0;transition:opacity .5s ease}#sec-cta .w2-wrap{position:relative;z-index:1}@media(max-width:1024px){#sec-cta .opswrap{display:none}}</style>
 </head>
 <body>
 <div id="w2-page">
@@ -1158,6 +1159,7 @@ p{margin:0}
 
 <!-- ============ CTA ============ -->
 <section id="sec-cta" class="w2-sec">
+  <div class="opswrap" aria-hidden="true"><canvas class="opsfield"></canvas><div class="gcap gcap-l"></div><div class="gcap gcap-r"></div></div>
   <div class="ht ht-light" style="opacity:.12" aria-hidden="true"></div>
   <div class="w2-wrap">
     <p class="cta-eyebrow">Book a call</p>
@@ -1320,5 +1322,101 @@ p{margin:0}
 <script src="/js/include.js"></script>
 <script src="/js/nav.js"></script>
 <style id="nav-pad-fix">#hero-os{padding-top:178px !important}</style>
+<script>
+/* OS bottom CTA: homepage opsfield dot animation (re-scoped to #sec-cta) */
+(function(){
+  var root=document.getElementById('sec-cta'); if(!root) return;
+  var wrap=root.querySelector('.opswrap'); if(!wrap) return;
+  var canvas=wrap.querySelector('.opsfield'), ctx=canvas.getContext('2d');
+  var capEls=[wrap.querySelector('.gcap-l'), wrap.querySelector('.gcap-r')];
+  var SCENES=[
+    {big:'2,535', cap:'service tasks handled this week'},
+    {big:'−15%', cap:'lower cost after the AI renewal workflow'},
+    {big:'$4.80',  cap:'average cost per task'},
+    {big:'44%',    cap:'of service tasks executed by AI'},
+    {big:'4.8/5',  cap:'average client satisfaction'}
+  ];
+  var STEP=11, N=SCENES.length;
+  var CONV=2700, HOLD=2600, DISP=2200, SLOT=12500;
+  var GOLD=[224,161,0], GRAY=[206,212,226];
+  function hash(n){ var x=Math.sin(n*127.1+311.7)*43758.5453; return x-Math.floor(x); }
+  function eo(p){ p=p<0?0:p>1?1:p; return 1-Math.pow(1-p,3); }
+  function mix(a,b,t){ return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2])*t]; }
+  var W=0,H=0,dpr=1,G=0,ctaH=0,fx0=0,fx1=-1,fy0=0,fy1=0;
+  var hx=[],hy=[],hh=[],zoneOf=[],ox=[],oy=[],dl=[];
+  var zones=[
+    {seed:7,   off:0,        xmin:0,xmax:0, appr:-1,forms:false,sc:0,fc:0,ax:0,ay:0},
+    {seed:107, off:SLOT*0.5, xmin:0,xmax:0, appr:-1,forms:false,sc:0,fc:0,ax:0,ay:0}
+  ];
+  function buildGrid(){
+    hx=[];hy=[];hh=[];zoneOf=[];ox=[];oy=[];dl=[];
+    for(var y=STEP*0.5;y<H;y+=STEP){ for(var x=STEP*0.5;x<W;x+=STEP){ hx.push(x);hy.push(y);hh.push(hash(hx.length*1.7));zoneOf.push(-1);ox.push(0);oy.push(0);dl.push(0); } }
+    G=hx.length;
+    zones[0].xmin=0; zones[0].xmax=W*0.34;
+    zones[1].xmin=W*0.66; zones[1].xmax=W;
+  }
+  function clearZone(zi){ for(var i=0;i<G;i++) if(zoneOf[i]===zi) zoneOf[i]=-1; }
+  function markNumber(zi){
+    var z=zones[zi], text=SCENES[z.sc].big;
+    var o=document.createElement('canvas'); o.width=W;o.height=H; var c=o.getContext('2d');
+    c.fillStyle='#000';c.textAlign='center';c.textBaseline='middle';
+    var fs=Math.min(ctaH*0.24, ((z.xmax-z.xmin)*0.92)/(text.length*0.58)); c.font='900 '+fs+'px Nunito, sans-serif';
+    c.fillText(text, z.ax, z.ay);
+    var d=c.getImageData(0,0,W,H).data;
+    for(var i=0;i<G;i++){ if(hx[i]<z.xmin-10||hx[i]>z.xmax+10) continue; var X=Math.round(hx[i]),Y=Math.round(hy[i]);
+      if(X>=0&&Y>=0&&X<W&&Y<H&&d[(Y*W+X)*4+3]>120){ zoneOf[i]=zi; var ang=hash(i*2.3)*6.283, dist=26+hash(i*4.1)*74; ox[i]=Math.cos(ang)*dist; oy[i]=Math.sin(ang)*dist; dl[i]=0.42*hash(i*5.9); } }
+    return fs;
+  }
+  function updateZone(zi, time){
+    var z=zones[zi], appr=Math.floor((time+z.off)/SLOT);
+    if(appr===z.appr) return; z.appr=appr; clearZone(zi);
+    z.forms = hash(appr*13.1+z.seed) > 0.50;
+    var cx=(z.xmin+z.xmax)/2, hw=(z.xmax-z.xmin)/2;
+    z.ax = cx + (hash(appr*3.1+z.seed)-0.5)*hw*0.30;
+    z.ay = ctaH*(0.22+0.42*hash(appr*7.3+z.seed));
+    if(z.forms){ z.sc=z.fc%N; z.fc++; var fs=markNumber(zi); capEls[zi].textContent=SCENES[z.sc].cap; capEls[zi].style.left=z.ax+'px'; capEls[zi].style.top=(z.ay+fs*0.5+18)+'px'; }
+  }
+  function draw(time){
+    if(W<8) return;
+    updateZone(0,time); updateZone(1,time);
+    for(var zc=0;zc<2;zc++){ var zz=zones[zc], sc=(time+zz.off)%SLOT; capEls[zc].style.opacity=(zz.forms && sc>CONV*0.7 && sc<CONV+HOLD+DISP*0.25)?1:0; }
+    var drift=time*0.0017;
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<G;i++){
+      var X=hx[i],Y=hy[i]; if(fx1>fx0 && X>fx0 && X<fx1 && Y>fy0 && Y<fy1) continue;
+      var wv=Math.sin(X*0.018+Y*0.020-drift)*0.62+Math.sin(X*0.009-Y*0.013+drift*0.7)*0.38, nw=wv*0.5+0.5;
+      var ambA=0.20+0.26*nw, ambR=1.32*(0.42+0.7*nw);
+      var swX=Math.sin(Y*0.03+time*0.00095)*1.8, swY=Math.cos(X*0.03+time*0.0011)*1.8;
+      var px=X+swX, py=Y+swY, a=ambA, r=ambR, col=GRAY;
+      var zo=zoneOf[i];
+      if(zo>=0){ var z=zones[zo], st=(time+z.off)%SLOT;
+        if(st<CONV){ var loc=eo((st/CONV - dl[i])/Math.max(0.2,1-dl[i]));
+          px=X+ox[i]*(1-loc)+swX*(1-loc); py=Y+oy[i]*(1-loc)+swY*(1-loc);
+          a=ambA+(0.92-ambA)*loc; r=ambR+(3.0-ambR)*loc; col=mix(GRAY,GOLD,loc);
+        } else if(st<CONV+HOLD){ px=X+Math.sin(time*0.0011+i)*1.0; py=Y+Math.cos(time*0.0012+i)*1.0;
+          var shim=0.85+0.15*Math.sin(time*0.0016 - X*0.02 + dl[i]*30); a=0.85+0.12*shim; r=3.0; col=GOLD;
+        } else if(st<CONV+HOLD+DISP){ var lo=eo((st-CONV-HOLD)/DISP), pu=Math.sin(lo*Math.PI);
+          px=X+ox[i]*0.35*pu+swX; py=Y+oy[i]*0.35*pu+swY;
+          a=ambA+(0.9-ambA)*(1-lo); r=ambR+(3.0-ambR)*(1-lo); col=mix(GOLD,GRAY,lo);
+        }
+      }
+      if(a<=0.04) continue;
+      ctx.beginPath();ctx.arc(px,py,r,0,6.2832);ctx.fillStyle='rgba('+(col[0]|0)+','+(col[1]|0)+','+(col[2]|0)+','+a.toFixed(3)+')';ctx.fill();
+    }
+  }
+  function resize(){ var r=canvas.getBoundingClientRect(); dpr=Math.min(window.devicePixelRatio||1,2); W=Math.max(1,r.width|0); H=Math.max(1,r.height|0); canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); var cw=root.querySelector('.ctawrap'); ctaH=cw?cw.getBoundingClientRect().height:H; var ff=root.querySelector('.ft-footer'); if(ff){ var fr=ff.getBoundingClientRect(); fx0=fr.left-r.left; fx1=fr.right-r.left; fy0=fr.top-r.top; fy1=fr.bottom-r.top; } else { fx1=-1; } buildGrid(); zones[0].appr=-1; zones[1].appr=-1; }
+  window.addEventListener('resize',resize);
+  root.addEventListener('include:loaded',function(e){
+    if(e.target&&e.target.matches('[data-include="/partials/footer.html"]')) resize();
+  });
+  resize(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(resize);
+  var running=false, raf=null, reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function frame(t){ draw(t); if(running) raf=requestAnimationFrame(frame); else raf=null; }
+  function start(){ if(raf) return; if(reduce){ draw(CONV+HOLD*0.4); return; } running=true; raf=requestAnimationFrame(frame); }
+  function stop(){ running=false; }
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ e[0].isIntersecting?start():stop(); },{threshold:0}).observe(root); } else start();
+  document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
+})();
+</script>
 </body>
 </html>
