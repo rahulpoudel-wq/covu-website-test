@@ -45,7 +45,7 @@ h1,h2,h3,h4,h5,h6{font-family:"Merriweather",Georgia,serif;margin:0;letter-spaci
 p{margin:0}
 
 /* ---------- page shell + GLOBAL halftone (carried across the page at 10%) ---------- */
-#vero-page{position:relative;z-index:0;
+#vero-page{position:relative;z-index:0;display:flow-root;
   background:
     radial-gradient(1400px 640px at 50% 0, rgba(255,183,3,.16), rgba(255,183,3,0) 62%),
     radial-gradient(1000px 520px at 92% 0, rgba(255,209,92,.20), rgba(255,209,92,0) 60%),
@@ -53,6 +53,8 @@ p{margin:0}
     linear-gradient(180deg,#FFF6E4 0%, #FFFDF7 320px, var(--surface) 860px);
   background-repeat:no-repeat;}
 #vero-page > *{position:relative;z-index:1}
+/* keep the global nav above sibling sections + sticky (the rule above would otherwise pin it to z-index:1 = #hero, which then covers it) */
+#vero-page > .navbar{position:sticky;z-index:120}
 /* animated halftone canvas — matches the homepage (soft diagonal traveling wave, GAP 13, hover ripple) */
 .halftone{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block;opacity:.15}
 
