@@ -54,7 +54,7 @@ p{margin:0}
   background-repeat:no-repeat;}
 #vero-page > *{position:relative;z-index:1}
 /* animated halftone canvas — matches the homepage (soft diagonal traveling wave, GAP 13, hover ripple) */
-.halftone{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block;opacity:.3}
+.halftone{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block;opacity:.15}
 
 /* ---------- shared section rhythm ---------- */
 .w2-sec{padding:var(--sec-pad) 24px;position:relative}
@@ -91,6 +91,8 @@ p{margin:0}
 /* ===== SHARED FLAT NAVY SECTION — every navy section looks exactly alike ===== */
 .w2-dark{background:#1C2945;color:#fff;position:relative;overflow:hidden}
 .w2-dark h2{color:#fff}
+
+/* NAVBAR styles come from the shared /css/nav.css (global nav) */
 
 /* ================= HERO (homepage-matched warm bg + orbs) ================= */
 #hero{padding:80px 24px 112px;position:relative;overflow:hidden}
@@ -223,15 +225,14 @@ p{margin:0}
 
 /* ================= VERO FEATURE CATALOG (hover-pop mini-diagrams) ================= */
 #sec-feat{--amber:#C98A00;--yellow-wash:#FFF6DA;--yellow-line:#F2E4B8;--stage-line:#EAD9A8}
-#sec-feat .cat{background:var(--white);border:1px solid var(--line);border-radius:20px;
-  box-shadow:0 1px 2px rgba(28,41,69,.04),0 18px 44px -30px rgba(28,41,69,.30);padding:38px 44px 22px}
-#sec-feat .ghead{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line-2);padding:2px 2px 18px}
-#sec-feat .gchip{width:24px;height:24px;border-radius:8px;flex-shrink:0;background:var(--yellow-wash);display:flex;align-items:center;justify-content:center}
-#sec-feat .gchip i{display:block;width:11px;height:11px;border-radius:4px;background:var(--yellow)}
-#sec-feat .ghead h3{font-family:"Merriweather",serif;font-size:26px;font-weight:900;color:var(--navy);letter-spacing:.5px}
-#sec-feat .plane{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--yellow-dark);white-space:nowrap;transform:translateY(1px)}
-#sec-feat .count{margin-left:auto;font-size:13px;font-weight:700;color:var(--muted);border:1px solid var(--line-2);border-radius:999px;padding:6px 15px;white-space:nowrap;background:#fff}
-#sec-feat .fgrid{display:grid;grid-template-columns:1fr 1fr;column-gap:56px;padding-top:6px}
+#sec-feat .cat{background:none;border:none;border-radius:0;box-shadow:none;padding:0}
+#sec-feat .ghead{display:flex;align-items:center;gap:14px;margin-bottom:8px;padding:0 2px}
+#sec-feat .gchip{width:14px;height:14px;border-radius:50%;flex-shrink:0;background:var(--yellow)}
+#sec-feat .gchip i{display:none}
+#sec-feat .ghead h3{font-family:"Merriweather",serif;font-size:28px;font-weight:900;color:var(--navy);letter-spacing:.3px}
+#sec-feat .plane{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);white-space:nowrap}
+#sec-feat .count{margin-left:auto;font-size:13px;font-weight:800;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 15px;white-space:nowrap;background:var(--white)}
+#sec-feat .fgrid{display:grid;grid-template-columns:1fr 1fr;column-gap:56px;border-top:1px solid var(--line-2)}
 #sec-feat .fcard{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
 #sec-feat .fcard:nth-last-child(-n+2){border-bottom:none}
 #sec-feat .fico{position:relative;width:42px;height:42px;border-radius:12px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--yellow-wash);border:1px solid var(--yellow-line);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
@@ -269,7 +270,7 @@ p{margin:0}
 #sec-feat .spin{transform-box:fill-box;transform-origin:center;animation:featSpin 1.3s linear infinite}
 @keyframes featSpin{to{transform:rotate(360deg)}}
 @media(max-width:860px){
-  #sec-feat .cat{padding:30px 22px 14px}
+  #sec-feat .cat{padding:0}
   #sec-feat .fgrid{grid-template-columns:1fr;column-gap:0}
   #sec-feat .fcard{border-bottom:1px solid var(--line)}
   #sec-feat .fcard:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
@@ -416,11 +417,6 @@ p{margin:0}
 </style>
 <link rel="canonical" href="https://www.covu.com/product/vero/">
 <link rel="stylesheet" href="/css/nav.css">
-<style id="nav-place">
-  #vero-page{padding-top:18px;overflow-x:clip;overflow-y:visible}
-  #vero-page>.navbar{position:sticky;top:18px;z-index:120}
-  #hero{padding-top:44px}
-</style>
 </head>
 <body>
 <div id="vero-page">
@@ -453,7 +449,7 @@ p{margin:0}
 
 <!-- ============ HERO ============ -->
 <section id="hero" aria-label="Vero — AI that runs inside the stack, governed and measured">
-  <canvas class="halftone" style="opacity:.40" aria-hidden="true"></canvas>
+  <canvas class="halftone" aria-hidden="true"></canvas>
   <div class="stage">
     <div class="copy">
       <p class="crumb"><i></i>Product · Vero</p>
@@ -571,7 +567,7 @@ p{margin:0}
 
 <!-- ============ PROBLEM (flat navy) ============ -->
 <section id="sec-prob" class="w2-sec w2-dark">
-  <canvas class="halftone" data-dot="150,168,205" style="opacity:.20" aria-hidden="true"></canvas>
+  <canvas class="halftone" data-dot="150,168,205" aria-hidden="true"></canvas>
   <div class="w2-wrap">
     <div class="prob-lead">
       <div>
@@ -600,7 +596,7 @@ p{margin:0}
 
 <!-- ============ WHERE VERO WORKS (light) ============ -->
 <section id="sec-where" class="w2-sec">
-  <canvas class="halftone" style="opacity:.22" aria-hidden="true"></canvas>
+  <canvas class="halftone" aria-hidden="true"></canvas>
   <div class="w2-wrap">
     <div class="shead reveal">
       <span class="pill-eye"><svg viewBox="0 0 24 24"><use href="#i-network"/></svg>Where Vero works</span>
@@ -617,7 +613,7 @@ p{margin:0}
 
 <!-- ============ PROOF (flat navy, 3 rings) ============ -->
 <section id="sec-proof" class="w2-sec w2-dark">
-  <canvas class="halftone" data-dot="150,168,205" style="opacity:.18" aria-hidden="true"></canvas>
+  <canvas class="halftone" data-dot="150,168,205" aria-hidden="true"></canvas>
   <div class="w2-wrap">
     <div class="shead reveal">
       <span class="pill-eye dark"><svg viewBox="0 0 24 24"><use href="#i-trend"/></svg>Proof</span>
@@ -652,7 +648,7 @@ p{margin:0}
 
 <!-- ============ WHY IT'S DIFFERENT (light, 4 cards) ============ -->
 <section id="sec-why" class="w2-sec">
-  <canvas class="halftone" style="opacity:.16" aria-hidden="true"></canvas>
+  <canvas class="halftone" aria-hidden="true"></canvas>
   <div class="w2-wrap">
     <div class="shead reveal">
       <span class="pill-eye"><svg viewBox="0 0 24 24"><use href="#i-cube"/></svg>Why it&rsquo;s different</span>
@@ -670,7 +666,7 @@ p{margin:0}
 
 <!-- ============ VERO FEATURE CATALOG (light) ============ -->
 <section id="sec-feat" class="w2-sec">
-  <canvas class="halftone" style="opacity:.10" aria-hidden="true"></canvas>
+  <canvas class="halftone" aria-hidden="true"></canvas>
   <div class="w2-wrap">
     <div class="cat reveal">
 
@@ -785,14 +781,14 @@ p{margin:0}
 
 <!-- ============ RUNS ON IT ============ -->
 <section id="sec-runs" class="w2-sec">
-  <canvas class="halftone" style="opacity:.10" aria-hidden="true"></canvas>
+  <canvas class="halftone" aria-hidden="true"></canvas>
   <div class="w2-wrap">
     <p class="runs-eye reveal">You're on <b>Connect</b> <span>·</span> The Data Plane</p>
     <h2 class="reveal">Here's what runs on it.</h2>
     <p class="lede reveal">Connect resolves your whole book into one trusted record. Every layer above runs on that clean data &mdash; use any part on its own, and add the rest as you grow.</p>
     <div class="runs-grid">
 
-      <a class="run-card reveal-pop" href="/product/os">
+      <a class="run-card reveal-pop" href="#">
         <div class="thumb"><svg id="ro1" class="ill" viewBox="0 0 300 150" role="img" aria-label="COVU OS — work broken into routed tasks">
           <style>
             #ro1 .flow{stroke-dasharray:4 8;animation:ro1flow 1.4s linear infinite}
@@ -818,7 +814,7 @@ p{margin:0}
         <div class="body"><div class="kick">Layer 2 · Control Plane</div><h4>COVU OS</h4><p>Service work broken into tasks, routed by license, and costed end to end.</p><span class="go">Explore COVU OS <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
 
-      <a class="run-card reveal-pop" href="/product/service">
+      <a class="run-card reveal-pop" href="#">
         <div class="thumb"><svg id="ro2" class="ill" viewBox="0 0 300 150" role="img" aria-label="Service Capacity — licensed people and AI do the work">
           <style>
             #ro2 .flow{stroke-dasharray:4 8;animation:ro2flow 1.6s linear infinite}
@@ -842,7 +838,7 @@ p{margin:0}
         <div class="body"><div class="kick">Layer 3 · Execution</div><h4>Service Capacity</h4><p>Licensed people and AI do the work, on demand and under your brand.</p><span class="go">Explore Service Capacity <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
 
-      <a class="run-card reveal-pop" href="/product/vero">
+      <a class="run-card reveal-pop" href="#">
         <div class="thumb"><svg id="ro3" class="ill" viewBox="0 0 300 150" role="img" aria-label="VERO — AI woven through every layer">
           <style>
             #ro3 .flow{stroke-dasharray:4 8;animation:ro3flow 1.7s linear infinite}
@@ -869,7 +865,7 @@ p{margin:0}
         <div class="body"><div class="kick">AI Across Every Layer</div><h4>VERO</h4><p>AI woven through the whole stack — not bolted onto one part. VERO makes every module smarter.</p><span class="go">Meet VERO <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
 
-      <a class="run-card reveal-pop" href="/product/bex">
+      <a class="run-card reveal-pop" href="#">
         <div class="thumb"><svg id="ro4" class="ill" viewBox="0 0 300 150" role="img" aria-label="BEX — turn any email into a structured request">
           <style>
             #ro4 .flow{stroke-dasharray:4 8;animation:ro4flow 1.5s linear infinite}
@@ -904,14 +900,14 @@ p{margin:0}
         <h3>Explore the COVU Stack</h3>
         <p>See how Connect, COVU OS, Service Capacity, VERO &amp; BEX fit together as one operating stack.</p>
       </div>
-      <a class="btn-primary" href="/product/">Explore COVU Stack <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn-primary" href="#">Explore COVU Stack <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
 
 <!-- ============ FAQ ============ -->
 <section id="sec-faq" class="w2-sec">
-  <canvas class="halftone" data-dot="60,74,105" style="opacity:.26" aria-hidden="true"></canvas>
+  <canvas class="halftone" data-dot="60,74,105" aria-hidden="true"></canvas>
   <div class="w2-wrap">
     <div class="faq-grid">
       <div class="faq-left">
@@ -921,27 +917,27 @@ p{margin:0}
         <div class="faq-help">
           <h5>Still have questions?</h5>
           <p>Our team can walk you through how COVU runs on top of your stack, without data or workflow risk.</p>
-          <a class="btn-dark" href="/book-a-consultation-with-covu">Book a demo
+          <a class="btn-dark" href="#sec-ctafoot">Book a demo
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
       </div>
       <div class="faq-list">
         <div class="faq-item open">
-          <button class="faq-q">What is Vero?<span class="tog"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></span></button>
-          <div class="faq-a"><p>Vero is COVU's proprietary AI, working across Connect, OS, and the Service Network. It triages, drafts, and executes service work on a standardized foundation.</p></div>
+          <button class="faq-q">Does COVU replace my AMS?<span class="tog"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></span></button>
+          <div class="faq-a"><p>No. COVU runs on top, with two-way integration. Your AMS stays the system of record, and COVU makes the work in it usable, routable, and measurable.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Why is Vero different from a standalone AI tool?<span class="tog"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></span></button>
-          <div class="faq-a"><p>Standalone AI tools can look strong in a demo but stall in production when data, systems, and workflows are disconnected. Vero runs inside the COVU Stack, where the work is already structured, routed, governed, and measured.</p></div>
+          <button class="faq-q">Does my team get replaced?<span class="tog"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></span></button>
+          <div class="faq-a"><p>No. Vero runs the routine, repeatable work so your people spend their time on judgment calls and client relationships. Low-confidence work always escalates to a person.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">What can Vero help with first?<span class="tog"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></span></button>
-          <div class="faq-a"><p>Vero can triage inbound work, filter noise, dedupe and clean data, classify intent, route requests, draft responses, summarize context, and support routine task completion.</p></div>
+          <button class="faq-q">Is everything auditable?<span class="tog"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></span></button>
+          <div class="faq-a"><p>Yes. Every action Vero takes is logged with the actor, a timestamp, and a reason — a full audit trail you can put in front of a regulator. Licensed work is gated to licensed capacity.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">How is Vero governed and supervised?<span class="tog"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></span></button>
-          <div class="faq-a"><p>Vero runs with license gates, confidence thresholds, and an audit trail on every action. Low-confidence work escalates to a person, and regulated work routes to licensed capacity.</p></div>
+          <button class="faq-q">Who actually does the work?<span class="tog"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></span></button>
+          <div class="faq-a"><p>Vero handles the routine parts above its confidence threshold; anything regulated or uncertain routes to licensed agents and vetted professionals. Vero runs as one supply type alongside people, all routed and governed through OS.</p></div>
         </div>
       </div>
     </div>
@@ -954,7 +950,7 @@ p{margin:0}
 <!-- ===== CTA ===== -->
 <div class="ctawrap">
   <section class="cta">
-    <canvas class="halftone" style="display:block;opacity:.10" aria-hidden="true"></canvas>
+    <canvas class="halftone" aria-hidden="true"></canvas>
     <div class="cta-inner">
       <div class="cta-eyebrow">Book a Call</div>
       <h2>Experience the Future of<br><span class="hl">P&amp;C Operations</span></h2>
@@ -965,7 +961,7 @@ p{margin:0}
           <input id="vero-email" name="email" type="email" placeholder="you@youragency.com">
           <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
         </div>
-        <a class="submit" href="/book-a-consultation-with-covu">Book a Call</a>
+        <a class="submit" href="https://www.covu.com/book-a-consultation-with-covu">Book a Consultation</a>
       </div>
     </div>
     <span class="totop" id="totop"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg> Back to top</span>
@@ -1259,11 +1255,7 @@ document.documentElement.classList.add('js');
     }
   }
   function resize(){ var r=canvas.getBoundingClientRect(); dpr=Math.min(window.devicePixelRatio||1,2); W=Math.max(1,r.width|0); H=Math.max(1,r.height|0); canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); var cw=root.querySelector('.ctawrap'); ctaH=cw?cw.getBoundingClientRect().height:H; var ff=root.querySelector('.ft-footer'); if(ff){ var fr=ff.getBoundingClientRect(); fx0=fr.left-r.left; fx1=fr.right-r.left; fy0=fr.top-r.top; fy1=fr.bottom-r.top; } else { fx1=-1; } buildGrid(); zones[0].appr=-1; zones[1].appr=-1; }
-  window.addEventListener('resize',resize);
-  root.addEventListener('include:loaded',function(e){
-    if(e.target&&e.target.matches('[data-include="/partials/footer.html"]')) resize();
-  });
-  resize(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(resize);
+  window.addEventListener('resize',resize); resize(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(resize);
   var running=false, raf=null, reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   function frame(t){ draw(t); if(running) raf=requestAnimationFrame(frame); else raf=null; }
   function start(){ if(raf) return; if(reduce){ draw(CONV+HOLD*0.4); return; } running=true; raf=requestAnimationFrame(frame); }
@@ -1271,6 +1263,10 @@ document.documentElement.classList.add('js');
   if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ e[0].isIntersecting?start():stop(); },{threshold:0}).observe(root); } else start();
   document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
 })();
+</script>
+<script>
+/* refit the CTA/footer ops canvas once the shared footer is injected */
+document.addEventListener('include:loaded', function(){ window.dispatchEvent(new Event('resize')); });
 </script>
 <script src="/js/include.js"></script>
 <script src="/js/nav.js"></script>
