@@ -52,6 +52,7 @@ p{margin:0}
   background-repeat:no-repeat;}
 /* canvas halftone — wave-modulated blue-gray dot field, matched to the homepage hero */
 #svc-page > *{position:relative;z-index:1}
+#svc-page > .navbar{position:sticky;z-index:120}
 #svc-page > #svc-halftone{display:none}
 @media(prefers-reduced-motion:reduce){.w2-dark::before,#sec-faq::before,.stack-banner::before{animation:none}}
 
@@ -455,8 +456,91 @@ p{margin:0}
 #sec-run .items{display:grid;grid-template-columns:1fr 1fr;gap:6px 40px}
 #sec-run .item{display:flex;gap:14px;padding:15px 14px;border-radius:12px;align-items:flex-start;transition:background .18s}
 #sec-run .item:hover{background:#F7F8FB}
-#sec-run .item .ic{flex:0 0 38px;width:38px;height:38px;border-radius:10px;background:color-mix(in srgb,var(--c) 13%,transparent);display:grid;place-items:center}
-#sec-run .item .ic svg{width:19px;height:19px;stroke:var(--cs,var(--c));fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+/* icon tile = the hover trigger for the popup */
+#sec-run .item .ic{position:relative;flex:0 0 38px;width:38px;height:38px;border-radius:10px;cursor:pointer;
+  background:color-mix(in srgb,var(--c) 13%,transparent);display:grid;place-items:center;
+  transition:background .22s, transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s}
+#sec-run .item .ic > svg{width:19px;height:19px;stroke:var(--cs,var(--c));fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+#sec-run .item .ic:hover,#sec-run .item .ic:focus-visible{z-index:40;transform:translateY(-2px);
+  background:color-mix(in srgb,var(--c) 20%,transparent);box-shadow:0 8px 18px -8px color-mix(in srgb,var(--c) 60%,transparent)}
+#sec-run .item .ic:focus-visible{outline:2px solid var(--c);outline-offset:3px}
+
+/* ---- hover popup card (matches Connect data-plane pattern) ---- */
+#sec-run .pop{position:absolute;bottom:100%;left:-14px;z-index:30;display:none;padding-bottom:13px;pointer-events:none}
+#sec-run .ic:hover .pop,#sec-run .ic:focus-visible .pop{display:block}
+#sec-run .ic.flip .pop{bottom:auto;top:100%;padding-bottom:0;padding-top:13px}
+#sec-run .pop-card{display:block;position:relative;width:250px;max-width:calc(100vw - 40px);text-align:left;
+  background:#F1F3F7;border:1px solid #E1E5EC;border-radius:14px;padding:14px 15px 13px;
+  box-shadow:0 18px 40px -14px rgba(28,41,69,.45),0 2px 6px rgba(28,41,69,.08);
+  animation:rnpopIn .28s cubic-bezier(.2,.9,.3,1.2) both}
+#sec-run .pop-card::after{content:"";position:absolute;left:26px;bottom:-7px;width:14px;height:14px;background:#F1F3F7;
+  border-right:1px solid #E1E5EC;border-bottom:1px solid #E1E5EC;transform:rotate(45deg)}
+#sec-run .ic.flip .pop-card::after{bottom:auto;top:-7px;border:0;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+#sec-run .pop-title{display:block;font-family:"Nunito Sans",sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--cs,var(--c));margin-bottom:9px}
+#sec-run .stage{position:relative;width:100%;height:92px;border-radius:10px;overflow:hidden;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--c) 5%,#F7F8FC),color-mix(in srgb,var(--c) 9%,#EDF0F6));
+  border:1px solid color-mix(in srgb,var(--c) 20%,#E1E5EC)}
+#sec-run .pop-desc{display:block;font-size:12px;color:var(--muted);line-height:1.5;margin-top:10px}
+#sec-run .pop-desc b{color:var(--navy);font-weight:800}
+@keyframes rnpopIn{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:none}}
+
+/* ---- process-scene tokens: neutral panel, marks ramped in the section colour ---- */
+#sec-run .scene{display:block;width:100%;height:100%}
+#sec-run .scene text{font-family:"Nunito Sans",sans-serif;font-weight:800}
+#sec-run .s1{fill:color-mix(in srgb,var(--c) 22%,#fff)}
+#sec-run .s2{fill:color-mix(in srgb,var(--c) 42%,#fff)}
+#sec-run .s3{fill:color-mix(in srgb,var(--c) 64%,#fff)}
+#sec-run .s4{fill:var(--cs,var(--c))}
+#sec-run .sCard{fill:#fff;stroke:color-mix(in srgb,var(--c) 34%,#D4DAE6);stroke-width:1.5}
+#sec-run .sSoft{fill:color-mix(in srgb,var(--c) 12%,#fff)}
+#sec-run .sNode{fill:#fff;stroke:color-mix(in srgb,var(--c) 40%,#C7D0E4);stroke-width:1.5}
+#sec-run .sAx{stroke:#C7D0E4;stroke-width:2;fill:none;stroke-linecap:round}
+#sec-run .sStroke{stroke:var(--cs,var(--c));stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+#sec-run .sTrend{stroke:var(--cs,var(--c));stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4 5}
+#sec-run .sFlow{stroke:var(--cs,var(--c));stroke-width:2;fill:none;stroke-linecap:round;stroke-dasharray:5 8}
+#sec-run .sInk{fill:var(--cs,var(--c))}
+#sec-run .sMut{fill:#C2C9D6}
+#sec-run .sCap{font-size:8px;fill:#98A2B3}
+#sec-run .sCapC{font-size:8px;fill:var(--cs,var(--c))}
+@media(prefers-reduced-motion:no-preference){
+  #sec-run .sFlow{animation:s-dash 1.1s linear infinite}@keyframes s-dash{to{stroke-dashoffset:-26}}
+  #sec-run .a-march{animation:k-march 1.1s linear infinite}@keyframes k-march{to{stroke-dashoffset:-18}}
+  #sec-run .d1{animation-delay:.12s}#sec-run .d2{animation-delay:.24s}#sec-run .d3{animation-delay:.36s}#sec-run .d4{animation-delay:.48s}
+  #sec-run .a-fill{transform-box:fill-box;transform-origin:left center;animation:k-fill 2.8s ease-in-out infinite}
+  @keyframes k-fill{0%,8%{transform:scaleX(0)}42%,90%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+  #sec-run .a-grow{transform-box:fill-box;transform-origin:center bottom;animation:k-grow 2.8s ease-in-out infinite}
+  @keyframes k-grow{0%{transform:scaleY(.06)}45%,88%{transform:scaleY(1)}100%{transform:scaleY(.06)}}
+  #sec-run .a-meter{transform-box:fill-box;transform-origin:left center;animation:k-meter 3s ease-in-out infinite}
+  @keyframes k-meter{0%{transform:scaleX(0)}52%,100%{transform:scaleX(.66)}}
+  #sec-run .a-draw{animation:k-draw 2.8s ease-in-out infinite}
+  @keyframes k-draw{0%,15%{stroke-dashoffset:var(--dl,160)}55%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:var(--dl,160)}}
+  #sec-run .a-pop{transform-box:fill-box;transform-origin:center;opacity:0;animation:k-pop 2.8s ease-in-out infinite}
+  @keyframes k-pop{0%,32%{opacity:0;transform:scale(.4)}46%{opacity:1;transform:scale(1.1)}56%,90%{opacity:1;transform:scale(1)}100%{opacity:0}}
+  #sec-run .a-send{animation:k-send 2.8s ease-in-out infinite}
+  @keyframes k-send{0%,40%{opacity:0;transform:translateX(0)}50%{opacity:1}86%{opacity:1;transform:translateX(64px)}100%{opacity:0;transform:translateX(82px)}}
+  #sec-run .a-travel{animation:k-travel 2.4s ease-in-out infinite}
+  @keyframes k-travel{0%{opacity:0;transform:translateX(0)}12%{opacity:1}80%{opacity:1;transform:translateX(92px)}92%,100%{opacity:0}}
+  #sec-run .a-slide{animation:k-slide 2.8s ease-in-out infinite}
+  @keyframes k-slide{0%{opacity:0;transform:translateX(22px)}28%,86%{opacity:1;transform:translateX(0)}100%{opacity:0;transform:translateX(22px)}}
+  #sec-run .a-scan{animation:k-scan 2.6s ease-in-out infinite alternate}
+  @keyframes k-scan{0%{transform:translateY(0)}100%{transform:translateY(40px)}}
+  #sec-run .a-rew{transform-box:fill-box;transform-origin:center;animation:k-rew 3s ease-in-out infinite}
+  @keyframes k-rew{0%,26%{transform:rotate(0)}72%,100%{transform:rotate(-360deg)}}
+  #sec-run .a-lift{transform-box:fill-box;transform-origin:center bottom;animation:k-lift 2.8s ease-in-out infinite}
+  @keyframes k-lift{0%,42%{transform:translateY(0)}56%,100%{transform:translateY(-6px)}}
+  #sec-run .a-conv{animation:k-conv 2.8s ease-in-out infinite}
+  @keyframes k-conv{0%{opacity:.3;transform:translate(var(--gx,0),var(--gy,0))}40%,100%{opacity:1;transform:translate(0,0)}}
+  #sec-run .a-out{animation:k-out 3s ease-in-out infinite}@keyframes k-out{0%,34%{opacity:1}54%,100%{opacity:0}}
+  #sec-run .a-in{opacity:0;animation:k-in 3s ease-in-out infinite}@keyframes k-in{0%,46%{opacity:0}62%,100%{opacity:1}}
+}
+/* reduced motion: hold each scene on a sensible resolved state */
+@media(prefers-reduced-motion:reduce){
+  #sec-run .a-pop,#sec-run .a-slide,#sec-run .a-in{opacity:1;transform:none}
+  #sec-run .a-fill{transform:scaleX(1)}#sec-run .a-grow{transform:scaleY(1)}#sec-run .a-meter{transform:scaleX(.66)}
+  #sec-run .a-draw{stroke-dashoffset:0}#sec-run .a-out{opacity:0}
+  #sec-run .a-send,#sec-run .a-travel{opacity:0}
+}
 #sec-run .item .rt{flex:1;min-width:0}
 #sec-run .item .nm{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px}
 #sec-run .item .nm b{font-family:"Merriweather",serif;font-weight:700;font-size:15px;color:var(--navy);line-height:1.2}
@@ -725,19 +809,16 @@ p{margin:0}
 @media(max-width:900px){#sec-ctafoot .cta{padding:52px 24px 60px}#sec-ctafoot .cta h2{font-size:40px}#sec-ctafoot .totop{position:static;display:inline-flex;margin:28px auto 0;justify-content:center}}
 </style>
 <link rel="canonical" href="https://www.covu.com/product/service/">
-<style id="nav-place">
-  #svc-nav{display:contents}
-  #svc-nav .navbar{position:sticky;top:18px;z-index:130}
-</style>
 <link rel="stylesheet" href="/css/nav.css">
 </head>
 <body>
 <div id="svc-page">
 <canvas id="svc-halftone" aria-hidden="true"></canvas>
+<div class="navbar"><div data-include="/partials/nav.html"></div></div>
 
 <!-- ============ NAVBAR (mega-menu, ported from homepage) ============ -->
 <div id="svc-nav">
-  <div class="navbar"><div data-include="/partials/nav.html"></div></div>
+  
 </div>
 
 <!-- ============ HERO ============ -->
@@ -750,8 +831,8 @@ p{margin:0}
       <p class="sub">On-demand capacity routed through OS: U.S. licensed agents, vetted capacity, and Vero AI. Send work in, get it back done.</p>
       <p class="subnote">Routed by license and skill. Your own staff stays the default.</p>
       <div class="ctas">
-        <a class="btn-primary" href="#sec-ctafoot">Book a demo</a>
-        <a class="btn-ghost" href="#sec-runs">See the stack
+        <a class="btn-primary" href="/book-a-consultation-with-covu">Book a demo</a>
+        <a class="btn-ghost" href="/product/">See the stack
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
@@ -913,7 +994,7 @@ p{margin:0}
       </div>
       <div class="prob-bridge">
         <span class="txt">Every option trades one problem for another. <b>There is a measured one:</b> capacity you turn on only when you need it.</span>
-        <a href="#sec-runs">See how the Service Network works
+        <a href="/product/">See how the Service Network works
           <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       </div>
@@ -1456,41 +1537,182 @@ document.documentElement.classList.add('js');
     cancel:'<circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>',
     aor:'<circle cx="8" cy="8" r="3"/><path d="M2.5 19c0-3 2.5-5 5.5-5 1.2 0 2.3.3 3.2.9"/><path d="M15 6l3 3-3 3M22 9h-7"/>'
   };
+  /* process scenes — neutral panel, marks in section colour, one distinct motion each */
+  function scn(inner){return '<svg class="scene" viewBox="0 0 250 92" preserveAspectRatio="xMidYMid meet">'+inner+'</svg>';}
+  var CK='stroke-linecap="round" stroke-linejoin="round"';
+  var SCENES={
+    /* doc lines fill in, then a plane sends it */
+    issue:function(){return scn(
+      '<rect class="sCard" x="58" y="20" width="74" height="54" rx="8"/>'+
+      '<rect class="s4" x="68" y="29" width="40" height="5" rx="2.5"/>'+
+      '<rect class="s2 a-fill d1" x="68" y="42" width="54" height="5" rx="2.5"/>'+
+      '<rect class="s2 a-fill d2" x="68" y="52" width="54" height="5" rx="2.5"/>'+
+      '<rect class="s2 a-fill d3" x="68" y="62" width="36" height="5" rx="2.5"/>'+
+      '<g transform="translate(146,34)"><g class="a-send"><path class="sInk" d="M0 3 L22 11 L0 19 L6 11 Z"/></g></g>');},
+    /* doc produced, a seal is stamped, delivered */
+    deliver:function(){return scn(
+      '<rect class="sCard" x="50" y="20" width="72" height="54" rx="8"/>'+
+      '<rect class="s2" x="60" y="30" width="42" height="5" rx="2.5"/>'+
+      '<rect class="s2" x="60" y="40" width="42" height="5" rx="2.5"/>'+
+      '<rect class="s2" x="60" y="50" width="30" height="5" rx="2.5"/>'+
+      '<g transform="translate(104,58)"><g class="a-pop"><circle class="s4" r="11"/><path d="M-4 0 l3 3 6-7" stroke="#fff" stroke-width="2" fill="none" '+CK+'/></g></g>'+
+      '<g transform="translate(150,34)"><g class="a-send"><path class="sInk" d="M0 3 L22 11 L0 19 L6 11 Z"/></g></g>');},
+    /* an edit flows into the system of record and is confirmed */
+    confirm:function(it){var a=(it&&it.l1)||'EDIT',b=(it&&it.l2)||'DONE';return scn(
+      '<rect class="sNode" x="18" y="34" width="56" height="24" rx="6"/>'+
+      '<text class="sCap" x="46" y="49" text-anchor="middle">'+a+'</text>'+
+      '<path class="sFlow a-march" d="M78 46 H150"/>'+
+      '<rect class="sSoft" x="152" y="26" width="80" height="40" rx="9"/>'+
+      '<text class="sCapC" x="192" y="39" text-anchor="middle">'+b+'</text>'+
+      '<g transform="translate(192,50)"><g class="a-pop"><path class="sStroke" d="M-8 0 l5 5 11-13"/></g></g>');},
+    /* a scan sweeps the policy, ticks land line by line */
+    scan:function(){return scn(
+      '<rect class="sCard" x="58" y="14" width="86" height="64" rx="8"/>'+
+      '<rect class="sMut" x="68" y="26" width="46" height="5" rx="2.5"/>'+
+      '<rect class="sMut" x="68" y="38" width="46" height="5" rx="2.5"/>'+
+      '<rect class="sMut" x="68" y="50" width="46" height="5" rx="2.5"/>'+
+      '<rect class="sMut" x="68" y="62" width="46" height="5" rx="2.5"/>'+
+      '<g transform="translate(120,25)"><g class="a-pop d1"><path class="sStroke" d="M0 0 l3.5 3.5 6-7.5"/></g></g>'+
+      '<g transform="translate(120,37)"><g class="a-pop d2"><path class="sStroke" d="M0 0 l3.5 3.5 6-7.5"/></g></g>'+
+      '<g transform="translate(120,49)"><g class="a-pop d3"><path class="sStroke" d="M0 0 l3.5 3.5 6-7.5"/></g></g>'+
+      '<g transform="translate(120,61)"><g class="a-pop d4"><path class="sStroke" d="M0 0 l3.5 3.5 6-7.5"/></g></g>'+
+      '<g transform="translate(58,18)"><rect class="sInk a-scan" x="0" y="0" width="86" height="9" rx="3" opacity="0.14"/></g>');},
+    /* lapsed status rewinds to active */
+    restore:function(){return scn(
+      '<g transform="translate(125,40)"><g class="a-rew"><path class="sStroke" d="M13 5 a13 13 0 1 0 4 10"/><path class="sStroke" d="M17 2 l1 9 -9 -2"/></g></g>'+
+      '<text class="sCap a-out" x="125" y="76" text-anchor="middle">LAPSED</text>'+
+      '<text class="sCapC a-in" x="125" y="76" text-anchor="middle">ACTIVE</text>');},
+    /* gated coverage unlocks and goes live */
+    unlock:function(){return scn(
+      '<rect class="sCard" x="74" y="20" width="98" height="52" rx="9"/>'+
+      '<text class="sCap" x="116" y="33" text-anchor="middle">COVERAGE</text>'+
+      '<g transform="translate(111,40)"><path class="sStroke a-lift" d="M4 12 V7 a8 8 0 0 1 16 0 V12"/><rect class="s4" x="0" y="12" width="24" height="18" rx="3"/></g>'+
+      '<g transform="translate(158,30)"><g class="a-pop"><path class="sStroke" d="M-8 0 l5 5 10-12"/></g></g>');},
+    /* a new exposure is added to the shield, gated */
+    addrisk:function(){return scn(
+      '<path class="sNode" d="M110 15 L130 23 V37 C130 50 121 59 110 63 C99 59 90 50 90 37 V23 Z"/>'+
+      '<g transform="translate(110,40)"><g class="a-pop"><circle class="s4" r="11"/><path d="M0 -5 V5 M-5 0 H5" stroke="#fff" stroke-width="2.2" '+CK+'/></g></g>');},
+    /* prep progresses to a checkpoint ahead of the expiry flag */
+    timeline:function(){return scn(
+      '<line class="sAx" x1="30" y1="54" x2="206" y2="54"/>'+
+      '<line class="sAx" x1="60" y1="50" x2="60" y2="58"/>'+
+      '<line class="sAx" x1="90" y1="50" x2="90" y2="58"/>'+
+      '<line class="sAx" x1="120" y1="50" x2="120" y2="58"/>'+
+      '<g transform="translate(180,36)"><line class="sAx" x1="0" y1="0" x2="0" y2="20"/><path class="sMut" d="M0 0 h13 l-3 4 3 4 H0 z"/></g>'+
+      '<g transform="translate(30,54)"><rect class="s4 a-fill" x="0" y="-2" width="90" height="4" rx="2"/></g>'+
+      '<g transform="translate(30,54)"><g class="a-send"><circle class="s4" cx="0" cy="0" r="6"/></g></g>'+
+      '<g transform="translate(120,42)"><g class="a-pop"><path class="sStroke" d="M-6 0 l4.5 4.5 9-11"/></g></g>'+
+      '<text class="sCap" x="182" y="82" text-anchor="middle">renewal</text>');},
+    /* quotes shopped across the market — bars rise with a trend line */
+    trend:function(){return scn(
+      '<path class="sAx" d="M26 76 H228"/><path class="sAx" d="M26 76 V16"/>'+
+      '<rect class="s1 a-grow d1" x="40" y="58" width="22" height="18" rx="3"/>'+
+      '<rect class="s2 a-grow d2" x="76" y="50" width="22" height="26" rx="3"/>'+
+      '<rect class="s3 a-grow d3" x="112" y="40" width="22" height="36" rx="3"/>'+
+      '<rect class="s4 a-grow d4" x="148" y="30" width="22" height="46" rx="3"/>'+
+      '<path class="sTrend a-march" d="M51 62 L87 54 L123 43 L159 33"/>'+
+      '<text class="sCap" x="30" y="12">rate &uarr;</text>'+
+      '<text class="sCap" x="150" y="90" text-anchor="middle">every market</text>');},
+    /* an at-risk book value dips, then is pulled back up */
+    recover:function(){return scn(
+      '<path class="sAx" d="M26 76 H228"/><path class="sAx" d="M26 76 V16"/>'+
+      '<path class="sStroke a-draw" d="M34 34 L74 44 L112 58 L150 44 L196 26" stroke-dasharray="200" style="--dl:200"/>'+
+      '<g transform="translate(196,26)"><g class="a-pop"><circle class="s4" r="4.5"/></g></g>'+
+      '<text class="sCap" x="30" y="12">book value</text>'+
+      '<text class="sCap" x="150" y="90" text-anchor="middle">saved</text>');},
+    /* one policy is swapped out for a re-marketed one */
+    swap:function(){return scn(
+      '<g class="a-out"><rect class="sNode" x="40" y="30" width="56" height="34" rx="7"/><rect class="s2" x="48" y="40" width="34" height="4" rx="2"/><rect class="s2" x="48" y="49" width="26" height="4" rx="2"/></g>'+
+      '<g transform="translate(112,47)"><path class="sStroke" d="M-8 -4 H8 l-4 -4 M8 4 H-8 l4 4"/></g>'+
+      '<g class="a-slide"><rect class="sCard" x="150" y="30" width="56" height="34" rx="7"/><rect class="s4" x="158" y="40" width="34" height="4" rx="2"/><rect class="s2" x="158" y="49" width="26" height="4" rx="2"/></g>');},
+    /* a second line joins the account */
+    addline:function(){return scn(
+      '<rect class="sCard" x="52" y="30" width="52" height="34" rx="7"/>'+
+      '<rect class="s4" x="60" y="38" width="30" height="4" rx="2"/>'+
+      '<rect class="s2" x="60" y="47" width="22" height="4" rx="2"/>'+
+      '<text class="sInk" x="118" y="52" text-anchor="middle" font-size="17">+</text>'+
+      '<g class="a-slide"><rect class="sCard" x="132" y="30" width="52" height="34" rx="7"/><rect class="s4" x="140" y="38" width="30" height="4" rx="2"/><rect class="s2" x="140" y="47" width="22" height="4" rx="2"/></g>');},
+    /* a loss report is captured, then routed to a destination */
+    route:function(){return scn(
+      '<rect class="sNode" x="14" y="34" width="52" height="24" rx="6"/>'+
+      '<text class="sCap" x="40" y="49" text-anchor="middle">FNOL</text>'+
+      '<path class="sAx" d="M66 46 H176"/>'+
+      '<circle class="sNode" cx="200" cy="46" r="16"/>'+
+      '<g transform="translate(200,46)"><g class="a-pop"><path class="sStroke" d="M-6 0 l4.5 4.5 9-11"/></g></g>'+
+      '<g transform="translate(70,40)"><g class="a-travel"><rect class="s4" x="0" y="0" width="14" height="12" rx="2.5"/></g></g>');},
+    /* a packet is handed from one node to another */
+    handoff:function(it){var a=(it&&it.l1)||'AGENCY',b=(it&&it.l2)||'CARRIER';return scn(
+      '<rect class="sNode" x="14" y="30" width="56" height="32" rx="7"/>'+
+      '<text class="sCap" x="42" y="49" text-anchor="middle">'+a+'</text>'+
+      '<path class="sAx" d="M70 46 H176"/>'+
+      '<rect class="sSoft" x="176" y="30" width="60" height="32" rx="7"/>'+
+      '<text class="sCapC" x="206" y="43" text-anchor="middle">'+b+'</text>'+
+      '<g transform="translate(206,51)"><g class="a-pop"><path class="sStroke" d="M-7 0 l4.5 4.5 9-10.5"/></g></g>'+
+      '<g transform="translate(74,40)"><g class="a-travel"><rect class="s4" x="0" y="0" width="15" height="12" rx="2.5"/></g></g>');},
+    /* loose records converge into one file */
+    pull:function(){return scn(
+      '<rect class="sCard" x="150" y="24" width="62" height="46" rx="7"/>'+
+      '<path class="sAx" d="M150 34 H212"/>'+
+      '<g class="a-conv d1" style="--gx:-74px;--gy:-16px"><rect class="s2" x="158" y="42" width="46" height="6" rx="3"/></g>'+
+      '<g class="a-conv d2" style="--gx:-88px;--gy:0px"><rect class="s3" x="158" y="52" width="46" height="6" rx="3"/></g>'+
+      '<g class="a-conv d3" style="--gx:-60px;--gy:16px"><rect class="s4" x="158" y="62" width="46" height="6" rx="3"/></g>');},
+    /* a due meter is caught by a shield before it lapses */
+    guard:function(){return scn(
+      '<text class="sCap" x="60" y="35" text-anchor="middle">DUE</text>'+
+      '<rect class="sNode" x="40" y="42" width="120" height="12" rx="6"/>'+
+      '<g transform="translate(42,44)"><rect class="s4 a-meter" x="0" y="0" width="116" height="8" rx="4"/></g>'+
+      '<line x1="158" y1="38" x2="158" y2="58" stroke="#E27A57" stroke-width="2"/>'+
+      '<g transform="translate(126,48)"><g class="a-pop"><path class="sStroke" d="M0 -13 l11 4 v6 c0 7 -5 11 -11 14 c-6 -3 -11 -7 -11 -14 v-6 z"/><path class="sStroke" d="M-5 1 l4 4 7 -8"/></g></g>');},
+    /* a question is researched and resolved */
+    resolve:function(){return scn(
+      '<circle class="sNode" cx="46" cy="46" r="17"/>'+
+      '<text class="sInk" x="46" y="52" text-anchor="middle" font-size="18">?</text>'+
+      '<path class="sFlow a-march" d="M70 46 H150"/>'+
+      '<rect class="sSoft" x="152" y="28" width="74" height="36" rx="9"/>'+
+      '<g transform="translate(189,46)"><g class="a-pop"><path class="sStroke" d="M-9 0 l6 6 12-14"/></g></g>');},
+    /* funds returned, progress tracked to done */
+    refund:function(){return scn(
+      '<text class="sCap" x="150" y="30" text-anchor="middle">tracked to done</text>'+
+      '<g transform="translate(40,40)"><g class="a-slide"><circle class="s4" cx="10" cy="10" r="11"/><text x="10" y="14" text-anchor="middle" font-size="12" fill="#fff">$</text></g></g>'+
+      '<rect class="sNode" x="70" y="52" width="140" height="12" rx="6"/>'+
+      '<g transform="translate(72,54)"><rect class="s4 a-fill" x="0" y="0" width="136" height="8" rx="4"/></g>'+
+      '<g transform="translate(214,52)"><g class="a-pop"><path class="sStroke" d="M-7 0 l4.5 4.5 9-11"/></g></g>');}
+  };
   var CATS=[
     {title:'Policy servicing',tag:'Service desk',c:'#FFB703',cs:'#E9AE00',items:[
-      {ic:'coi',name:'Certificate of Insurance (COI)',dsc:'Certificates issued and sent the same day.'},
-      {ic:'seal',name:'Evidence of Insurance (EOI)',dsc:'Evidence produced and delivered on request.'},
-      {ic:'doc',name:'Proof of Insurance (POI)',dsc:'Proof generated without the back-and-forth.'},
-      {ic:'doc',name:'General document',dsc:'Documents handled, filed, and returned ready to use.'},
-      {ic:'endorse',name:'Endorsement — admin',dsc:'Non-binding changes processed and confirmed in your AMS.'},
-      {ic:'inspect',name:'Policy inspection',dsc:'Policies checked line-by-line against the quote.'},
-      {ic:'reinstate',name:'Reinstatement',dsc:'Lapsed policies reinstated and documented.'},
-      {ic:'endorse',name:'Endorsement — binding',dsc:'Material coverage changes — live once binding ships.'},
-      {ic:'risk',name:'Risk addition',dsc:'New exposures added — gated on binding authority.'}
+      {ic:'coi',name:'Certificate of Insurance (COI)',sc:'issue',dsc:'Certificates issued and sent the same day.',d:'Certificates issued and sent the <b>same day</b> — no waiting on a licensed hand.'},
+      {ic:'seal',name:'Evidence of Insurance (EOI)',sc:'deliver',dsc:'Evidence produced and delivered on request.',d:'Evidence of coverage <b>produced and delivered</b> the moment it\'s requested.'},
+      {ic:'doc',name:'Proof of Insurance (POI)',sc:'issue',dsc:'Proof generated without the back-and-forth.',d:'Proof generated and shared <b>without the back-and-forth</b>.'},
+      {ic:'doc',name:'General document',sc:'deliver',dsc:'Documents handled, filed, and returned ready to use.',d:'Documents handled, filed, and returned <b>ready to use</b>.'},
+      {ic:'endorse',name:'Endorsement — admin',sc:'confirm',l1:'EDIT',l2:'AMS',dsc:'Non-binding changes processed and confirmed in your AMS.',d:'Non-binding changes processed and <b>confirmed in your AMS</b>.'},
+      {ic:'inspect',name:'Policy inspection',sc:'scan',dsc:'Policies checked line-by-line against the quote.',d:'Policies checked <b>line-by-line</b> against the quote before they reach you.'},
+      {ic:'reinstate',name:'Reinstatement',sc:'restore',dsc:'Lapsed policies reinstated and documented.',d:'Lapsed policies <b>reinstated and documented</b> end to end.'},
+      {ic:'endorse',name:'Endorsement — binding',sc:'unlock',dsc:'Material coverage changes — live once binding ships.',d:'Material coverage changes — <b>live once binding ships</b>.'},
+      {ic:'risk',name:'Risk addition',sc:'addrisk',dsc:'New exposures added — gated on binding authority.',d:'New exposures added, <b>gated on binding authority</b>.'}
     ]},
     {title:'Renewals and remarketing',tag:'Retention',c:'#F5822B',cs:'#F5822B',items:[
-      {ic:'renew',name:'Standard renewal touch',dsc:'Proactive renewal prep handled ahead of expiration.'},
-      {ic:'reshop',name:'Renewal remarket',dsc:'Shopping the market at renewal — on the roadmap.'},
-      {ic:'retain',name:'Carrier non-renewal retention',dsc:'Saving non-renewed accounts — gated on binding.'},
-      {ic:'remarket',name:'Mid-term reshop / rewrite',dsc:'Re-marketing mid-term — live once binding ships.'},
-      {ic:'newbiz',name:'New customer acquisition',dsc:'New-business quoting — on the roadmap.'},
-      {ic:'crosssell',name:'Cross-sell',dsc:'Rounding out accounts — on the roadmap.'}
+      {ic:'renew',name:'Standard renewal touch',sc:'timeline',dsc:'Proactive renewal prep handled ahead of expiration.',d:'Proactive renewal prep handled <b>ahead of expiration</b>.'},
+      {ic:'reshop',name:'Renewal remarket',sc:'trend',dsc:'Shopping the market at renewal — on the roadmap.',d:'Shopping the market at renewal — <b>on the roadmap</b>.'},
+      {ic:'retain',name:'Carrier non-renewal retention',sc:'recover',dsc:'Saving non-renewed accounts — gated on binding.',d:'Saving non-renewed accounts — <b>gated on binding</b>.'},
+      {ic:'remarket',name:'Mid-term reshop / rewrite',sc:'swap',dsc:'Re-marketing mid-term — live once binding ships.',d:'Re-marketing mid-term — <b>live once binding ships</b>.'},
+      {ic:'newbiz',name:'New customer acquisition',sc:'trend',dsc:'New-business quoting — on the roadmap.',d:'New-business quoting — <b>on the roadmap</b>.'},
+      {ic:'crosssell',name:'Cross-sell',sc:'addline',dsc:'Rounding out accounts — on the roadmap.',d:'Rounding out accounts with the right coverage — <b>on the roadmap</b>.'}
     ]},
     {title:'Claims',tag:'First notice',c:'#0FB5AE',cs:'#0E9C96',items:[
-      {ic:'claims',name:'Claims assistance',dsc:'First notice of loss captured and routed the same day.'},
-      {ic:'transfer',name:'Claims transfer',dsc:'Claims handed to the carrier cleanly, with the file.'},
-      {ic:'lossrun',name:'Loss runs',dsc:'Loss history pulled and packaged on request.'}
+      {ic:'claims',name:'Claims assistance',sc:'route',dsc:'First notice of loss captured and routed the same day.',d:'First notice of loss <b>captured and routed</b> the same day.'},
+      {ic:'transfer',name:'Claims transfer',sc:'handoff',l1:'AGENCY',l2:'CARRIER',dsc:'Claims handed to the carrier cleanly, with the file.',d:'Claims handed to the carrier <b>cleanly, with the file</b>.'},
+      {ic:'lossrun',name:'Loss runs',sc:'pull',dsc:'Loss history pulled and packaged on request.',d:'Loss history <b>pulled and packaged</b> on request.'}
     ]},
     {title:'Back office',tag:'Account admin',c:'#1C2945',cs:'#1C2945',items:[
-      {ic:'nonpay',name:'Non-payment notice',dsc:'Non-pay notices caught and acted on before a lapse.'},
-      {ic:'filing',name:'Document indexing / filing',dsc:'Files named, filed, and attached where they belong.'},
-      {ic:'audit',name:'Premium audit prep',dsc:'Audit paperwork gathered and prepped for you.'},
-      {ic:'billing',name:'Billing inquiry',dsc:'Billing questions researched and resolved.'},
-      {ic:'refund',name:'Refund',dsc:'Refunds requested and tracked to completion.'},
-      {ic:'contact',name:'Contact update',dsc:'Client details updated across the record.'},
-      {ic:'cancel',name:'UW cancellation notice',dsc:'Carrier cancellation notices reviewed and worked.'},
-      {ic:'aor',name:'AOR / BOR change — admin',dsc:'Agent/broker-of-record changes filed cleanly.'},
-      {ic:'cancel',name:'Cancellation request',dsc:'Cancellations processed cleanly and on time.'}
+      {ic:'nonpay',name:'Non-payment notice',sc:'guard',dsc:'Non-pay notices caught and acted on before a lapse.',d:'Non-pay notices caught and acted on <b>before a lapse</b>.'},
+      {ic:'filing',name:'Document indexing / filing',sc:'pull',dsc:'Files named, filed, and attached where they belong.',d:'Files named, filed, and attached <b>where they belong</b>.'},
+      {ic:'audit',name:'Premium audit prep',sc:'scan',dsc:'Audit paperwork gathered and prepped for you.',d:'Audit paperwork <b>gathered and prepped</b> for you.'},
+      {ic:'billing',name:'Billing inquiry',sc:'resolve',dsc:'Billing questions researched and resolved.',d:'Billing questions <b>researched and resolved</b>.'},
+      {ic:'refund',name:'Refund',sc:'refund',dsc:'Refunds requested and tracked to completion.',d:'Refunds requested and <b>tracked to completion</b>.'},
+      {ic:'contact',name:'Contact update',sc:'confirm',l1:'EDIT',l2:'RECORD',dsc:'Client details updated across the record.',d:'Client details updated <b>across the record</b>.'},
+      {ic:'cancel',name:'UW cancellation notice',sc:'guard',dsc:'Carrier cancellation notices reviewed and worked.',d:'Carrier cancellation notices <b>reviewed and worked</b>.'},
+      {ic:'aor',name:'AOR / BOR change — admin',sc:'handoff',l1:'AOR',l2:'FILED',dsc:'Agent/broker-of-record changes filed cleanly.',d:'Agent/broker-of-record changes <b>filed cleanly</b>.'},
+      {ic:'cancel',name:'Cancellation request',sc:'confirm',l1:'REQUEST',l2:'DONE',dsc:'Cancellations processed cleanly and on time.',d:'Cancellations processed <b>cleanly and on time</b>.'}
     ]}
   ];
   var total=CATS.reduce(function(s,c){return s+c.items.length;},0);
@@ -1512,7 +1734,15 @@ document.documentElement.classList.add('js');
     var sec=document.createElement('section'); sec.className='lyr'; sec.id='svc-lyr-'+i;
     sec.style.setProperty('--c',cat.c); sec.style.setProperty('--cs',cat.cs);
     var rows=cat.items.map(function(it){
-      return '<div class="item"><span class="ic"><svg viewBox="0 0 24 24">'+IC[it.ic]+'</svg></span>'+
+      var scene=(SCENES[it.sc]||SCENES.issue)(it);
+      return '<div class="item"><span class="ic" tabindex="0" role="button" aria-label="'+it.name+' — how it works">'+
+          '<svg viewBox="0 0 24 24">'+IC[it.ic]+'</svg>'+
+          '<span class="pop"><span class="pop-card">'+
+            '<span class="pop-title">'+cat.title+'</span>'+
+            '<span class="stage">'+scene+'</span>'+
+            '<span class="pop-desc">'+(it.d||it.dsc)+'</span>'+
+          '</span></span>'+
+        '</span>'+
         '<span class="rt"><span class="nm"><b>'+it.name+'</b></span>'+
         '<span class="dsc">'+it.dsc+'</span></span></div>';
     }).join('');
@@ -1548,6 +1778,21 @@ document.documentElement.classList.add('js');
     },{rootMargin:'-20% 0px -70% 0px',threshold:0});
     sections.forEach(function(s){ io.observe(s); });
   }
+})();
+
+/* ===== what-we-run popups: flip below the icon when near the top of the viewport ===== */
+(function(){
+  var POP_H=210; // popup height + gap headroom
+  var ticking=false;
+  function update(){
+    ticking=false;
+    var icons=document.querySelectorAll('#sec-run .item .ic');
+    for(var i=0;i<icons.length;i++){ icons[i].classList.toggle('flip', icons[i].getBoundingClientRect().top < POP_H); }
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  update();
 })();
 
 /* ===== FAQ accordion ===== */
@@ -1658,11 +1903,7 @@ document.documentElement.classList.add('js');
     }
   }
   function resize(){ var r=canvas.getBoundingClientRect(); dpr=Math.min(window.devicePixelRatio||1,2); W=Math.max(1,r.width|0); H=Math.max(1,r.height|0); canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); var cw=root.querySelector('.ctawrap'); ctaH=cw?cw.getBoundingClientRect().height:H; var ff=root.querySelector('.ft-footer'); if(ff){ var fr=ff.getBoundingClientRect(); fx0=fr.left-r.left; fx1=fr.right-r.left; fy0=fr.top-r.top; fy1=fr.bottom-r.top; } else { fx1=-1; } buildGrid(); zones[0].appr=-1; zones[1].appr=-1; }
-  window.addEventListener('resize',resize);
-  root.addEventListener('include:loaded',function(e){
-    if(e.target&&e.target.matches('[data-include="/partials/footer.html"]')) resize();
-  });
-  resize(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(resize);
+  window.addEventListener('resize',resize); resize(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(resize);
   var running=false, raf=null, reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   function frame(t){ draw(t); if(running) raf=requestAnimationFrame(frame); else raf=null; }
   function start(){ if(raf) return; if(reduce){ draw(CONV+HOLD*0.4); return; } running=true; raf=requestAnimationFrame(frame); }
@@ -1696,6 +1937,10 @@ document.documentElement.classList.add('js');
   }
 })();
 
+</script>
+<script>
+/* re-fit the opsfield/CTA canvas after the shared footer injects (no stretch) */
+document.addEventListener('include:loaded', function(){ window.dispatchEvent(new Event('resize')); });
 </script>
 <script src="/js/include.js"></script>
 <script src="/js/nav.js"></script>
