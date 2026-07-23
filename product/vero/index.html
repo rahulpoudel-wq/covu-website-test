@@ -178,6 +178,10 @@ p{margin:0}
 
 /* ================= SHARED light section head + cards ================= */
 .shead{text-align:center;max-width:720px;margin:0 auto 48px}
+/* keep these two section headings on a single line on desktop (still centered;
+   they overflow the 720px .shead into the section margin, within the 1200px wrap).
+   Wraps normally below 1000px so it never overflows narrow screens. */
+@media(min-width:1000px){#sec-where .shead h2,#sec-why .shead h2{white-space:nowrap}}
 .shead .pill-eye{margin-bottom:18px}
 .shead .lede{margin:0 auto;text-align:center;color:var(--muted)}
 .vgrid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative}
