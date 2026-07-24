@@ -126,6 +126,7 @@
 
 @media(max-width:900px){
   .navlinks{display:none}
+  .nav-cta{display:none!important}
   .navburger{display:inline-flex;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:14px}
   .navburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
 }
